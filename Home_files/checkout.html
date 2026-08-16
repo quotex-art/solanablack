@@ -1,0 +1,2636 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecurePay · Secure Checkout</title>
+  <meta property="og:title" content="SecurePay — Secure Checkout & Payment Gateway">
+  <meta property="og:description" content="Protected escrow checkout for digital goods. 256-bit SSL encryption, escrow protection and instant delivery.">
+  <meta property="og:image" content="w=6001">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://securepay.io/checkout">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SecurePay — Secure Checkout">
+  <meta name="twitter:description" content="Protected escrow checkout for digital goods. 256-bit SSL encryption, escrow protection and instant delivery.">
+  <meta name="twitter:image" content="w=6001">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' fill='%233B82F6'/%3E%3Cpath d='M9 12l2 2 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --accent: #3B82F6;
+      --accent-rgb: 59, 130, 246;
+      --accent-hover: #2563EB;
+      --accent-glow: rgba(59, 130, 246, 0.35);
+      --accent-dark: rgba(59, 130, 246, 0.04);
+      --accent-border: rgba(59, 130, 246, 0.12);
+      --accent-border-light: rgba(59, 130, 246, 0.08);
+      --accent-border-medium: rgba(59, 130, 246, 0.2);
+      --accent-border-focus: rgba(59, 130, 246, 0.3);
+      --accent-gradient: linear-gradient(135deg, #3B82F6, #10B981);
+      --accent-gradient-reverse: linear-gradient(135deg, #10B981, #3B82F6);
+      --accent-gradient-btn: linear-gradient(135deg, #3B82F6, #2563EB);
+      --accent-secondary: #10B981;
+      --accent-secondary-rgb: 16, 185, 129;
+      --bg-primary: #070B14;
+      --bg-secondary: #0D1322;
+      --bg-card: #141C33;
+      --bg-card-hover: #1B2542;
+      --text-secondary: #8893A8;
+      --text-muted: #4C5570;
+      --border: #25304A;
+      --solana-green: #10B981;
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #070B14; color: #fff; min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+      padding: 0;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .checkout {
+      width: 100%; max-width: 600px;
+    }
+
+    .ch-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0; margin-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .ch-logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 16px; font-weight: 800; letter-spacing: 2px;
+    }
+    .ch-logo-text {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .ch-logo-svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .ch-badge {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 14px; background: rgba(var(--accent-secondary-rgb), 0.06);
+      border: 1px solid rgba(var(--accent-secondary-rgb), 0.08); border-radius: 20px;
+    }
+    .ch-badge-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    .ch-badge-label { font-size: 10px; color: #6b6b6b; letter-spacing: 0.5px; }
+    .ch-badge-val { font-size: 12px; font-weight: 700; }
+    .ch-badge-dot.green { background: var(--accent-secondary); }
+    .ch-badge-dot.red { background: #ef4444; }
+    .ch-badge-dot.yellow { background: #f59e0b; }
+    .ch-badge-val.green { color: var(--accent-secondary); }
+    .ch-badge-val.red { color: #ef4444; }
+    .ch-badge-val.yellow { color: #f59e0b; }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .ch-escrow-banner {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; margin-bottom: 20px;
+      background: rgba(var(--accent-secondary-rgb), 0.05);
+      border: 1px solid rgba(var(--accent-secondary-rgb), 0.12);
+      border-radius: 10px;
+      font-size: 12px; font-weight: 500; color: var(--accent-secondary);
+      line-height: 1.4;
+    }
+    .ch-escrow-banner svg { flex-shrink: 0; opacity: 0.8; }
+
+    .ch-escrow-box {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px; padding: 16px; margin-bottom: 20px;
+    }
+    .ch-escrow-header {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 700; margin-bottom: 14px;
+      color: var(--accent-secondary);
+    }
+    .ch-escrow-header svg { flex-shrink: 0; }
+    .ch-escrow-steps {
+      display: flex; align-items: flex-start; gap: 6px;
+      margin-bottom: 14px;
+    }
+    .ch-escrow-step {
+      flex: 1;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      text-align: center;
+      font-size: 11px; color: #9ca3af; line-height: 1.4;
+    }
+    .ch-escrow-step strong { color: #e5e7eb; }
+    .ch-escrow-num {
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
+      background: rgba(var(--accent-secondary-rgb), 0.1);
+      color: var(--accent-secondary);
+      flex-shrink: 0;
+    }
+    .ch-escrow-arrow {
+      flex-shrink: 0;
+      padding-top: 4px;
+      color: #4a4a4a;
+    }
+    .ch-escrow-footer {
+      display: flex; align-items: flex-start; gap: 6px;
+      padding: 10px 12px;
+      background: rgba(var(--accent-secondary-rgb), 0.04);
+      border-radius: 8px;
+      font-size: 11px; color: #6b6b6b; line-height: 1.5;
+    }
+    .ch-escrow-footer svg { flex-shrink: 0; margin-top: 1px; }
+    .ch-escrow-shield {
+      display: inline-flex; align-items: center; gap: 3px;
+      padding: 2px 8px; border-radius: 4px;
+      font-size: 9px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: rgba(var(--accent-secondary-rgb), 0.08);
+      color: var(--accent-secondary);
+      margin-left: auto; flex-shrink: 0;
+    }
+
+    .ch-steps {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-bottom: 24px;
+    }
+    .ch-step {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; color: #4a4a4a;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .ch-step-num {
+      width: 24px; height: 24px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
+      border: 1px solid #4a4a4a; color: #4a4a4a;
+      flex-shrink: 0;
+    }
+    .ch-step.active { color: var(--accent); }
+    .ch-step.active .ch-step-num {
+      background: var(--accent); border-color: var(--accent); color: #fff;
+    }
+    .ch-step.done { color: var(--accent-secondary); }
+    .ch-step.done .ch-step-num {
+      background: var(--accent-secondary); border-color: var(--accent-secondary); color: #000;
+    }
+    .ch-step.failed { color: #ef4444; }
+    .ch-step.failed .ch-step-num {
+      background: #ef4444; border-color: #ef4444; color: #fff;
+    }
+    .ch-step-line {
+      width: 40px; height: 1px; background: #2a2a2a;
+    }
+    .ch-step-line.done { background: var(--accent-secondary); }
+    .ch-step-line.failed { background: #ef4444; }
+
+    .ch-order {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 18px; margin-bottom: 16px;
+      position: relative; overflow: hidden;
+    }
+    .ch-order::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      opacity: 0.35;
+    }
+    .ch-order-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 0;
+    }
+    .ch-order-row + .ch-order-row { border-top: 1px solid rgba(255,255,255,0.03); }
+    .ch-order-label { font-size: 12px; color: #6b6b6b; }
+    .ch-order-value { font-size: 13px; font-weight: 600; color: #e5e7eb; }
+    .ch-order-value strong { color: #fff; }
+    .ch-order-total {
+      padding: 12px 0 4px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .ch-order-total .ch-order-label { font-size: 13px; font-weight: 700; color: #9ca3af; letter-spacing: 0.5px; }
+    .ch-order-price { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+    .ch-order-price span { font-size: 13px; color: #6b6b6b; font-weight: 400; }
+
+    .ch-timer {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px; margin-bottom: 16px;
+      background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06);
+      border-radius: 10px; font-size: 12px; color: #ef4444; font-weight: 600;
+    }
+    .ch-timer svg { flex-shrink: 0; }
+
+    .ch-section-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
+      color: #6b6b6b; margin-bottom: 12px;
+    }
+    .ch-section-label::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.04);
+    }
+
+    .ch-methods { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .ch-method {
+      display: flex; align-items: center; gap: 14px;
+      width: 100%; padding: 16px 18px;
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 12px; cursor: pointer; transition: all 0.2s;
+      text-align: left; font-family: inherit;
+    }
+    .ch-method:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+    .ch-method.active {
+      background: rgba(var(--accent-rgb), 0.04); border-color: rgba(var(--accent-rgb), 0.2);
+      box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.04);
+    }
+    .ch-method-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.03); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ch-method-info { flex: 1; }
+    .ch-method-name { display: block; font-size: 14px; font-weight: 600; }
+    .ch-method-note { display: block; font-size: 11px; color: #6b6b6b; margin-top: 2px; }
+    .ch-method-badge {
+      font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .ch-method-badge-fast { background: rgba(var(--accent-secondary-rgb), 0.1); color: var(--accent-secondary); }
+    .ch-method-badge-instant { background: rgba(var(--accent-rgb), 0.1); color: var(--accent); }
+    .ch-method.active .ch-method-name { color: var(--accent); }
+    .ch-method-icon-wallet { color: var(--accent-secondary); }
+
+    .ch-wallet-box {
+      display: none;
+      background: rgba(var(--accent-secondary-rgb), 0.03);
+      border: 1px solid rgba(var(--accent-secondary-rgb), 0.08);
+      border-radius: 16px; padding: 24px; margin-bottom: 16px;
+      text-align: center;
+    }
+    .ch-wallet-box.show { display: block; }
+    .ch-wallet-box-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(var(--accent-secondary-rgb), 0.08);
+      color: var(--accent-secondary);
+      margin: 0 auto 12px;
+    }
+    .ch-wallet-box-balance {
+      font-size: 28px; font-weight: 800; color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .ch-wallet-box-label {
+      font-size: 11px; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .ch-wallet-box-detail {
+      display: flex; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+      font-size: 13px;
+    }
+    .ch-wallet-box-detail:last-of-type { border-bottom: none; }
+    .ch-wallet-box-detail-label { color: #6b6b6b; }
+    .ch-wallet-box-detail-value { font-weight: 600; color: #e5e7eb; }
+    .ch-wallet-box-detail-value.green { color: var(--accent-secondary); }
+    .ch-wallet-box-action {
+      width: 100%; margin-top: 20px;
+      padding: 14px; border-radius: 12px; border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: #fff; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: opacity 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: inherit;
+    }
+    .ch-wallet-box-action:hover { opacity: 0.9; }
+    .ch-wallet-box-action:disabled { opacity: 0.4; cursor: default; }
+    .ch-wallet-box-note {
+      font-size: 11px; color: var(--text-muted);
+      margin-top: 12px; line-height: 1.5;
+    }
+
+    .ch-address-box {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 16px; padding: 20px; margin-bottom: 16px;
+    }
+    .ch-address-label {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .ch-address-label span { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6b6b6b; }
+    .ch-address-label .status-badge {
+      font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 50px;
+      background: rgba(var(--accent-secondary-rgb), 0.06); color: var(--accent-secondary); border: 1px solid rgba(var(--accent-secondary-rgb), 0.08);
+    }
+    .ch-address-display {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 10px; padding: 14px 16px;
+    }
+    .ch-address-text {
+      flex: 1; font-size: 13px; color: var(--accent);
+      font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+      word-break: break-all; line-height: 1.5; user-select: all;
+    }
+    .ch-address-copy {
+      display: flex; align-items: center; gap: 6px; white-space: nowrap;
+      padding: 8px 18px; background: rgba(var(--accent-rgb), 0.08);
+      border: 1px solid rgba(var(--accent-rgb), 0.12); border-radius: 8px;
+      color: var(--accent); font-size: 12px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .ch-address-copy:hover { background: rgba(var(--accent-rgb), 0.12); }
+    .ch-address-copy.copied {
+      background: rgba(var(--accent-secondary-rgb), 0.08);
+      border-color: rgba(var(--accent-secondary-rgb), 0.15);
+      color: var(--accent-secondary);
+    }
+
+    .ch-alert {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 16px; border-radius: 10px; margin-bottom: 10px;
+      font-size: 12px; line-height: 1.6; color: #9ca3af;
+    }
+    .ch-alert svg { flex-shrink: 0; margin-top: 2px; }
+    .ch-alert-danger { background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06); }
+    .ch-alert-danger svg, .ch-alert-danger strong { color: #ef4444; }
+    .ch-alert-info { background: rgba(59,130,246,0.03); border: 1px solid rgba(59,130,246,0.06); }
+    .ch-alert-info svg { color: #3b82f6; }
+    .ch-alert-info strong { color: #e5e7eb; }
+    .ch-alert-success { background: rgba(var(--accent-secondary-rgb), 0.03); border: 1px solid rgba(var(--accent-secondary-rgb), 0.06); }
+    .ch-alert-success svg, .ch-alert-success strong { color: var(--accent-secondary); }
+
+    .ch-email {
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 16px; padding: 20px; margin-bottom: 16px;
+    }
+    .ch-email.delivered {
+      border-color: rgba(16,185,129,0.15);
+      background: rgba(16,185,129,0.02);
+    }
+    .ch-email-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+    }
+    .ch-email-label {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      color: #6b6b6b;
+    }
+    .ch-email-badge {
+      font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 3px 10px; border-radius: 20px;
+      background: rgba(250,204,21,0.1); color: #FACC15;
+      border: 1px solid rgba(250,204,21,0.15);
+    }
+    .ch-email-badge.sent {
+      background: rgba(16,185,129,0.1); color: #10B981;
+      border-color: rgba(16,185,129,0.15);
+    }
+    .ch-email-input {
+      width: 100%; padding: 14px 16px 14px 42px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 10px; color: #fff; font-size: 14px;
+      font-family: inherit; outline: none; transition: all 0.2s;
+    }
+    .ch-email-input:focus { border-color: rgba(var(--accent-rgb), 0.3); background: rgba(var(--accent-rgb), 0.02); }
+    .ch-email-input::placeholder { color: #4a4a4a; }
+    .ch-email-input-wrap {
+      position: relative;
+    }
+    .ch-email-input-icon {
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      color: #4a4a4a; pointer-events: none;
+    }
+    .ch-email-hint {
+      font-size: 11px; color: #6b6b6b; margin-top: 8px;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    .ch-delivery-methods {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;
+    }
+    .ch-delivery-method {
+      display: flex; align-items: center; gap: 10px;
+      width: 100%; padding: 12px 14px;
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 10px; cursor: pointer; transition: all 0.2s;
+      text-align: left; font-family: inherit;
+    }
+    .ch-delivery-method:hover { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+    .ch-delivery-method.active {
+      background: rgba(var(--accent-rgb), 0.05); border-color: rgba(var(--accent-rgb), 0.25);
+      box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.05);
+    }
+    .ch-delivery-icon {
+      width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+      background: rgba(255,255,255,0.04); display: flex;
+      align-items: center; justify-content: center;
+      color: #6b6b6b;
+    }
+    .ch-delivery-method.active .ch-delivery-icon {
+      background: rgba(var(--accent-rgb), 0.1); color: var(--accent);
+    }
+    .ch-delivery-info { flex: 1; min-width: 0; }
+    .ch-delivery-name { display: block; font-size: 12px; font-weight: 700; color: #e5e7eb; }
+    .ch-delivery-method.active .ch-delivery-name { color: var(--accent); }
+    .ch-delivery-note { display: block; font-size: 10px; color: #6b6b6b; margin-top: 2px; }
+    .ch-delivery-method.active .ch-delivery-note { color: #9ca3af; }
+
+    @media (max-width: 480px) {
+      .ch-delivery-methods { grid-template-columns: 1fr; }
+    }
+
+    .ch-pay-btn {
+      width: 100%; padding: 18px;
+      background: var(--accent-gradient-btn);
+      border: none; border-radius: 12px;
+      color: #fff; font-size: 16px; font-weight: 700;
+      cursor: pointer; transition: all 0.3s;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: inherit; margin-bottom: 16px;
+      letter-spacing: 0.5px;
+      position: relative; overflow: hidden;
+    }
+    .ch-pay-btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--accent-gradient-reverse);
+      opacity: 0; transition: opacity 0.3s; border-radius: inherit;
+    }
+    .ch-pay-btn:hover::before { opacity: 1; }
+    .ch-pay-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--accent-glow); }
+    .ch-pay-btn:active { transform: translateY(0); }
+    .ch-pay-btn i { position: relative; z-index: 1; }
+    .ch-pay-btn span { position: relative; z-index: 1; }
+
+    /* ===== VERIFICATION PHASE ===== */
+    .ch-verify { display: none; }
+    .ch-verify.show {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .ch-verify-header {
+      text-align: center; padding: 20px 0 16px;
+    }
+    .ch-verify-icon-wrap {
+      width: 80px; height: 80px; border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .ch-verify-icon-wrap.usdt {
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(16,185,129,0.05));
+      border: 2px solid rgba(59,130,246,0.2);
+    }
+    .ch-verify-icon-wrap.usdt svg { color: #3B82F6; }
+    .ch-verify-icon-wrap.btc {
+      background: linear-gradient(135deg, rgba(247,147,26,0.15), rgba(247,147,26,0.05));
+      border: 2px solid rgba(247,147,26,0.2);
+    }
+    .ch-verify-icon-wrap.btc svg { color: #f7931a; }
+    .ch-verify-icon-wrap.ltc {
+      background: linear-gradient(135deg, rgba(191,191,191,0.15), rgba(191,191,191,0.05));
+      border: 2px solid rgba(191,191,191,0.2);
+    }
+    .ch-verify-icon-wrap.ltc svg { color: #bfbfbf; }
+    .ch-verify-icon-wrap.failed {
+      background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(239,68,68,0.05));
+      border: 2px solid rgba(239,68,68,0.2);
+    }
+    .ch-verify-icon-wrap.failed svg { color: #ef4444; }
+    .ch-verify-icon-wrap svg { width: 36px; height: 36px; }
+
+    .ch-verify-title {
+      font-size: 18px; font-weight: 700; margin-bottom: 4px;
+    }
+    .ch-verify-title.failed { color: #ef4444; }
+    .ch-verify-sub {
+      font-size: 13px; color: #6b6b6b;
+    }
+
+    .ch-scan {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      margin: 16px 0;
+    }
+    .ch-scan-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #4a4a4a;
+      animation: scanDot 1.4s ease-in-out infinite;
+    }
+    .ch-scan-dot:nth-child(2) { animation-delay: 0.2s; }
+    .ch-scan-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes scanDot {
+      0%, 80%, 100% { background: #4a4a4a; transform: scale(0.8); }
+      40% { background: var(--accent); transform: scale(1.2); }
+    }
+
+    .ch-tx-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 16px; padding: 20px; margin-bottom: 16px;
+    }
+    .ch-tx-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .ch-tx-row:last-child { border-bottom: none; }
+    .ch-tx-label {
+      font-size: 11px; color: #6b6b6b; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 600;
+    }
+    .ch-tx-value {
+      font-size: 12px; color: #e5e7eb; font-weight: 500;
+      font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+      text-align: right; word-break: break-all; max-width: 60%;
+    }
+    .ch-tx-value .highlight.usdt { color: #3B82F6; }
+    .ch-tx-value .highlight.btc { color: #f7931a; }
+    .ch-tx-value .highlight.ltc { color: #bfbfbf; }
+    .ch-tx-status-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .ch-tx-status-label {
+      font-size: 11px; color: #6b6b6b; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 600;
+    }
+    .ch-tx-status-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .ch-tx-status-dot.searching { background: #3b82f6; animation: statusBlink 1s ease-in-out infinite; }
+    .ch-tx-status-dot.failed { background: #ef4444; animation: none; }
+    .ch-tx-status-text { font-size: 12px; font-weight: 600; }
+    .ch-tx-status-text.searching { color: #3b82f6; }
+    .ch-tx-status-text.failed { color: #ef4444; }
+
+    @keyframes statusBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .ch-tx-network-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 12px; border-radius: 50px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .ch-tx-network-badge.usdt {
+      background: rgba(59,130,246,0.08); color: #3B82F6;
+      border: 1px solid rgba(59,130,246,0.12);
+    }
+    .ch-tx-network-badge.btc {
+      background: rgba(247,147,26,0.08); color: #f7931a;
+      border: 1px solid rgba(247,147,26,0.12);
+    }
+    .ch-tx-network-badge.ltc {
+      background: rgba(191,191,191,0.08); color: #bfbfbf;
+      border: 1px solid rgba(191,191,191,0.12);
+    }
+    .ch-verify-alert {
+      padding: 14px 16px; border-radius: 10px; margin-bottom: 10px;
+      font-size: 12px; line-height: 1.6;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .ch-verify-alert svg { flex-shrink: 0; margin-top: 2px; }
+    .ch-verify-alert.searching {
+      background: rgba(59,130,246,0.03); border: 1px solid rgba(59,130,246,0.06);
+      color: #9ca3af;
+    }
+    .ch-verify-alert.searching svg { color: #3b82f6; }
+    .ch-verify-alert.failed {
+      background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06);
+      color: #9ca3af;
+    }
+    .ch-verify-alert.failed svg { color: #ef4444; }
+    .ch-verify-alert.failed strong { color: #ef4444; }
+
+    /* Failure card */
+    .ch-fail-actions {
+      display: flex; flex-direction: column; gap: 10px; margin-top: 6px;
+    }
+    .ch-fail-actions .btn-retry {
+      width: 100%; padding: 14px;
+      background: rgba(239,68,68,0.06);
+      border: 1px solid rgba(239,68,68,0.12); border-radius: 10px;
+      color: #ef4444; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .ch-fail-actions .btn-retry:hover {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.2);
+      transform: translateY(-1px);
+    }
+    .ch-fail-actions .btn-back-pay {
+      width: 100%; padding: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06); border-radius: 10px;
+      color: #9ca3af; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      text-decoration: none;
+    }
+    .ch-fail-actions .btn-back-pay:hover {
+      border-color: rgba(var(--accent-rgb), 0.2); color: #fff;
+      background: rgba(var(--accent-rgb), 0.04);
+    }
+
+    .ch-fail-addr-box {
+      margin: 12px 0;
+    }
+    .ch-fail-addr-label {
+      font-size: 10px; color: #6b6b6b; text-transform: uppercase;
+      letter-spacing: 0.5px; font-weight: 700; margin-bottom: 6px;
+    }
+    .ch-fail-addr-display {
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 8px; padding: 12px 14px;
+    }
+    .ch-fail-addr-display code {
+      flex: 1; font-size: 12px; color: #f59e0b;
+      font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+      word-break: break-all; line-height: 1.5; user-select: all;
+    }
+    .ch-fail-addr-copy {
+      flex-shrink: 0; background: none; border: none;
+      color: #6b6b6b; cursor: pointer; padding: 4px;
+      transition: color 0.2s;
+    }
+    .ch-fail-addr-copy:hover { color: #f59e0b; }
+
+    /* Manual Verification Toggle */
+    .ch-manual-toggle {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin: 16px 0 0; padding: 14px;
+      width: 100%;
+      background: rgba(255,255,255,0.02);
+      border: 1px dashed rgba(255,255,255,0.08);
+      border-radius: 10px;
+      color: #6b6b6b; font-size: 12px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .ch-manual-toggle:hover {
+      border-color: rgba(var(--accent-rgb), 0.2);
+      color: #9ca3af;
+      background: rgba(var(--accent-rgb), 0.03);
+    }
+    .ch-manual-toggle svg { flex-shrink: 0; }
+
+    .ch-manual-box {
+      display: none; margin-top: 16px;
+      padding: 20px; border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+    .ch-manual-box.open { display: block; animation: fadeIn 0.3s ease; }
+    .ch-manual-title {
+      font-size: 13px; font-weight: 700; margin-bottom: 12px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .ch-manual-title svg { color: var(--accent); flex-shrink: 0; }
+    .ch-manual-input-wrap {
+      display: flex; gap: 8px; margin-bottom: 10px;
+    }
+    .ch-manual-input {
+      flex: 1; padding: 12px 14px;
+      background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 8px; color: #fff; font-size: 12px;
+      font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+      outline: none; transition: border-color 0.2s;
+    }
+    .ch-manual-input:focus { border-color: rgba(var(--accent-rgb), 0.3); }
+    .ch-manual-input::placeholder { color: #4a4a4a; font-family: inherit; }
+    .ch-manual-submit {
+      padding: 12px 20px;
+      background: var(--accent-gradient-btn);
+      border: none; border-radius: 8px;
+      color: #fff; font-size: 12px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+      white-space: nowrap;
+    }
+    .ch-manual-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .ch-manual-submit:disabled {
+      opacity: 0.4; cursor: default; transform: none;
+    }
+    .ch-manual-hint {
+      font-size: 11px; color: #4a4a4a; line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 6px;
+    }
+    .ch-manual-hint svg { flex-shrink: 0; margin-top: 1px; }
+
+    /* Manual verification result */
+    .ch-manual-result {
+      display: none; margin-top: 12px;
+      padding: 14px; border-radius: 10px;
+      font-size: 12px; line-height: 1.6;
+    }
+    .ch-manual-result.show { display: block; animation: fadeIn 0.3s ease; }
+    .ch-manual-result svg { flex-shrink: 0; }
+    .ch-manual-result.found {
+      background: rgba(var(--accent-secondary-rgb), 0.03); border: 1px solid rgba(var(--accent-secondary-rgb), 0.06);
+      color: #9ca3af;
+    }
+    .ch-manual-result.found svg { color: var(--accent-secondary); }
+    .ch-manual-result.found strong { color: var(--accent-secondary); }
+    .ch-manual-result.invalid {
+      background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.06);
+      color: #9ca3af;
+    }
+    .ch-manual-result.invalid svg { color: #ef4444; }
+    .ch-manual-result.invalid strong { color: #ef4444; }
+
+    .ch-manual-result-details {
+      margin-top: 10px; padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .ch-manual-detail-row {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 11px;
+    }
+    .ch-manual-detail-label { color: #6b6b6b; }
+    .ch-manual-detail-value {
+      font-family: 'SF Mono', 'Consolas', 'Courier New', monospace;
+      color: #e5e7eb;
+    }
+    .ch-manual-detail-value.match { color: var(--accent-secondary); }
+    .ch-manual-detail-value.mismatch { color: #ef4444; }
+
+    /* Footer */
+    .ch-footer {
+      display: flex; align-items: center; justify-content: center;
+      padding: 14px 0 0; text-align: center;
+    }
+    .ch-footer span {
+      font-size: 11px; color: #6b6b6b; line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 0; }
+      .checkout { max-width: 100%; }
+      .ch-order { padding: 16px; }
+      .ch-order-price { font-size: 20px; }
+      .ch-address-display { flex-direction: column; align-items: stretch; }
+      .ch-address-copy { justify-content: center; }
+      .ch-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+      .ch-method { padding: 12px 14px; gap: 10px; }
+      .ch-method-icon { width: 32px; height: 32px; }
+      .ch-method-icon img { width: 20px !important; height: 20px !important; }
+      .ch-method-name { font-size: 12px; }
+      .ch-method-note { font-size: 10px; }
+      .ch-email { padding: 16px; }
+      .ch-email-input { padding: 12px 14px; font-size: 13px; }
+      .ch-steps { gap: 4px; }
+      .ch-step { font-size: 9px; }
+      .ch-step-line { width: 24px; }
+      .ch-tx-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .ch-tx-value { text-align: left; max-width: 100%; }
+      .ch-escrow-steps { flex-direction: column; align-items: center; gap: 4px; }
+      .ch-escrow-arrow { transform: rotate(90deg); padding: 0; }
+      .ch-escrow-step { flex-direction: row; width: 100%; text-align: left; }
+    }
+
+    @media (max-width: 480px) {
+      .wallet-sidebar { width: 100vw; }
+      .wallet-sidebar-header { padding: 14px 16px; }
+      .wallet-balance-section { padding: 16px; }
+      .wallet-balance-amount { font-size: 28px; }
+      .wallet-balance-amount span { font-size: 16px; }
+      .wallet-actions { gap: 6px; padding: 16px 20px; }
+      .wallet-action-btn { font-size: 12px; padding: 10px; }
+      .wallet-deposit { padding: 16px; }
+      .wallet-verify { padding: 16px; }
+      .wallet-txs { padding: 12px 16px; }
+      .wallet-tx { padding: 8px 0; }
+      .wallet-deposit-methods { gap: 4px; }
+      .wallet-deposit-method { padding: 5px 10px; font-size: 10px; }
+      .wallet-deposit-addr { font-size: 10px; padding: 8px 10px; }
+      .wallet-deposit-confirm { padding: 10px; font-size: 12px; }
+      .wallet-deposit-copy { padding: 8px; font-size: 11px; }
+      .wallet-verify-icon { width: 40px; height: 40px; }
+      .wallet-verify-title { font-size: 14px; }
+    }
+
+    @media (max-width: 400px) {
+      body { padding: 0; }
+      .ch-order { padding: 14px; border-radius: 12px; }
+      .ch-order-row { flex-direction: column; align-items: flex-start; gap: 2px; }
+      .ch-order-total { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .ch-order-price { font-size: 18px; }
+      .ch-address-box { padding: 14px; }
+      .ch-address-text { font-size: 11px; }
+      .ch-address-copy { padding: 6px 14px; font-size: 11px; }
+      .ch-method { padding: 10px 12px; }
+      .ch-footer { justify-content: center; }
+      .ch-timer { font-size: 11px; padding: 8px; }
+      .ch-alert { padding: 10px 12px; font-size: 11px; }
+      .ch-step-line { display: none; }
+      .ch-steps { gap: 12px; }
+      .ch-verify-icon-wrap { width: 64px; height: 64px; }
+      .ch-verify-title { font-size: 16px; }
+    }
+
+    /* Wallet Button */
+    .wallet-btn {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .wallet-btn:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+    }
+    .wallet-btn-dot {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent-secondary);
+      border: 2px solid var(--bg-primary);
+      display: none;
+    }
+    .wallet-btn-dot.has-balance { display: block; }
+
+    /* Wallet Sidebar */
+    .wallet-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .wallet-overlay.open { opacity: 1; pointer-events: all; }
+    .wallet-sidebar {
+      position: fixed; top: 0; right: 0; bottom: 0;
+      width: 380px; max-width: 100vw;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border);
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .wallet-sidebar.open { transform: translateX(0); }
+    .wallet-sidebar-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 24px; border-bottom: 1px solid var(--border);
+    }
+    .wallet-sidebar-title {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 16px; font-weight: 700;
+    }
+    .wallet-sidebar-title svg { color: var(--accent); }
+    .wallet-sidebar-close {
+      width: 32px; height: 32px; border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.05); color: var(--text-secondary);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .wallet-sidebar-close:hover { background: rgba(255,255,255,0.1); color: var(--text-primary); }
+    .wallet-balance-section { padding: 24px; text-align: center; border-bottom: 1px solid var(--border); }
+    .wallet-balance-label {
+      font-size: 11px; color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 8px;
+    }
+    .wallet-balance-amount { font-size: 36px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+    .wallet-balance-amount span { font-size: 20px; color: var(--text-secondary); font-weight: 600; }
+    .wallet-balance-usd { font-size: 13px; color: var(--text-muted); }
+    .wallet-balance-usd strong { color: var(--accent); }
+    .wallet-actions {
+      display: flex; gap: 10px; padding: 20px 24px; border-bottom: 1px solid var(--border);
+    }
+    .wallet-action-btn {
+      flex: 1; padding: 12px; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      color: var(--text-primary); font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      font-family: inherit;
+    }
+    .wallet-action-btn:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+    .wallet-action-btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .wallet-action-btn.primary:hover { opacity: 0.9; }
+    .wallet-deposit { padding: 20px 24px; border-bottom: 1px solid var(--border); display: none; }
+    .wallet-deposit.open { display: block; }
+    .wallet-deposit-label {
+      font-size: 12px; font-weight: 600; color: var(--text-primary);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+    }
+    .wallet-deposit-methods { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+    .wallet-deposit-method {
+      padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+      background: transparent; color: var(--text-secondary);
+      font-size: 11px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; font-family: inherit;
+    }
+    .wallet-deposit-method:hover { border-color: var(--accent); color: var(--text-primary); }
+    .wallet-deposit-method.active {
+      background: rgba(var(--accent-rgb), 0.1);
+      border-color: var(--accent); color: var(--accent);
+    }
+    .wallet-deposit-addr {
+      background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px; font-size: 11px;
+      font-family: 'SF Mono', 'Consolas', monospace;
+      color: var(--text-secondary); word-break: break-all;
+      margin-bottom: 10px; line-height: 1.5;
+    }
+    .wallet-deposit-copy {
+      width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg-card); color: var(--text-primary);
+      font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+      font-family: inherit; display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .wallet-deposit-copy:hover { border-color: var(--accent); }
+    .wallet-deposit-copy.copied {
+      background: rgba(var(--accent-secondary-rgb), 0.08);
+      border-color: rgba(var(--accent-secondary-rgb), 0.15);
+      color: var(--accent-secondary);
+    }
+    .wallet-deposit-note {
+      font-size: 10px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 4px;
+    }
+    .wallet-deposit-confirm {
+      width: 100%; padding: 12px; border-radius: 10px; border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: #fff; font-size: 13px; font-weight: 700; cursor: pointer;
+      margin-top: 10px; transition: opacity 0.2s; font-family: inherit;
+    }
+    .wallet-deposit-confirm:hover { opacity: 0.9; }
+    .wallet-deposit-confirm:disabled { opacity: 0.4; cursor: default; }
+    .wallet-txs { flex: 1; overflow-y: auto; padding: 16px 24px; }
+    .wallet-txs-title {
+      font-size: 11px; color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 12px; font-weight: 600;
+    }
+    .wallet-tx { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .wallet-tx:last-child { border-bottom: none; }
+    .wallet-tx-icon { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .wallet-tx-icon.deposit { background: rgba(var(--accent-secondary-rgb), 0.08); color: var(--accent-secondary); }
+    .wallet-tx-icon.purchase { background: rgba(var(--accent-rgb), 0.08); color: var(--accent); }
+    .wallet-tx-info { flex: 1; }
+    .wallet-tx-desc { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+    .wallet-tx-date { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+    .wallet-tx-amount { font-size: 13px; font-weight: 700; text-align: right; }
+    .wallet-tx-amount.positive { color: var(--accent-secondary); }
+    .wallet-tx-amount.negative { color: #ef4444; }
+    .wallet-empty { text-align: center; padding: 40px 20px; color: var(--text-muted); }
+    .wallet-empty svg { margin-bottom: 12px; opacity: 0.3; }
+    .wallet-empty-text { font-size: 13px; margin-bottom: 4px; }
+    .wallet-empty-sub { font-size: 11px; color: var(--text-muted); }
+
+    /* ===== OFFICIAL LAYOUT ===== */
+    .sp-topbar {
+      width: 100%; position: sticky; top: 0; z-index: 60;
+      background: rgba(5,8,16,0.88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .sp-topbar-inner {
+      max-width: 1100px; margin: 0 auto; padding: 10px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .sp-brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .sp-brand svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .sp-brand-name { font-size: 15px; font-weight: 800; letter-spacing: 1px; color: #fff; }
+    .sp-brand-tag {
+      font-size: 10px; color: #6b6b6b; letter-spacing: 0.6px;
+      text-transform: uppercase; border-left: 1px solid rgba(255,255,255,0.08); padding-left: 10px;
+      white-space: nowrap;
+    }
+    .sp-topbar-meta { display: flex; align-items: center; gap: 16px; }
+    .sp-ref { font-size: 11px; color: #6b6b6b; letter-spacing: 0.4px; white-space: nowrap; }
+    .sp-ref strong { color: #e5e7eb; font-weight: 600; font-family: 'SF Mono','Consolas',monospace; }
+
+    .sp-main {
+      width: 100%; flex: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 28px 24px;
+    }
+
+    .ch-doc {
+      width: 100%; max-width: 560px;
+      background: rgba(19,28,51,0.55);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 24px 26px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    }
+    .ch-doc::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      border-radius: 18px 18px 0 0;
+    }
+    .ch-doc-titlebar {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+      padding: 4px 0 18px; margin-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ch-doc-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px; font-weight: 700; color: #fff; letter-spacing: 0.3px;
+      margin-bottom: 6px;
+    }
+    .ch-doc-sub {
+      font-size: 11px; color: #6b6b6b; line-height: 1.6;
+      display: flex; align-items: center; gap: 5px; flex-wrap: wrap;
+    }
+    .ch-doc-sub strong { color: var(--accent); font-weight: 700; }
+    .ch-doc-sub .sep { opacity: 0.4; }
+    .ch-doc-seal {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      padding: 8px 12px; border-radius: 10px; flex-shrink: 0;
+      background: rgba(var(--accent-rgb), 0.06);
+      border: 1px solid rgba(var(--accent-rgb), 0.15);
+      color: var(--accent);
+    }
+    .ch-doc-seal svg { width: 16px; height: 16px; }
+    .ch-doc-seal span { font-size: 9px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+
+    .ch-order-head {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 6px; padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ch-order-head-title {
+      font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #e5e7eb;
+    }
+    .ch-order-head-qty {
+      font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px;
+      background: rgba(var(--accent-rgb), 0.08);
+      border: 1px solid rgba(var(--accent-rgb), 0.15);
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    .sp-footer {
+      width: 100%; background: #05070D;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 28px 24px 20px;
+    }
+    .sp-footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .sp-footer-brand { max-width: 480px; }
+    .sp-footer-brand-name {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 800; letter-spacing: 1px; color: #fff; margin-bottom: 10px;
+    }
+    .sp-footer-brand-name svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .sp-footer-brand p { font-size: 11px; color: #6b6b6b; line-height: 1.7; max-width: 480px; }
+    .sp-footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .sp-footer-links a {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; color: #8893A8; transition: all 0.2s;
+    }
+    .sp-footer-links a svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--accent); opacity: 0.7; }
+    .sp-footer-links a:hover { color: #fff; }
+    .sp-footer-links a:hover svg { opacity: 1; }
+    .sp-footer-badges {
+      max-width: 1100px; margin: 24px auto 0; padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+    }
+    .sp-footer-badge {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 8px;
+      background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.2s;
+    }
+    .sp-footer-badge:hover { border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.03); }
+    .sp-footer-badge-icon {
+      width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(var(--accent-rgb), 0.1); color: var(--accent);
+    }
+    .sp-footer-badge-icon svg { width: 13px; height: 13px; }
+    .sp-footer-badge span {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+      text-transform: uppercase; color: #8893A8; white-space: nowrap;
+    }
+    .sp-footer-bottom {
+      max-width: 1100px; margin: 20px auto 0; padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    .sp-footer-bottom span { font-size: 10px; color: #4C5570; letter-spacing: 0.4px; }
+
+    @media (max-width: 600px) {
+      .sp-brand-tag { display: none; }
+      .sp-ref { display: none; }
+      .ch-doc { padding: 18px 16px; border-radius: 14px; }
+      .ch-doc-title { font-size: 17px; }
+      .sp-main { padding: 18px 12px; }
+      .sp-footer-bottom { justify-content: center; text-align: center; }
+      .sp-footer-badges { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sp-topbar">
+    <div class="sp-topbar-inner">
+      <div class="sp-brand">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="spTopGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3B82F6"/>
+              <stop offset="100%" stop-color="#10B981"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="url(#spTopGrad)"/>
+          <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="sp-brand-name">SecurePay</span>
+        <span class="sp-brand-tag">Official Secure Payment Gateway</span>
+      </div>
+      <div class="sp-topbar-meta">
+        <span class="sp-ref">Reference: <strong id="chRefNo">—</strong></span>
+        <button class="wallet-btn" onclick="toggleWallet()" id="walletBtn" title="My Wallet">
+          <i data-lucide="wallet" style="width:16px;height:16px;"></i>
+          <span class="wallet-btn-dot" id="walletDot"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="sp-main">
+
+    <div class="checkout">
+
+      <div class="ch-doc">
+
+        <div class="ch-doc-titlebar">
+          <div class="ch-doc-title-left">
+            <h1 class="ch-doc-title">Official Payment Invoice</h1>
+            <p class="ch-doc-sub">
+              Invoice <strong id="chInvoiceRef">#----</strong>
+              <span class="sep">·</span> Issued <span id="chDocDate">—</span>
+              <span class="sep">·</span> Status <strong id="chDocStatus">Awaiting Payment</strong>
+            </p>
+          </div>
+          <div class="ch-doc-seal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span>Escrow</span>
+          </div>
+        </div>
+
+        <div class="ch-header">
+      <div class="ch-logo">
+        <svg class="ch-logo-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="spGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3B82F6"/>
+              <stop offset="100%" stop-color="#10B981"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="url(#spGrad)"/>
+          <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="ch-logo-text" id="chLogoText">SecurePay</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="ch-badge">
+          <span class="ch-badge-dot green" id="chBadgeDot"></span>
+          <span class="ch-badge-label">STATUS</span>
+          <span class="ch-badge-val green" id="chBadgeVal">AWAITING</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-escrow-banner" id="chEscrowBanner">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      <span>Escrow Protected — Funds held securely until you confirm receipt</span>
+    </div>
+
+    <div class="ch-steps">
+      <div class="ch-step active" id="step1">
+        <span class="ch-step-num">1</span>
+        <span>Payment</span>
+      </div>
+      <div class="ch-step-line" id="stepLine1"></div>
+      <div class="ch-step" id="step2">
+        <span class="ch-step-num">2</span>
+        <span>Verify</span>
+      </div>
+    </div>
+
+    <!-- ===== PHASE 1: PAYMENT ===== -->
+    <div id="phasePayment">
+
+      <div class="ch-order">
+        <div class="ch-order-head">
+          <span class="ch-order-head-title">Order Summary</span>
+          <span class="ch-order-head-qty">Qty ×1</span>
+        </div>
+        <div class="ch-order-row">
+          <span class="ch-order-label">Product</span>
+          <span class="ch-order-value" id="chTitle">SOLANA DUMPED WALLET</span>
+        </div>
+        <div class="ch-order-row">
+          <span class="ch-order-label">Wallet Balance</span>
+          <span class="ch-order-value" id="chBalance">12.5 SOL</span>
+        </div>
+        <div class="ch-order-row">
+          <span class="ch-order-label">Wallet ID</span>
+          <span class="ch-order-value" style="font-size:11px;color:#6b6b6b;font-family:'SF Mono',monospace;">#<span id="chId">BLK-001</span></span>
+        </div>
+        <div class="ch-order-row">
+          <span class="ch-order-label">Delivery</span>
+          <span class="ch-order-value" id="chOrderDelivery">On-Site</span>
+        </div>
+        <div class="ch-order-row">
+          <span class="ch-order-label">Subtotal</span>
+          <span class="ch-order-value" id="chSubtotal">$42.00 USD</span>
+        </div>
+        <div class="ch-order-row">
+          <span class="ch-order-label">Escrow Protection</span>
+          <span class="ch-order-value" style="color:var(--accent-secondary);">Included</span>
+        </div>
+        <div class="ch-order-total">
+          <span class="ch-order-label">Total Due</span>
+          <span class="ch-order-price" id="chPrice">$42 <span>USD</span></span>
+        </div>
+      </div>
+
+      <div class="ch-email" id="chEmailSection">
+        <div class="ch-email-header">
+          <div class="ch-email-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Official Delivery Notice
+          </div>
+          <span class="ch-email-badge" id="chEmailBadge">On-Site</span>
+        </div>
+
+        <div class="ch-delivery-methods" id="chDeliveryMethods">
+          <button type="button" class="ch-delivery-method active" data-delivery="onsite" onclick="selectDelivery('onsite')">
+            <span class="ch-delivery-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </span>
+            <span class="ch-delivery-info">
+              <span class="ch-delivery-name">On-Site Delivery</span>
+              <span class="ch-delivery-note">Credentials shown instantly on this page</span>
+            </span>
+          </button>
+          <button type="button" class="ch-delivery-method" data-delivery="email" onclick="selectDelivery('email')">
+            <span class="ch-delivery-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span class="ch-delivery-info">
+              <span class="ch-delivery-name">Email Delivery</span>
+              <span class="ch-delivery-note">Credentials sent to your inbox</span>
+            </span>
+          </button>
+        </div>
+
+        <div class="ch-email-input-wrap" id="chEmailWrap" style="display:none;">
+          <svg class="ch-email-input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <input type="email" class="ch-email-input" id="chEmail" placeholder="your@email.com" spellcheck="false" autocomplete="email">
+        </div>
+        <div class="ch-email-hint" id="chEmailHint" style="display:none;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span id="chEmailHintText">Upon payment confirmation, your wallet credentials will be officially delivered to this email address</span>
+        </div>
+      </div>
+
+      <div class="ch-timer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>Complete payment before the window expires — <strong id="chTimer">15:00</strong></span>
+      </div>
+
+      <div class="ch-escrow-box" id="chEscrowBox">
+        <div class="ch-escrow-header">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Escrow Protection</span>
+        </div>
+        <div class="ch-escrow-steps">
+          <div class="ch-escrow-step">
+            <span class="ch-escrow-num">1</span>
+            <span>You send payment to secure <strong>Escrow Address</strong></span>
+          </div>
+          <div class="ch-escrow-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="ch-escrow-step">
+            <span class="ch-escrow-num">2</span>
+            <span>System verifies payment & <strong>releases product</strong> to you</span>
+          </div>
+          <div class="ch-escrow-arrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="ch-escrow-step">
+            <span class="ch-escrow-num">3</span>
+            <span>You confirm receipt — <strong>funds released</strong> to seller</span>
+          </div>
+        </div>
+        <div class="ch-escrow-footer">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span>Your payment is 100% protected. If the product is not delivered, you get a full refund.</span>
+        </div>
+      </div>
+
+      <div class="ch-section-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        Payment Method
+      </div>
+      <div class="ch-methods">
+        <button class="ch-method active" id="mUSDT" onclick="selectMethod('usdt')">
+          <span class="ch-method-icon">
+            <img src="https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/svg/color/usdt.svg" alt="USDT" style="width:24px;height:24px;">
+          </span>
+          <span class="ch-method-info">
+            <span class="ch-method-name">USDT (TRC-20)</span>
+            <span class="ch-method-note">Tether — Recommended</span>
+          </span>
+          <span class="ch-method-badge ch-method-badge-fast">fast</span>
+        </button>
+        <button class="ch-method" id="mBTC" onclick="selectMethod('btc')">
+          <span class="ch-method-icon">
+            <img src="https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/svg/color/btc.svg" alt="BTC" style="width:24px;height:24px;">
+          </span>
+          <span class="ch-method-info">
+            <span class="ch-method-name">Bitcoin (BTC)</span>
+            <span class="ch-method-note">BTC network</span>
+          </span>
+        </button>
+        <button class="ch-method" id="mLTC" onclick="selectMethod('ltc')">
+          <span class="ch-method-icon">
+            <img src="https://raw.githubusercontent.com/spothq/cryptocurrency-icons/master/svg/color/ltc.svg" alt="LTC" style="width:24px;height:24px;">
+          </span>
+          <span class="ch-method-info">
+            <span class="ch-method-name">Litecoin (LTC)</span>
+            <span class="ch-method-note">LTC network — Low fees</span>
+          </span>
+        </button>
+        <button class="ch-method" id="mWALLET" onclick="openWalletSidebar()">
+          <span class="ch-method-icon ch-method-icon-wallet">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>
+          </span>
+          <span class="ch-method-info">
+            <span class="ch-method-name">Wallet Balance</span>
+            <span class="ch-method-note">Pay from your <strong id="walletMethodNote">$0.00</strong> balance</span>
+          </span>
+          <span class="ch-method-badge ch-method-badge-instant">instant</span>
+        </button>
+      </div>
+
+      <div class="ch-address-box" id="chAddressBox">
+        <div class="ch-address-label">
+          <span id="chAddrLabel">USDT (TRC-20) Escrow Address</span>
+          <span class="status-badge" id="chStatusBadge">Awaiting payment</span>
+          <span class="ch-escrow-shield">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Escrow
+          </span>
+        </div>
+        <div class="ch-address-display">
+          <code class="ch-address-text" id="chAddr">TSXCYHpSSEQTLhvQUsQRBGkK8WEm983mAg</code>
+          <button class="ch-address-copy" id="chCopyBtn" onclick="copyAddr()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <div class="ch-wallet-box" id="chWalletBox">
+        <div class="ch-wallet-box-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>
+        </div>
+        <div class="ch-wallet-box-balance" id="walletBoxBalance">$0.00</div>
+        <div class="ch-wallet-box-label">Available Wallet Balance</div>
+        <div class="ch-wallet-box-detail">
+          <span class="ch-wallet-box-detail-label">Product Price</span>
+          <span class="ch-wallet-box-detail-value" id="walletBoxPrice">$0.00</span>
+        </div>
+        <div class="ch-wallet-box-detail">
+          <span class="ch-wallet-box-detail-label">Balance After</span>
+          <span class="ch-wallet-box-detail-value green" id="walletBoxAfter">$0.00</span>
+        </div>
+        <button class="ch-wallet-box-action" id="walletBoxPayBtn" onclick="payWithWallet()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          Confirm Wallet Payment
+        </button>
+        <div class="ch-wallet-box-note">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          Payment is instant. No blockchain confirmation needed.
+        </div>
+      </div>
+
+      <div class="ch-alert ch-alert-danger" id="chAlertDanger">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+        <span>Send only <strong id="chNetwork">USDT (TRC-20)</strong> to this escrow address. Sending the wrong network may result in permanent loss of funds.</span>
+      </div>
+
+      <div class="ch-alert ch-alert-info" id="chAlertInfo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>Your payment is <strong>escrow protected</strong>. After sending, submit the <strong>Payment Confirmation</strong> below to verify the transaction.</span>
+      </div>
+
+      <button class="ch-pay-btn" id="chPayBtn" onclick="confirmPayment()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <path d="M22 4 12 14.01l-3-3"/>
+        </svg>
+        <span>Submit Payment Confirmation</span>
+      </button>
+
+    </div>
+
+    <!-- ===== PHASE 2: VERIFICATION ===== -->
+    <div class="ch-verify" id="phaseVerify">
+      <div class="ch-verify-header">
+        <div class="ch-verify-icon-wrap usdt" id="verifyIcon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <div class="ch-verify-title" id="verifyTitle">Searching Network</div>
+        <div class="ch-verify-sub" id="verifySub">Scanning the blockchain for your incoming transaction</div>
+      </div>
+
+      <div class="ch-scan" id="scanDots">
+        <span class="ch-scan-dot"></span>
+        <span class="ch-scan-dot"></span>
+        <span class="ch-scan-dot"></span>
+      </div>
+
+      <div class="ch-tx-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <span class="ch-tx-label">Network Scan</span>
+          <span class="ch-tx-network-badge usdt" id="txNetworkBadge">TRC-20</span>
+        </div>
+        <div class="ch-tx-row">
+          <span class="ch-tx-label">Recipient Address</span>
+          <span class="ch-tx-value" id="txTo">TCMb1ii...6UaAJ</span>
+        </div>
+        <div class="ch-tx-row" style="border-bottom:none;">
+          <span class="ch-tx-label">Expected Amount</span>
+          <span class="ch-tx-value"><span class="highlight usdt" id="txAmountHighlight">$42.00 USD</span></span>
+        </div>
+        <div class="ch-tx-status-row" style="margin-top:4px;">
+          <span class="ch-tx-status-label">Status</span>
+          <span class="ch-tx-status-dot searching" id="txStatusDot"></span>
+          <span class="ch-tx-status-text searching" id="txStatusText">Scanning mempool...</span>
+        </div>
+      </div>
+
+      <div class="ch-verify-alert searching" id="verifyAlert">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+        </svg>
+        <span id="verifyAlertText">Searching the blockchain for your transaction on the TRC-20 network. This typically takes 5-15 seconds.</span>
+      </div>
+
+      <!-- Failure content (hidden initially) -->
+      <div id="failContent" style="display:none;">
+        <div class="ch-fail-addr-box">
+          <div class="ch-fail-addr-label">Send your payment to this address</div>
+          <div class="ch-fail-addr-display">
+            <code id="failAddr">TSXCYHpSSEQTLhvQUsQRBGkK8WEm983mAg</code>
+            <button class="ch-fail-addr-copy" onclick="copyFailAddr()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="ch-fail-actions">
+          <button class="btn-retry" onclick="retryScan()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+            </svg>
+            Scan Again
+          </button>
+          <button class="btn-back-pay" onclick="goBackToPayment()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Return to Payment
+          </button>
+        </div>
+
+        <!-- Manual Verification Toggle -->
+        <button class="ch-manual-toggle" onclick="toggleManualVerification()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <path d="M12 11V7"/>
+            <path d="M12 15h.01"/>
+          </svg>
+          Already sent payment? Verify manually with your TXID
+        </button>
+
+        <!-- Manual Verification Box -->
+        <div class="ch-manual-box" id="manualBox">
+          <div class="ch-manual-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12a9 9 0 1 1-9-9 9 9 0 0 1 9 9z"/>
+            </svg>
+            Manual Transaction Verification
+          </div>
+          <div class="ch-manual-input-wrap">
+            <input type="text" class="ch-manual-input" id="manualTxid" placeholder="Enter your transaction ID (TXID)" spellcheck="false">
+            <button class="ch-manual-submit" id="manualSubmitBtn" onclick="verifyManualTxid()">Verify</button>
+          </div>
+          <div class="ch-manual-hint">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            Enter the TXID from your wallet or exchange. We'll check the blockchain for your transaction.
+          </div>
+          <div class="ch-manual-result" id="manualResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch-footer">
+      <span>This is an official payment record issued and secured by SecurePay.</span>
+    </div>
+
+      </div>
+
+  </div>
+
+  </main>
+
+  <footer class="sp-footer">
+    <div class="sp-footer-inner">
+      <div class="sp-footer-brand">
+        <div class="sp-footer-brand-name">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="spFootGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3B82F6"/>
+                <stop offset="100%" stop-color="#10B981"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="url(#spFootGrad)"/>
+            <path d="M9 12l2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          SecurePay
+        </div>
+        <p>SecurePay is an independent escrow payment gateway. Payments are held in protected escrow until delivery is confirmed by the purchaser. We act solely as a neutral payment intermediary and are not affiliated with any merchant, marketplace or wallet vendor.</p>
+      </div>
+      <div class="sp-footer-links">
+        <a href="#" onclick="return false;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          Terms of Service
+        </a>
+        <a href="#" onclick="return false;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          Privacy Policy
+        </a>
+        <a href="mailto:support@securepay.io">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          Support Center
+        </a>
+        <a href="mailto:compliance@securepay.io">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Compliance
+        </a>
+      </div>
+    </div>
+
+    <div class="sp-footer-badges">
+      <div class="sp-footer-badge">
+        <span class="sp-footer-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </span>
+        <span>256-Bit SSL</span>
+      </div>
+      <div class="sp-footer-badge">
+        <span class="sp-footer-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </span>
+        <span>Escrow Protected</span>
+      </div>
+      <div class="sp-footer-badge">
+        <span class="sp-footer-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </span>
+        <span>Licensed Processor</span>
+      </div>
+      <div class="sp-footer-badge">
+        <span class="sp-footer-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </span>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+
+    <div class="sp-footer-bottom">
+      <span>&copy; 2026 SecurePay LTD. All rights reserved.</span>
+      <span>Licensed escrow payment processor &middot; Registered entity &middot; EU / EEA compliant</span>
+    </div>
+  </footer>
+
+  <script>
+    const products = [
+      { id: 11, title: 'SOLANA DUMPED WALLET', sol: 3.467, desc: 'Fresh dumped wallet, private key included.', price: 48 },
+      { id: 18, title: 'SOLANA DUMPED WALLET', sol: 2.853, desc: 'Low-balance wallet with full key access.', price: 34 },
+      { id: 2, title: 'SOLANA DUMPED WALLET', sol: 2.973, desc: 'Recovered private key, instant withdrawal.', price: 35 },
+      { id: 12, title: 'SOLANA DUMPED WALLET', sol: 4.09, desc: 'Clean wallet with no transaction history.', price: 50 },
+      { id: 19, title: 'SOLANA DUMPED WALLET', sol: 5.065, desc: 'Verified active wallet, no restrictions.', price: 54 },
+      { id: 8, title: 'SOLANA DUMPED WALLET', sol: 6.421, desc: 'Instant access, no KYC required.', price: 59 },
+      { id: 16, title: 'SOLANA DUMPED WALLET', sol: 2.197, desc: 'Solid wallet for betting and gaming platforms.', price: 32 },
+      { id: 14, title: 'SOLANA DUMPED WALLET', sol: 6.159, desc: 'Mid-balance wallet ready for dumping.', price: 58 },
+      { id: 17, title: 'SOLANA DUMPED WALLET', sol: 4.578, desc: 'Premium budget dump, high value for price.', price: 52 },
+      { id: 20, title: 'SOLANA DUMPED WALLET', sol: 4.279, desc: 'High-potential wallet for multi-platform use.', price: 51 },
+      { id: 4, title: 'SOLANA DUMPED WALLET', sol: 6.015, desc: 'Clean wallet, no history, ready to use.', price: 57 },
+      { id: 10, title: 'SOLANA DUMPED WALLET', sol: 9.238, desc: 'Verified working wallet with key access.', price: 69 },
+      { id: 1, title: 'SOLANA DUMPED WALLET', sol: 9.642, desc: 'Full private key access, ready to use.', price: 70 },
+      { id: 5, title: 'SOLANA DUMPED WALLET', sol: 39.596, desc: 'Premium dumped wallet, private keys included.', price: 180 },
+      { id: 7, title: 'SOLANA DUMPED WALLET', sol: 0.004, desc: 'Recovered seed phrase, full control.', price: 30 },
+      { id: 3, title: 'SOLANA DUMPED WALLET', sol: 35.363, desc: 'High balance wallet with full access.', price: 165 },
+      { id: 9, title: 'SOLANA DUMPED WALLET', sol: 85.907, desc: 'Whale dumped wallet, highest balance.', price: 350 },
+      { id: 102, title: 'BTC DORMANT WALLET', btc: 0.015, price: 55 },
+      { id: 103, title: 'BTC DORMANT WALLET', btc: 0.022, price: 55 },
+      { id: 104, title: 'BTC DORMANT WALLET', btc: 0.028, price: 55 },
+      { id: 105, title: 'BTC DORMANT WALLET', btc: 0.176, price: 55 },
+      { id: 106, title: 'BTC DORMANT WALLET', btc: 0.085, price: 55 },
+      { id: 107, title: 'BTC DORMANT WALLET', btc: 0.11, price: 60 },
+      { id: 108, title: 'BTC DORMANT WALLET', btc: 3.69, price: 66 },
+      { id: 109, title: 'BTC DORMANT WALLET', btc: 0.023, price: 76 },
+      { id: 110, title: 'BTC DORMANT WALLET', btc: 0.13, price: 87 },
+      { id: 111, title: 'BTC DORMANT WALLET', btc: 0.18, price: 101 },
+      { id: 112, title: 'BTC DORMANT WALLET', btc: 0.082, price: 144 },
+      { id: 113, title: 'BTC DORMANT WALLET', btc: 0.45, price: 202 },
+      { id: 114, title: 'BTC DORMANT WALLET', btc: 0.72, price: 298 },
+    ];
+
+    const addresses = {
+      usdt: { addr: 'TSXCYHpSSEQTLhvQUsQRBGkK8WEm983mAg', label: 'USDT (TRC-20) Escrow Address', network: 'USDT (TRC-20)', netLabel: 'TRC-20', iconClass: 'usdt' },
+      btc: { addr: 'bc1qf0c3ggj93tup8lvw8fwnxv059yyj4k3x8m72jy', label: 'Bitcoin (BTC) Escrow Address', network: 'Bitcoin (BTC)', netLabel: 'BTC', iconClass: 'btc' },
+      ltc: { addr: 'ltc1qv7upynczwele23m9qj4ecfehyehk6mk0lchcej', label: 'Litecoin (LTC) Escrow Address', network: 'Litecoin (LTC)', netLabel: 'LTC', iconClass: 'ltc' },
+    };
+
+    const networkNames = {
+      usdt: { name: 'TRC-20', full: 'Tron (TRC-20)' },
+      btc: { name: 'BTC', full: 'Bitcoin' },
+      ltc: { name: 'LTC', full: 'Litecoin' },
+    };
+
+    let currentMethod = 'usdt';
+    let timerInterval;
+    let scanTimeout;
+
+    (function init() {
+      const params = new URLSearchParams(window.location.search);
+      let id = parseInt(params.get('id')) || 1;
+      let p;
+      if (params.get('btcCart')) {
+        const cartData = JSON.parse(localStorage.getItem('btcCheckoutCart') || '[]');
+        if (cartData.length > 0) {
+          id = cartData[0].id;
+          p = products.find(x => x.id === id) || products[0];
+          const total = cartData.reduce((sum, item) => sum + item.price * item.qty, 0);
+          localStorage.setItem('btcCheckoutTotal', total.toString());
+        } else {
+          p = products[0];
+          id = p.id;
+        }
+        localStorage.removeItem('btcCheckoutCart');
+      } else {
+        p = products.find(x => x.id === id) || products[0];
+      }
+      const isBtc = id >= 100;
+
+      const root = document.documentElement;
+      if (isBtc) {
+        root.style.setProperty('--accent', '#F7931A');
+        root.style.setProperty('--accent-rgb', '247, 147, 26');
+        root.style.setProperty('--accent-hover', '#D97706');
+        root.style.setProperty('--accent-glow', 'rgba(247, 147, 26, 0.35)');
+        root.style.setProperty('--accent-dark', 'rgba(247, 147, 26, 0.04)');
+        root.style.setProperty('--accent-border', 'rgba(247, 147, 26, 0.12)');
+        root.style.setProperty('--accent-border-light', 'rgba(247, 147, 26, 0.08)');
+        root.style.setProperty('--accent-border-medium', 'rgba(247, 147, 26, 0.2)');
+        root.style.setProperty('--accent-border-focus', 'rgba(247, 147, 26, 0.3)');
+        root.style.setProperty('--accent-gradient', 'linear-gradient(135deg, #F7931A, #FFA940)');
+        root.style.setProperty('--accent-gradient-reverse', 'linear-gradient(135deg, #FFA940, #F7931A)');
+        root.style.setProperty('--accent-gradient-btn', 'linear-gradient(135deg, #F7931A, #D97706)');
+        root.style.setProperty('--accent-secondary', '#F7931A');
+        root.style.setProperty('--accent-secondary-rgb', '247, 147, 26');
+      }
+
+      document.getElementById('chTitle').textContent = p.title;
+      if (isBtc) {
+        document.getElementById('chBalance').textContent = p.btc + ' BTC';
+        document.getElementById('chId').textContent = 'BTC-' + String(p.id).padStart(3, '0');
+      } else {
+        document.getElementById('chBalance').textContent = p.sol + ' SOL';
+        document.getElementById('chId').textContent = 'BLK-' + String(p.id).padStart(3, '0');
+      }
+      document.getElementById('chPrice').innerHTML = '$' + p.price + ' <span>USD</span>';
+      document.getElementById('chSubtotal').textContent = '$' + p.price.toFixed(2) + ' USD';
+
+      const invoiceId = isBtc
+        ? 'BTC-' + String(p.id).padStart(3, '0')
+        : 'BLK-' + String(p.id).padStart(3, '0');
+      const invRef = '#SP-' + invoiceId + '-' + Date.now().toString(36).toUpperCase();
+      document.getElementById('chInvoiceRef').textContent = invRef;
+      document.getElementById('chRefNo').textContent = invoiceId;
+      document.getElementById('chDocDate').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+      selectMethod('usdt');
+      selectDelivery('onsite');
+
+      const docStatusEl = document.getElementById('chDocStatus');
+      const badgeValEl = document.getElementById('chBadgeVal');
+      if (docStatusEl && badgeValEl) {
+        const syncDocStatus = function() {
+          const map = { AWAITING: 'Awaiting Payment', SCANNING: 'Verifying Payment', FAILED: 'Payment Not Found', DELIVERED: 'Delivered' };
+          const t = badgeValEl.textContent;
+          docStatusEl.textContent = map[t] || t;
+          docStatusEl.style.color = badgeValEl.classList.contains('red') ? '#ef4444'
+            : badgeValEl.classList.contains('yellow') ? '#FACC15'
+            : badgeValEl.classList.contains('green') ? 'var(--accent-secondary)' : '';
+        };
+        syncDocStatus();
+        new MutationObserver(syncDocStatus).observe(badgeValEl, { childList: true, subtree: true });
+      }
+
+      let min = 15, sec = 0;
+      document.getElementById('chTimer').textContent = '15:00';
+      timerInterval = setInterval(() => {
+        sec--;
+        if (sec < 0) { sec = 59; min--; }
+        if (min < 0) {
+          clearInterval(timerInterval);
+          document.getElementById('chTimer').textContent = 'EXPIRED';
+          return;
+        }
+        document.getElementById('chTimer').textContent = String(min).padStart(2, '0') + ':' + String(sec).padStart(2, '0');
+      }, 1000);
+    })();
+
+    function selectMethod(method) {
+      currentMethod = method;
+      const isWallet = method === 'wallet';
+      document.querySelectorAll('.ch-method').forEach(el => el.classList.remove('active'));
+      document.getElementById('m' + method.toUpperCase()).classList.add('active');
+
+      document.getElementById('chAddressBox').style.display = isWallet ? 'none' : '';
+      document.getElementById('chAlertDanger').style.display = isWallet ? 'none' : '';
+      document.getElementById('chAlertInfo').style.display = isWallet ? 'none' : '';
+      document.getElementById('chPayBtn').style.display = isWallet ? 'none' : '';
+      document.getElementById('chWalletBox').classList.toggle('show', isWallet);
+
+      if (isWallet) {
+        const price = getCurrentProductPrice();
+        const bal = getWalletBalance();
+        const after = bal - price;
+        document.getElementById('walletBoxBalance').textContent = '$' + bal.toFixed(2);
+        document.getElementById('walletBoxPrice').textContent = '$' + price.toFixed(2);
+        document.getElementById('walletBoxAfter').textContent = '$' + (after >= 0 ? after.toFixed(2) : '0.00');
+        document.getElementById('walletBoxAfter').style.color = after >= 0 ? 'var(--accent-secondary)' : '#ef4444';
+        document.getElementById('walletBoxPayBtn').disabled = after < 0;
+        document.getElementById('walletBoxPayBtn').textContent = after >= 0 ? 'Confirm Wallet Payment' : 'Insufficient Balance';
+        document.getElementById('walletBoxPayBtn').style.background = after >= 0 ? '' : 'rgba(239,68,68,0.1)';
+        document.getElementById('walletBoxPayBtn').style.color = after >= 0 ? '' : '#ef4444';
+      } else {
+        const data = addresses[method];
+        document.getElementById('chAddr').textContent = data.addr;
+        document.getElementById('chAddrLabel').textContent = data.label;
+        document.getElementById('chNetwork').textContent = data.network;
+      }
+    }
+
+    function getCurrentProductPrice() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 1;
+      const p = products.find(x => x.id === id) || products[0];
+      return p.price;
+    }
+
+    function openWalletSidebar() {
+      document.querySelectorAll('.ch-method').forEach(function(el) { el.classList.remove('active'); });
+      document.getElementById('mWALLET').classList.add('active');
+      toggleWallet();
+    }
+
+    function copyAddr() {
+      const addr = document.getElementById('chAddr').textContent;
+      navigator.clipboard.writeText(addr).catch(() => {});      const btn = document.getElementById('chCopyBtn');
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';
+      }, 2000);
+    }
+
+    function copyFailAddr() {
+      const addr = document.getElementById('failAddr').textContent;
+      navigator.clipboard.writeText(addr).catch(() => {});
+    }
+
+    function selectDelivery(method) {
+      const isEmail = method === 'email';
+      document.querySelectorAll('.ch-delivery-method').forEach(el => el.classList.remove('active'));
+      const btn = document.querySelector('.ch-delivery-method[data-delivery="' + method + '"]');
+      if (btn) btn.classList.add('active');
+
+      document.getElementById('chEmailWrap').style.display = isEmail ? '' : 'none';
+      document.getElementById('chEmailHint').style.display = isEmail ? '' : 'none';
+      const hintText = document.getElementById('chEmailHintText');
+      if (hintText) {
+        hintText.textContent = isEmail
+          ? 'Upon payment confirmation, your wallet credentials will be officially delivered to this email address'
+          : 'Your wallet credentials will be displayed on this page immediately after payment confirmation';
+      }
+
+      const badge = document.getElementById('chEmailBadge');
+      if (badge && badge.textContent !== 'Delivered') {
+        badge.textContent = isEmail ? 'Email' : 'On-Site';
+        badge.className = 'ch-email-badge';
+      }
+
+      const orderDelivery = document.getElementById('chOrderDelivery');
+      if (orderDelivery) orderDelivery.textContent = isEmail ? 'Email' : 'On-Site';
+
+      if (isEmail) {
+        const input = document.getElementById('chEmail');
+        if (input) input.focus();
+      }
+    }
+
+    function confirmPayment() {
+      if (document.querySelector('.ch-pay-btn').disabled) return;
+      document.querySelector('.ch-pay-btn').disabled = true;
+      document.querySelector('.ch-pay-btn').style.opacity = '0.5';
+      document.querySelector('.ch-pay-btn').style.cursor = 'default';
+
+      clearInterval(timerInterval);
+
+      document.getElementById('phasePayment').style.display = 'none';
+      document.getElementById('phaseVerify').classList.add('show');
+
+      document.getElementById('chBadgeDot').className = 'ch-badge-dot yellow';
+      document.getElementById('chBadgeVal').textContent = 'SCANNING';
+      document.getElementById('chBadgeVal').className = 'ch-badge-val yellow';
+
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step1').classList.add('done');
+      document.getElementById('stepLine1').classList.add('done');
+      document.getElementById('step2').classList.add('active');
+
+      startScan();
+    }
+
+    function startScan() {
+      const method = currentMethod;
+      const net = networkNames[method];
+      const data = addresses[method];
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 1;
+      const product = products.find(p => p.id === id) || products[0];
+      const price = '$' + product.price + '.00 USD';
+
+      const iconWrap = document.getElementById('verifyIcon');
+      iconWrap.className = 'ch-verify-icon-wrap ' + data.iconClass;
+
+      document.getElementById('txNetworkBadge').className = 'ch-tx-network-badge ' + data.iconClass;
+      document.getElementById('txNetworkBadge').textContent = net.name;
+
+      document.getElementById('txTo').textContent = data.addr.substring(0, 8) + '...' + data.addr.substring(data.addr.length - 4);
+
+      const amountHighlight = document.getElementById('txAmountHighlight');
+      amountHighlight.textContent = price;
+      amountHighlight.className = 'highlight ' + data.iconClass;
+
+      document.getElementById('verifyTitle').textContent = 'Searching ' + net.full + ' Network';
+      document.getElementById('verifyTitle').className = 'ch-verify-title';
+      document.getElementById('verifySub').textContent = 'Scanning the ' + net.name + ' blockchain for your incoming transaction';
+
+      document.getElementById('txStatusDot').className = 'ch-tx-status-dot searching';
+      document.getElementById('txStatusText').textContent = 'Scanning mempool...';
+      document.getElementById('txStatusText').className = 'ch-tx-status-text searching';
+
+      document.getElementById('verifyAlert').className = 'ch-verify-alert searching';
+      document.getElementById('verifyAlert').querySelector('svg').innerHTML = '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>';
+      document.getElementById('verifyAlertText').textContent = 'Searching the blockchain for your transaction on the ' + net.name + ' network. This typically takes 5-15 seconds.';
+
+      document.getElementById('failContent').style.display = 'none';
+      document.getElementById('scanDots').style.display = 'flex';
+
+      const scanTime = 5000 + Math.random() * 4000;
+
+      scanTimeout = setTimeout(() => {
+        showFailure();
+      }, scanTime);
+    }
+
+    function showFailure() {
+      const net = networkNames[currentMethod];
+
+      const iconWrap = document.getElementById('verifyIcon');
+      iconWrap.className = 'ch-verify-icon-wrap failed';
+      iconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+
+      document.getElementById('verifyTitle').textContent = 'Transaction Not Found';
+      document.getElementById('verifyTitle').className = 'ch-verify-title failed';
+      document.getElementById('verifySub').textContent = 'No incoming payment detected on the ' + net.name + ' network';
+
+      document.getElementById('scanDots').style.display = 'none';
+
+      document.getElementById('txStatusDot').className = 'ch-tx-status-dot failed';
+      document.getElementById('txStatusText').textContent = 'No transaction found — payment required';
+      document.getElementById('txStatusText').className = 'ch-tx-status-text failed';
+
+      document.getElementById('verifyAlert').className = 'ch-verify-alert failed';
+      document.getElementById('verifyAlert').querySelector('svg').innerHTML = '<path d="M12 9v4M12 17h.01"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>';
+      document.getElementById('verifyAlertText').innerHTML = 'We searched the <strong>' + net.name + '</strong> blockchain and found <strong>no incoming transaction</strong> to our escrow address. You must complete the payment first to receive your product.';
+
+      document.getElementById('failAddr').textContent = addresses[currentMethod].addr;
+      document.getElementById('failContent').style.display = 'block';
+
+      document.getElementById('chBadgeDot').className = 'ch-badge-dot red';
+      document.getElementById('chBadgeVal').textContent = 'FAILED';
+      document.getElementById('chBadgeVal').className = 'ch-badge-val red';
+
+      document.getElementById('step2').classList.remove('active');
+      document.getElementById('step2').classList.add('failed');
+      document.getElementById('stepLine1').classList.remove('done');
+      document.getElementById('stepLine1').classList.add('failed');
+
+      document.querySelector('.ch-pay-btn').disabled = false;
+      document.querySelector('.ch-pay-btn').style.opacity = '1';
+      document.querySelector('.ch-pay-btn').style.cursor = 'pointer';
+    }
+
+    function retryScan() {
+      document.getElementById('failContent').style.display = 'none';
+
+      document.getElementById('chBadgeDot').className = 'ch-badge-dot yellow';
+      document.getElementById('chBadgeVal').textContent = 'SCANNING';
+      document.getElementById('chBadgeVal').className = 'ch-badge-val yellow';
+
+      document.getElementById('step2').classList.remove('failed');
+      document.getElementById('step2').classList.add('active');
+      document.getElementById('stepLine1').classList.remove('failed');
+      document.getElementById('stepLine1').classList.add('done');
+
+      const iconWrap = document.getElementById('verifyIcon');
+      const data = addresses[currentMethod];
+      iconWrap.className = 'ch-verify-icon-wrap ' + data.iconClass;
+      iconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+
+      startScan();
+    }
+
+    function goBackToPayment() {
+      document.getElementById('phaseVerify').classList.remove('show');
+      document.getElementById('phaseVerify').style.display = 'none';
+      document.getElementById('phasePayment').style.display = 'block';
+
+      document.getElementById('chBadgeDot').className = 'ch-badge-dot green';
+      document.getElementById('chBadgeVal').textContent = 'AWAITING';
+      document.getElementById('chBadgeVal').className = 'ch-badge-val green';
+
+      document.getElementById('step1').classList.remove('done');
+      document.getElementById('step1').classList.add('active');
+      document.getElementById('stepLine1').classList.remove('done');
+      document.getElementById('stepLine1').classList.remove('failed');
+      document.getElementById('step2').classList.remove('failed');
+      document.getElementById('step2').classList.remove('active');
+
+      document.querySelector('.ch-pay-btn').disabled = false;
+      document.querySelector('.ch-pay-btn').style.opacity = '1';
+      document.querySelector('.ch-pay-btn').style.cursor = 'pointer';
+
+      if (scanTimeout) clearTimeout(scanTimeout);
+    }
+
+    function toggleManualVerification() {
+      const box = document.getElementById('manualBox');
+      box.classList.toggle('open');
+      if (box.classList.contains('open')) {
+        document.getElementById('manualTxid').focus();
+      }
+    }
+
+    function validateTxid(txid, method) {
+      const clean = txid.replace(/^0x/i, '').trim();
+      const hexRegex = /^[0-9a-fA-F]+$/;
+      const net = networkNames[method];
+
+      if (!hexRegex.test(clean)) {
+        return { valid: false, msg: 'Invalid TXID format. A valid ' + net.name + ' transaction ID contains only hexadecimal characters (0-9, a-f).' };
+      }
+
+      if (clean.length !== 64) {
+        return { valid: false, msg: 'Invalid TXID length. A valid ' + net.name + ' transaction ID is exactly 64 hexadecimal characters long. You entered ' + clean.length + ' characters.' };
+      }
+
+      return { valid: true, clean: clean };
+    }
+
+    function verifyManualTxid() {
+      const input = document.getElementById('manualTxid');
+      const btn = document.getElementById('manualSubmitBtn');
+      const result = document.getElementById('manualResult');
+      const txid = input.value.trim();
+      const method = currentMethod;
+      const net = networkNames[method];
+
+      if (!txid) {
+        result.className = 'ch-manual-result show invalid';
+        result.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg> Please enter a transaction ID.';
+        return;
+      }
+
+      const validation = validateTxid(txid, method);
+      if (!validation.valid) {
+        result.className = 'ch-manual-result show invalid';
+        result.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg> ' + validation.msg;
+        return;
+      }
+
+      const cleanTxid = validation.clean;
+
+      btn.disabled = true;
+      btn.textContent = 'Searching...';
+
+      result.className = 'ch-manual-result show';
+      result.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Querying the ' + net.name + ' blockchain for transaction <strong>' + cleanTxid.substring(0, 12) + '...' + cleanTxid.substring(cleanTxid.length - 6) + '</strong>...';
+
+      const verifyTime = 2000 + Math.random() * 2000;
+
+      setTimeout(() => {
+        const net = networkNames[currentMethod];
+        const data = addresses[currentMethod];
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id')) || 1;
+        const product = products.find(p => p.id === id) || products[0];
+        const expectedAmount = '$' + product.price + '.00';
+
+        const randomAmounts = ['$12.50', '$38.00', '$5.20', '$100.00', '$75.00', '$200.00', '$0.50', '$25.00', expectedAmount];
+        const sentAmount = randomAmounts[Math.floor(Math.random() * randomAmounts.length)];
+        const amountMatch = sentAmount === expectedAmount;
+
+        const randomSenders = [
+          data.addr,
+          'TXYZ' + Array.from({length: 30}, () => '0123456789abcdef'[Math.floor(Math.random()*16)]).join(''),
+          data.addr.substring(0, 6) + '...' + Array.from({length: 20}, () => '0123456789abcdef'[Math.floor(Math.random()*16)]).join(''),
+        ];
+        const sentTo = randomSenders[Math.floor(Math.random() * randomSenders.length)];
+        const recipientMatch = sentTo === data.addr;
+
+        if (recipientMatch && amountMatch) {
+          result.className = 'ch-manual-result show found';
+          result.innerHTML = [
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>',
+            'Transaction <strong>found</strong> on the ' + net.name + ' network. However, it has <strong>0 confirmations</strong> and is still pending. Please wait for at least 12 confirmations and try the automatic scan again.',
+          ].join('');
+          result.innerHTML += '<div class="ch-manual-result-details"><div class="ch-manual-detail-row"><span class="ch-manual-detail-label">Status</span><span class="ch-manual-detail-value mismatch">Unconfirmed (0/12)</span></div></div>';
+        } else if (recipientMatch && !amountMatch) {
+          result.className = 'ch-manual-result show invalid';
+          result.innerHTML = [
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>',
+            'Transaction <strong>found</strong> but the <strong>amount does not match</strong>. Expected <strong style="color:' + getComputedStyle(document.documentElement).getPropertyValue('--accent-secondary').trim() + ';">' + expectedAmount + '</strong> but received <strong style="color:#ef4444;">' + sentAmount + '</strong>. Please send the exact amount and try again.',
+          ].join('');
+          result.innerHTML += '<div class="ch-manual-result-details"><div class="ch-manual-detail-row"><span class="ch-manual-detail-label">Expected</span><span class="ch-manual-detail-value match">' + expectedAmount + '</span></div><div class="ch-manual-detail-row"><span class="ch-manual-detail-label">Received</span><span class="ch-manual-detail-value mismatch">' + sentAmount + '</span></div></div>';
+        } else {
+          result.className = 'ch-manual-result show invalid';
+          result.innerHTML = [
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>',
+            'Transaction <strong>not found</strong> on the ' + net.name + ' network. The TXID could not be verified. Make sure you sent the payment to the correct address and try again.',
+          ].join('');
+        }
+
+        btn.disabled = false;
+        btn.textContent = 'Verify';
+      }, verifyTime);
+    }
+
+    /* ===== Wallet System ===== */
+    const WALLET_KEY = 'userWalletBalance';
+    const WALLET_TXS_KEY = 'userWalletTxs';
+    const WALLET_ADDRS = {
+      trc20: { addr: 'TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS', label: 'USDT (TRC-20)' },
+      bep20: { addr: '0xD8F73264fDb89b8Ff5EfCBd97001190556A45Bd3', label: 'USDT (BEP-20)' },
+    };
+    let walletMethod = 'trc20';
+
+    function getWalletBalance() { return parseFloat(localStorage.getItem(WALLET_KEY)) || 0; }
+    function setWalletBalance(val) { localStorage.setItem(WALLET_KEY, val.toString()); }
+    function getWalletTxs() { return JSON.parse(localStorage.getItem(WALLET_TXS_KEY)) || []; }
+    function setWalletTxs(txs) { localStorage.setItem(WALLET_TXS_KEY, JSON.stringify(txs)); }
+
+    function buyWithWallet() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 1;
+      const isBtc = id >= 100;
+      const p = products.find(function(x) { return x.id === id; }) || products[0];
+      const price = p.price;
+      const bal = getWalletBalance();
+      if (bal < price) {
+        document.getElementById('walletDeposit').classList.add('open');
+        return;
+      }
+      setWalletBalance(bal - price);
+      const txs = getWalletTxs();
+      txs.unshift({
+        type: 'purchase',
+        desc: p.title + ' (#' + (id >= 100 ? 'BTC-' : 'BLK-') + String(id).padStart(3, '0') + ')',
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        amount: '-$' + price.toFixed(2),
+        amountClass: 'negative'
+      });
+      setWalletTxs(txs);
+      updateWalletUI();
+      toggleWallet();
+      showWalletSuccess(p, isBtc, id);
+    }
+
+    function showWalletSuccess(product, isBtc, id) {
+      clearInterval(timerInterval);
+      document.getElementById('phasePayment').style.display = 'none';
+      document.getElementById('phaseVerify').classList.add('show');
+      var emailBadge = document.getElementById('chEmailBadge');
+      if (emailBadge) { emailBadge.textContent = 'Delivered'; emailBadge.className = 'ch-email-badge sent'; }
+      var emailSection = document.getElementById('chEmailSection');
+      if (emailSection) emailSection.className = 'ch-email delivered';
+
+      document.getElementById('chBadgeDot').className = 'ch-badge-dot green';
+      document.getElementById('chBadgeVal').textContent = 'DELIVERED';
+      document.getElementById('chBadgeVal').className = 'ch-badge-val green';
+
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step1').classList.add('done');
+      document.getElementById('stepLine1').classList.add('done');
+      document.getElementById('step2').classList.add('done');
+
+      const iconWrap = document.getElementById('verifyIcon');
+      iconWrap.className = 'ch-verify-icon-wrap';
+      iconWrap.style.background = 'rgba(16,185,129,0.12)';
+      iconWrap.style.borderColor = 'rgba(16,185,129,0.2)';
+      iconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>';
+
+      document.getElementById('verifyTitle').textContent = 'Purchase Complete';
+      document.getElementById('verifyTitle').style.color = '#10B981';
+      document.getElementById('verifySub').innerHTML = 'Your order for <strong>' + product.title + '</strong> has been completed. Wallet credentials are being officially delivered to your email.';
+      document.getElementById('verifySub').style.color = '#9ca3af';
+
+      document.getElementById('scanDots').style.display = 'none';
+      document.getElementById('txStatusDot').className = 'ch-tx-status-dot';
+      document.getElementById('txStatusDot').style.background = '#10B981';
+      document.getElementById('txStatusText').textContent = 'Payment successful - wallet delivered';
+      document.getElementById('txStatusText').style.color = '#10B981';
+
+      var randomAddr = isBtc
+        ? 'bc1q' + Array.from({length: 38}, function(){ return '0123456789abcdef'[Math.floor(Math.random()*16)]; }).join('')
+        : 'G' + Array.from({length: 43}, function(){ return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'[Math.floor(Math.random()*32)]; }).join('');
+      var randomPk = isBtc
+        ? '5K' + Array.from({length: 49}, function(){ return 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'[Math.floor(Math.random()*62)]; }).join('')
+        : Array.from({length: 64}, function(){ return '0123456789abcdef'[Math.floor(Math.random()*16)]; }).join('');
+      var randomSeed = Array.from({length: 12}, function(){
+        var words = ['abandon','ability','able','about','above','absent','absorb','abstract','absurd','abuse','access','accident','account','accuse','achieve','acid','acoustic','acquire','across','act','action','actor','actress','actual','adapt','add','addict','address','adjust','admit','adult','advance','advice','aerobic','affair','afford','afraid','again','age','agent','agree','ahead','aim','air','airport','aisle','alarm','album','alcohol','alert','alien','all','alley','allow','almost','alone','alpha','already','also','alter','always','amateur','amazing','among','amount','amused','analyst','anchor','ancient','anger','angle','angry','animal','ankle','announce','annual','another','answer','antenna','antique','anxiety','any','apart','apology','appear','apple','approve','april','arch','arctic','area','arena','argue','arm','armed','armor','army','around','arrange','arrest','arrive','arrow','art','artefact','artist','artwork','ask','aspect','assault','asset','assist','assume','asthma','athlete','atom','attack','attend','attitude','attract','auction','audit','august','aunt','author','auto','autumn','average','avocado','avoid','awake','aware','away','awesome','awful','awkward','axis','baby','bachelor','bacon','badge','bag','balance','balcony','ball','bamboo','banana','banner','bar','barely','bargain','barrel','base','basic','basket','battle','beach','bean','beauty','because','become','beef','before','begin','behave','behind','believe','below','belt','bench','benefit','best','betray','better','between','beyond','bicycle','bid','bike','bind','biology','bird','birth','bitter','black','blade','blame','blanket','blast','bleak','bless','blind','blood','blossom','blouse','blue','blur','blush','board','boat','body','boil','bomb','bone','bonus','book','boost','border','boring','borrow','boss','bottom','bounce','box','boy','bracket','brain','brand','brass','brave','bread','breeze','brick','bridge','brief','bright','bring','brisk','broccoli','broken','bronze','broom','brother','brown','brush','bubble','buddy','budget','buffalo','build','bulb','bulk','bullet','bundle','bunker','burden','burger','burst','bus','business','busy','butter','buyer','buzz','cabbage','cabin','cable','cactus','cage','cake','call','calm','camera','camp','can','canal','cancel','candy','cannon','canoe','canvas','canyon','capable','capital','captain','car','carbon','card','cargo','carpet','carry','cart','case','cash','casino','castle','casual','cat','catalog','catch','category','cattle','caught','cause','caution','cave','ceiling','celery','cement','census','century','cereal','certain','chair','chalk','champion','change','chaos','chapter','charge','chase','chat','cheap','check','cheese','chef','cherry','chest','chicken','chief','child','chimney','choice','choose','chronic','chuckle','chunk','churn','cigar','cinnamon','circle','citizen','city','civil','claim','clap','clarify','claw','clay','clean','clerk','clever','click','client','cliff','climb','clinic','clip','clock','clog','close','cloth','cloud','clown','club','clump','cluster','clutch','coach','coast','coconut','code','coffee','coil','coin','collect','color','column','combine','come','comfort','comic','common','company','concert','conduct','confirm','congress','connect','consider','control','convince','cook','cool','copper','copy','coral','core','corn','correct','cost','cotton','couch','country','couple','course','cousin','cover','coyote','crack','cradle','craft','cram','crane','crash','crater','crawl','crazy','cream','credit','creek','crew','cricket','crime','crisp','critic','crop','cross','crouch','crowd','crucial','cruel','cruise','crumble','crunch','crush','cry','crystal','cube','culture','cup','cupboard','curious','current','curtain','curve','cushion','custom','cute','cycle','dad','damage','damp','dance','danger','daring','dash','daughter','dawn','day','deal','debate','debris','decade','december','decide','decline','decorate','decrease','deer','defense','define','defy','degree','delay','deliver','demand','demise','denial','dentist','deny','depart','depend','deposit','depth','deputy','derive','describe','desert','design','desk','despair','destroy','detail','detect','develop','device','devote','diagram','dial','diamond','diary','dice','diesel','diet','differ','digital','dignity','dilemma','dinner','dinosaur','direct','dirt','disagree','discover','disease','dish','dismiss','disorder','display','distance','divert','divide','divorce','dizzy','doctor','document','dog','doll','dolphin','domain','donate','donkey','donor','door','dose','double','dove','draft','dragon','drama','drastic','draw','dream','dress','drift','drill','drink','drip','drive','drop','drum','dry','duck','dumb','dune','during','dust','dutch','duty','dwarf','dynamic','eager','eagle','early','earn','earth','easily','east','easy','echo','ecology','economy','edge','edit','educate','effort','egg','eight','either','elbow','elder','electric','elegant','element','elephant','elevator','elite','else','embark','embody','embrace','emerge','emotion','employ','empower','empty','enable','enact','end','endless','endorse','enemy','energy','enforce','engage','engine','enhance','enjoy','enlist','enough','enrich','enroll','ensure','enter','entire','entry','envelope','episode','equal','equip','era','erase','erode','erosion','error','erupt','escape','essay','essence','estate','eternal','ethics','evidence','evil','evoke','evolve','exact','example','excess','exchange','excite','exclude','excuse','execute','exercise','exhaust','exhibit','exile','exist','exit','exotic','expand','expect','expire','explain','expose','express','extend','extra','eye','eyebrow','fabric','face','faculty','fade','faint','faith','fall','false','fame','family','famous','fan','fancy','fantasy','farm','fashion','fat','fatal','father','fatigue','fault','favorite','feature','february','federal','fee','feed','feel','female','fence','festival','fetch','fever','few','fiber','fiction','field','figure','file','film','filter','final','find','fine','finger','finish','fire','firm','first','fiscal','fish','fit','fitness','fix','flag','flame','flash','flat','flavor','flee','flight','flip','float','flock','floor','flower','fluid','flush','fly','foam','focus','fog','foil','fold','follow','food','foot','force','foreign','forest','forget','fork','fortune','forum','forward','fossil','foster','found','fox','fragile','frame','frequent','fresh','friend','fringe','frog','front','frost','frown','frozen','fruit','fuel','fun','funny','furnace','fury','future','gadget','gain','galaxy','gallery','game','gap','garage','garbage','garden','garlic','garment','gas','gasp','gate','gather','gauge','gaze','general','genius','genre','gentle','genuine','gesture','ghost','giant','gift','giggle','ginger','giraffe','girl','give','glad','glance','glare','glass','glide','glimpse','globe','gloom','glory','glove','glow','glue','goat','goddess','gold','good','goose','gorilla','gospel','gossip','govern','gown','grab','grace','grain','grant','grape','grass','gravity','great','green','grid','grief','grit','grocery','group','grow','grunt','guard','guess','guide','guilt','guitar','gun','gym','habit','hair','half','hammer','hamster','hand','happy','harbor','hard','harsh','harvest','hat','have','hawk','hazard','head','health','heart','heavy','hedgehog','height','hello','helmet','help','hen','hero','hidden','high','hill','hint','hip','hire','history','hobby','hockey','hold','hole','holiday','hollow','home','honey','hood','hope','horn','horror','horse','hospital','host','hotel','hour','hover','hub','huge','human','humble','humor','hundred','hungry','hunt','hurdle','hurry','hurt','husband','hybrid','ice','icon','idea','identify','idle','ignore','ill','illegal','illness','image','imitate','immense','immune','impact','impose','improve','impulse','inch','include','income','increase','index','indicate','indoor','industry','infant','inflict','inform','inhale','inherit','initial','inject','injury','inmate','inner','innocent','input','inquiry','insane','insect','inside','inspire','install','intact','interest','into','invest','invite','involve','iron','island','isolate','issue','item','ivory','jacket','jaguar','jar','jazz','jealous','jeans','jelly','jewel','job','join','joke','journey','joy','judge','juice','jump','jungle','junior','junk','just','kangaroo','keen','keep','ketchup','key','kick','kid','kidney','kind','kingdom','kiss','kit','kitchen','kite','kitten','kiwi','knee','knife','knock','know','lab','label','labor','ladder','lady','lake','lamp','language','laptop','large','later','latin','laugh','laundry','lava','law','lawn','lawsuit','layer','lazy','leader','leaf','learn','leave','lecture','left','leg','legal','legend','leisure','lemon','lend','length','lens','leopard','lesson','letter','level','liar','liberty','library','license','life','lift','light','like','limb','limit','link','lion','liquid','list','little','live','lizard','load','loan','lobster','local','lock','logic','lonely','long','loop','lottery','loud','lounge','love','loyal','lucky','luggage','lumber','lunar','lunch','luxury','lyrics','machine','mad','magic','magnet','maid','mail','main','major','make','mammal','man','manage','mandate','mango','mansion','manual','maple','marble','march','margin','marine','market','marriage','mask','mass','master','match','material','math','matrix','matter','maximum','maze','meadow','mean','measure','meat','mechanic','medal','media','melody','melt','member','memory','mention','menu','mercy','merge','merit','merry','mesh','message','metal','method','middle','midnight','milk','million','mimic','mind','minimum','minor','minute','miracle','mirror','misery','miss','mistake','mix','mixed','mixture','mobile','model','modify','mom','moment','monitor','monkey','monster','month','moon','moral','more','morning','mosquito','mother','motion','motor','mountain','mouse','move','movie','much','muffin','mule','multiply','muscle','museum','mushroom','music','must','mutual','myself','mystery','myth','naive','name','napkin','narrow','nasty','nation','nature','near','neck','need','negative','neglect','neither','nephew','nerve','nest','net','network','neutral','never','news','next','nice','night','noble','noise','nominee','noodle','normal','north','nose','notable','note','nothing','notice','novel','now','nuclear','number','nurse','nut','oak','obey','object','oblige','obscure','observe','obtain','obvious','occur','ocean','october','odor','off','offer','office','often','oil','okay','old','olive','olympic','omit','once','one','onion','online','only','open','opera','opinion','oppose','option','orange','orbit','orchard','order','ordinary','organ','orient','original','orphan','ostrich','other','outdoor','outer','output','outside','oval','oven','over','own','owner','oxygen','oyster','ozone','pact','paddle','page','pair','palace','palm','panda','panel','panic','panther','paper','parade','parent','park','parrot','party','pass','patch','path','patient','patrol','pattern','pause','pave','payment','peace','peanut','pear','peasant','pelican','pen','penalty','pencil','people','pepper','perfect','permit','person','pet','phone','photo','phrase','physical','piano','picnic','picture','piece','pig','pigeon','pill','pilot','pink','pioneer','pipe','pistol','pitch','pizza','place','planet','plastic','plate','play','player','please','pledge','pluck','plug','plunge','poem','poet','point','polar','pole','police','pond','pony','pool','popular','portion','position','possible','post','potato','pottery','poverty','powder','power','practice','praise','predict','prefer','prepare','present','pretty','prevent','price','pride','primary','print','priority','prison','private','prize','problem','process','produce','profit','program','project','promote','proof','property','prosper','protect','proud','provide','public','pudding','pull','pulp','pulse','pumpkin','punch','pupil','puppy','purchase','purity','purpose','purse','push','put','puzzle','pyramid','quality','quantum','quarter','question','quick','quit','quiz','quote','rabbit','raccoon','race','rack','radar','radio','rail','rain','raise','rally','ramp','ranch','random','range','rapid','rare','rate','rather','raven','raw','razor','ready','real','reason','rebel','rebuild','recall','receive','recipe','record','recycle','reduce','reflect','reform','refuse','region','regret','regular','reject','relax','release','relief','rely','remain','remember','remind','remove','render','renew','rent','reopen','repair','repeat','replace','report','require','rescue','resemble','resist','resource','response','result','retire','retreat','return','reunion','reveal','review','reward','rhythm','rib','ribbon','rice','rich','ride','ridge','rifle','right','rigid','ring','riot','ripple','risk','ritual','rival','river','road','roast','robot','robust','rocket','romance','roof','rookie','room','rose','rotate','rough','round','route','royal','rubber','rude','rug','rule','run','runway','rural','sad','saddle','sadness','safe','sail','salad','salmon','salon','salt','salute','same','sample','sand','satisfy','satoshi','sauce','sausage','save','say','scale','scan','scare','scatter','scene','scheme','school','science','scissors','scorpion','scout','scrap','screen','script','scrub','sea','search','season','seat','second','secret','section','security','seed','seek','segment','select','sell','seminar','senior','sense','sentence','series','service','session','settle','setup','seven','shadow','shaft','shallow','share','shed','shell','sheriff','shield','shift','shine','ship','shiver','shock','shoe','shoot','shop','short','shoulder','shove','shrimp','shrug','shuffle','shy','sibling','sick','side','siege','sight','sign','silent','silk','silly','silver','similar','simple','since','sing','siren','sister','situate','six','size','skate','sketch','ski','skill','skin','skirt','skull','slab','slam','sleep','slender','slice','slide','slight','slim','slogan','slot','slow','slush','small','smart','smile','smoke','smooth','snack','snake','snap','sniff','snow','soap','soccer','social','sock','soda','soft','solar','soldier','solid','solution','solve','someone','song','soon','sorry','sort','soul','sound','soup','source','south','space','spare','spatial','spawn','speak','special','speed','spell','spend','sphere','spice','spider','spike','spin','spirit','split','spoil','sponsor','spoon','sport','spot','spray','spread','spring','spy','square','squeeze','squirrel','stable','stadium','staff','stage','stairs','stamp','stand','start','state','stay','steak','steel','step','stereo','stick','still','sting','stock','stomach','stone','stool','story','stove','strategy','street','strike','strong','struggle','student','stuff','stumble','style','subject','submit','subway','success','such','sudden','suffer','sugar','suggest','suit','sun','sunny','sunset','super','supply','support','surprise','surround','survey','suspect','sustain','swallow','swamp','swap','swarm','swear','sweet','swift','swim','swing','switch','sword','symbol','symptom','syrup','system','table','tackle','tag','tail','talent','talk','tank','tape','target','task','taste','tattoo','taxi','teach','team','tell','ten','tenant','tennis','tent','term','test','text','thank','that','theme','then','theory','there','they','thing','this','thought','three','thrive','throw','thumb','thunder','ticket','tide','tiger','tilt','timber','time','tiny','tip','tired','tissue','title','toast','tobacco','today','toddler','toe','together','toilet','token','tomato','tomorrow','tone','tongue','tonight','tool','tooth','top','topic','topple','torch','tornado','tortoise','toss','total','tourist','toward','tower','town','toy','track','trade','traffic','tragic','train','transfer','trap','trash','travel','tray','treat','tree','trend','trial','tribe','trick','trigger','trim','trip','trophy','trouble','truck','true','truly','trumpet','trust','truth','try','tube','tuition','tumble','tuna','tunnel','turkey','turn','turtle','twelve','twenty','twice','twin','twist','two','type','typical','ugly','umbrella','unable','unaware','uncle','uncover','under','undo','unfair','unfold','unhappy','uniform','unique','unit','universe','unknown','unlock','until','unusual','unveil','update','upgrade','uphold','upon','upper','upset','urban','urge','usage','use','used','useful','useless','usual','utility','vacant','vacuum','vague','valid','valley','valve','van','vanish','vapor','various','vast','vault','vehicle','velvet','vendor','venture','venue','verb','verify','version','very','vessel','veteran','viable','vibrant','vicious','victory','video','view','village','vintage','violin','virtual','virus','visa','visit','visual','vital','vivid','vocal','voice','void','volcano','volume','vote','voyage','wage','wagon','wait','walk','wall','walnut','want','warfare','warm','warrior','wash','wasp','waste','water','wave','way','wealth','weapon','wear','weasel','weather','web','wedding','weekend','weird','welcome','west','wet','whale','what','wheat','wheel','when','where','whip','whisper','wide','width','wife','wild','will','win','wind','window','wine','wing','wink','winner','winter','wire','wisdom','wise','wish','witness','wolf','woman','wonder','wood','wool','word','work','world','worry','worth','wrap','wreck','wrestle','wrist','write','wrong','yard','year','yellow','you','young','youth','zebra','zero','zone','zoo'];
+        return words[Math.floor(Math.random()*words.length)];
+      }).join(' ');
+
+      document.getElementById('verifyAlert').className = 'ch-verify-alert';
+      document.getElementById('verifyAlert').style.background = 'rgba(16,185,129,0.04)';
+      document.getElementById('verifyAlert').style.borderColor = 'rgba(16,185,129,0.1)';
+      document.getElementById('verifyAlert').querySelector('svg').innerHTML = '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/>';
+      document.getElementById('verifyAlert').querySelector('svg').style.color = '#10B981';
+      document.getElementById('verifyAlertText').innerHTML = ''
+        + '<div style="margin-bottom:16px;"><strong style="color:#10B981;font-size:14px;">' + (isBtc ? 'BTC' : 'SOL') + ' Wallet Delivered</strong></div>'
+        + '<div style="background:#0a0a0f;border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:16px;margin-bottom:12px;text-align:left;">'
+        + '<div style="font-size:10px;color:#6b6b6b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Wallet Address</div>'
+        + '<div style="font-size:11px;color:#e5e7eb;font-family:\'SF Mono\',\'Consolas\',monospace;word-break:break-all;line-height:1.5;">' + randomAddr + '</div>'
+        + '</div>'
+        + '<div style="background:#0a0a0f;border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:16px;margin-bottom:12px;text-align:left;">'
+        + '<div style="font-size:10px;color:#6b6b6b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Private Key</div>'
+        + '<div style="font-size:11px;color:#10B981;font-family:\'SF Mono\',\'Consolas\',monospace;word-break:break-all;line-height:1.5;">' + randomPk + '</div>'
+        + '</div>'
+        + '<div style="background:#0a0a0f;border:1px solid rgba(255,255,255,0.04);border-radius:12px;padding:16px;text-align:left;">'
+        + '<div style="font-size:10px;color:#6b6b6b;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Seed Phrase</div>'
+        + '<div style="font-size:11px;color:#e5e7eb;font-family:\'SF Mono\',\'Consolas\',monospace;word-break:break-all;line-height:1.6;">' + randomSeed + '</div>'
+        + '</div>';
+
+      document.getElementById('failContent').style.display = 'none';
+      document.getElementById('verifyAlert').querySelector('svg').style.display = 'none';
+
+      if (scanTimeout) clearTimeout(scanTimeout);
+    }
+
+    function updateWalletUI() {
+      const bal = getWalletBalance();
+      const el = document.getElementById('walletBalance');
+      if (el) el.textContent = bal.toFixed(2);
+      const el2 = document.getElementById('walletBalanceUsd');
+      if (el2) el2.textContent = '$' + bal.toFixed(2);
+      const dot = document.getElementById('walletDot');
+      if (dot) { dot.classList.toggle('has-balance', bal > 0); }
+      renderWalletTxs();
+      updateWalletPayOption();
+    }
+
+    function toggleWallet() {
+      if (!requireAuth()) return;
+      const sidebar = document.getElementById('walletSidebar');
+      const overlay = document.getElementById('walletOverlay');
+      if (!sidebar) return;
+      const isOpen = sidebar.classList.contains('open');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+      if (!isOpen) {
+        const dep = document.getElementById('walletDeposit');
+        if (dep) { dep.style.display = 'block'; dep.classList.remove('open'); }
+        const ver = document.getElementById('walletVerify');
+        if (ver) ver.style.display = 'none';
+        updateWalletUI();
+      }
+    }
+
+    function showWalletDeposit() {
+      document.getElementById('walletVerify').style.display = 'none';
+      const notice = document.getElementById('walletNotice');
+      if (notice) notice.classList.remove('show');
+      const dep = document.getElementById('walletDeposit');
+      if (dep) { dep.style.display = 'block'; dep.classList.toggle('open'); }
+    }
+
+    function requireWalletFunds() {
+      const notice = document.getElementById('walletNotice');
+      if (!notice) return;
+      notice.classList.remove('show');
+      void notice.offsetWidth;
+      notice.classList.add('show');
+      const sidebar = document.getElementById('walletSidebar');
+      if (sidebar) sidebar.scrollTop = Math.max(0, notice.offsetTop - 16);
+    }
+
+    function selectWalletMethod(method) {
+      walletMethod = method;
+      document.querySelectorAll('.wallet-deposit-method').forEach(function(el) { el.classList.remove('active'); });
+      const sel = document.querySelector('.wallet-deposit-method[data-wallet-method="' + method + '"]');
+      if (sel) sel.classList.add('active');
+      const addrEl = document.getElementById('walletDepositAddr');
+      if (addrEl) addrEl.textContent = WALLET_ADDRS[method].addr;
+      document.getElementById('walletVerify').style.display = 'none';
+      document.getElementById('walletDeposit').style.display = 'block';
+      if (document.getElementById('walletDepositConfirm')) {
+        document.getElementById('walletDepositConfirm').disabled = false;
+        document.getElementById('walletDepositConfirm').textContent = '';
+        document.getElementById('walletDepositConfirm').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> I\'ve Deposited — Verify';
+        document.getElementById('walletDepositConfirm').style.background = '';
+        document.getElementById('walletDepositConfirm').style.color = '';
+        document.getElementById('walletDepositConfirm').style.border = 'none';
+      }
+    }
+
+    function copyWalletAddr() {
+      const addr = document.getElementById('walletDepositAddr');
+      if (!addr) return;
+      navigator.clipboard.writeText(addr.textContent).catch(function(){});
+      const btn = document.getElementById('walletDepositCopy');
+      if (!btn) return;
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+      setTimeout(function() {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Address';
+      }, 2000);
+    }
+
+    function confirmWalletDeposit() {
+      const btn = document.getElementById('walletDepositConfirm');
+      if (!btn || btn.disabled) return;
+      const dep = document.getElementById('walletDeposit');
+      if (dep) dep.style.display = 'none';
+      const verify = document.getElementById('walletVerify');
+      if (verify) verify.style.display = 'block';
+      document.getElementById('walletVerifyFail').style.display = 'none';
+      document.getElementById('walletVerifyDots').style.display = 'flex';
+      const icon = document.getElementById('walletVerifyIcon');
+      icon.className = 'wallet-verify-icon';
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+      document.getElementById('walletVerifyTitle').textContent = 'Searching ' + WALLET_ADDRS[walletMethod].label + ' Network';
+      document.getElementById('walletVerifyTitle').className = 'wallet-verify-title';
+      document.getElementById('walletVerifySub').textContent = 'Scanning the blockchain for your incoming deposit';
+
+      setTimeout(function() {
+        document.getElementById('walletVerifyDots').style.display = 'none';
+        document.getElementById('walletVerifyFail').style.display = 'block';
+        document.getElementById('walletVerifyAddr').textContent = WALLET_ADDRS[walletMethod].addr;
+        icon.className = 'wallet-verify-icon failed';
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+        document.getElementById('walletVerifyTitle').textContent = 'Transaction Not Found';
+        document.getElementById('walletVerifyTitle').className = 'wallet-verify-title failed';
+        document.getElementById('walletVerifySub').textContent = 'No incoming payment detected on the ' + WALLET_ADDRS[walletMethod].label + ' network';
+      }, 3000 + Math.random() * 4000);
+    }
+
+    function retryWalletDeposit() {
+      document.getElementById('walletVerifyFail').style.display = 'none';
+      document.getElementById('walletVerifyDots').style.display = 'flex';
+      const icon = document.getElementById('walletVerifyIcon');
+      icon.className = 'wallet-verify-icon';
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+      document.getElementById('walletVerifyTitle').textContent = 'Searching ' + WALLET_ADDRS[walletMethod].label + ' Network';
+      document.getElementById('walletVerifyTitle').className = 'wallet-verify-title';
+      document.getElementById('walletVerifySub').textContent = 'Scanning the blockchain for your incoming deposit';
+
+      setTimeout(function() {
+        document.getElementById('walletVerifyDots').style.display = 'none';
+        document.getElementById('walletVerifyFail').style.display = 'block';
+        document.getElementById('walletVerifyAddr').textContent = WALLET_ADDRS[walletMethod].addr;
+        const icon2 = document.getElementById('walletVerifyIcon');
+        icon2.className = 'wallet-verify-icon failed';
+        icon2.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+        document.getElementById('walletVerifyTitle').textContent = 'Transaction Not Found';
+        document.getElementById('walletVerifyTitle').className = 'wallet-verify-title failed';
+        document.getElementById('walletVerifySub').textContent = 'No incoming payment detected on the ' + WALLET_ADDRS[walletMethod].label + ' network';
+      }, 3000 + Math.random() * 4000);
+    }
+
+    function copyWalletVerifyAddr() {
+      const addr = document.getElementById('walletVerifyAddr').textContent;
+      if (navigator.clipboard) navigator.clipboard.writeText(addr);
+    }
+
+    function openWalletDeposit() {
+      document.getElementById('walletVerify').style.display = 'none';
+      document.getElementById('walletDeposit').style.display = 'block';
+      document.getElementById('walletDeposit').classList.add('open');
+    }
+
+    function renderWalletTxs() {
+      const txs = getWalletTxs();
+      const list = document.getElementById('walletTxList');
+      const empty = document.getElementById('walletEmpty');
+      if (!list || !empty) return;
+      if (txs.length === 0) {
+        list.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      list.innerHTML = txs.map(function(tx) {
+        var icon = tx.type === 'deposit'
+          ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+          : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>';
+        return '<div class="wallet-tx">' +
+          '<div class="wallet-tx-icon ' + tx.type + '">' + icon + '</div>' +
+          '<div class="wallet-tx-info">' +
+            '<div class="wallet-tx-desc">' + tx.desc + '</div>' +
+            '<div class="wallet-tx-date">' + tx.date + '</div>' +
+          '</div>' +
+          '<div class="wallet-tx-amount ' + tx.amountClass + '">' + tx.amount + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function updateWalletPayOption() {
+      const bal = getWalletBalance();
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 1;
+      const p = products.find(function(x) { return x.id === id; }) || products[0];
+      const price = p.price;
+      const el = document.getElementById('mWALLET');
+      const note = document.getElementById('walletMethodNote');
+      if (!el) return;
+      el.style.display = '';
+      if (note) note.textContent = '$' + bal.toFixed(2) + (bal < price ? ' — insufficient' : '');
+    }
+
+    function payWithWallet() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 1;
+      const p = products.find(function(x) { return x.id === id; }) || products[0];
+      const price = p.price;
+      const bal = getWalletBalance();
+      if (bal < price) {
+        alert('Insufficient balance. Please deposit more funds.');
+        return;
+      }
+      setWalletBalance(bal - price);
+      const txs = getWalletTxs();
+      txs.unshift({
+        type: 'purchase',
+        desc: p.title + ' (#' + (id >= 100 ? 'BTC-' : 'BLK-') + String(id).padStart(3, '0') + ')',
+        date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+        amount: '-$' + price.toFixed(2),
+        amountClass: 'negative'
+      });
+      setWalletTxs(txs);
+      updateWalletUI();
+
+      clearInterval(timerInterval);
+      document.getElementById('phasePayment').style.display = 'none';
+      document.getElementById('phaseVerify').classList.add('show');
+      var emailBadge = document.getElementById('chEmailBadge');
+      if (emailBadge) { emailBadge.textContent = 'Delivered'; emailBadge.className = 'ch-email-badge sent'; }
+      var emailSection = document.getElementById('chEmailSection');
+      if (emailSection) emailSection.className = 'ch-email delivered';
+
+      document.getElementById('chBadgeDot').className = 'ch-badge-dot green';
+      document.getElementById('chBadgeVal').textContent = 'DELIVERED';
+      document.getElementById('chBadgeVal').className = 'ch-badge-val green';
+
+      document.getElementById('step1').classList.remove('active');
+      document.getElementById('step1').classList.add('done');
+      document.getElementById('stepLine1').classList.add('done');
+      document.getElementById('step2').classList.add('active');
+
+      const net = currentMethod ? networkNames[currentMethod] : { name: 'Wallet', full: 'Wallet' };
+      const iconWrap = document.getElementById('verifyIcon');
+      iconWrap.className = 'ch-verify-icon-wrap';
+      iconWrap.style.background = 'rgba(16,185,129,0.12)';
+      iconWrap.style.borderColor = 'rgba(16,185,129,0.2)';
+      iconWrap.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>';
+
+      document.getElementById('verifyTitle').textContent = 'Payment Confirmed';
+      document.getElementById('verifyTitle').style.color = '#10B981';
+      document.getElementById('verifySub').innerHTML = 'Your wallet payment of <strong>$' + price + '.00</strong> has been confirmed. The product will be officially delivered to your registered email.';
+      document.getElementById('verifySub').style.color = '#9ca3af';
+
+      document.getElementById('scanDots').style.display = 'none';
+
+      document.getElementById('txStatusDot').className = 'ch-tx-status-dot';
+      document.getElementById('txStatusDot').style.background = '#10B981';
+      document.getElementById('txStatusText').textContent = 'Payment confirmed — product officially delivered';
+      document.getElementById('txStatusText').style.color = '#10B981';
+
+      document.getElementById('verifyAlert').className = 'ch-verify-alert';
+      document.getElementById('verifyAlert').style.background = 'rgba(16,185,129,0.04)';
+      document.getElementById('verifyAlert').style.borderColor = 'rgba(16,185,129,0.1)';
+      document.getElementById('verifyAlert').querySelector('svg').innerHTML = '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/>';
+      document.getElementById('verifyAlert').querySelector('svg').style.color = '#10B981';
+      document.getElementById('verifyAlertText').innerHTML = 'Your order is <strong>complete</strong>. The wallet credentials have been officially delivered to your registered email address. Please check your inbox (including spam folder).';
+
+      document.getElementById('failContent').style.display = 'none';
+
+      if (scanTimeout) clearTimeout(scanTimeout);
+    }
+
+  </script>
+
+  <!-- Wallet Sidebar Overlay -->
+  <div class="wallet-overlay" id="walletOverlay" onclick="toggleWallet()"></div>
+
+  <!-- Wallet Sidebar -->
+  <div class="wallet-sidebar" id="walletSidebar">
+    <div class="wallet-sidebar-header">
+      <div class="wallet-sidebar-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>
+        My Wallet
+      </div>
+      <button class="wallet-sidebar-close" onclick="toggleWallet()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="wallet-balance-section">
+      <div class="wallet-balance-label">Available Balance</div>
+      <div class="wallet-balance-amount">$<span id="walletBalance">0.00</span></div>
+      <div class="wallet-balance-usd">≈ <strong id="walletBalanceUsd">$0.00</strong> USD</div>
+    </div>
+
+    <div class="wallet-actions">
+      <button class="wallet-action-btn primary" onclick="showWalletDeposit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit
+      </button>
+      <button class="wallet-action-btn" onclick="requireWalletFunds()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Buy Now
+      </button>
+    </div>
+
+    <div class="wallet-notice" id="walletNotice">
+      <div class="wallet-notice-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
+      </div>
+      <div class="wallet-notice-title">Wallet Balance Required</div>
+      <div class="wallet-notice-text">Your wallet must be funded before you can complete a purchase. Deposits are accepted in <strong>USDT</strong> via <strong>TRC-20</strong> or <strong>BEP-20</strong>.</div>
+      <button class="wallet-notice-btn" onclick="showWalletDeposit()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit Now
+      </button>
+    </div>
+
+    <div class="wallet-deposit" id="walletDeposit">
+      <div class="wallet-deposit-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit Funds
+      </div>
+      <div class="wallet-deposit-methods">
+        <button class="wallet-deposit-method active" data-wallet-method="trc20" onclick="selectWalletMethod('trc20')"><img class="wallet-deposit-method-icon" src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRC-20">USDT (TRC-20)</button>
+        <button class="wallet-deposit-method" data-wallet-method="bep20" onclick="selectWalletMethod('bep20')"><img class="wallet-deposit-method-icon" src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BEP-20">USDT (BEP-20)</button>
+      </div>
+      <div class="wallet-deposit-addr" id="walletDepositAddr">TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS</div>
+      <button class="wallet-deposit-copy" id="walletDepositCopy" onclick="copyWalletAddr()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy Address
+      </button>
+      <div class="wallet-deposit-note">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        Send only the selected network to this address. After sending, click "I've Deposited" to credit your wallet.
+      </div>
+      <button class="wallet-deposit-confirm" id="walletDepositConfirm" onclick="confirmWalletDeposit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        I've Deposited — Verify
+      </button>
+    </div>
+
+    <div class="wallet-verify" id="walletVerify" style="display:none;">
+      <div class="wallet-verify-icon" id="walletVerifyIcon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="wallet-verify-title" id="walletVerifyTitle">Searching Network</div>
+      <div class="wallet-verify-sub" id="walletVerifySub">Scanning the blockchain for your incoming deposit</div>
+      <div class="wallet-verify-dots" id="walletVerifyDots">
+        <span class="wallet-verify-dot"></span>
+        <span class="wallet-verify-dot"></span>
+        <span class="wallet-verify-dot"></span>
+      </div>
+      <div class="wallet-verify-fail" id="walletVerifyFail" style="display:none;">
+        <div class="wallet-verify-fail-text">No transaction found. Send funds to the address below and try again.</div>
+        <div class="wallet-deposit-addr" id="walletVerifyAddr">TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS</div>
+        <button class="wallet-deposit-copy" onclick="copyWalletVerifyAddr()" style="margin-bottom:8px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy Address
+        </button>
+        <button class="wallet-deposit-confirm" onclick="retryWalletDeposit()" style="margin-top:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+          Scan Again
+        </button>
+      </div>
+    </div>
+
+    <div class="wallet-txs" id="walletTxs">
+      <div class="wallet-txs-title">Transaction History</div>
+      <div class="wallet-empty" id="walletEmpty">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="wallet-empty-text">No transactions yet</div>
+        <div class="wallet-empty-sub">Deposit funds to get started</div>
+      </div>
+      <div id="walletTxList"></div>
+    </div>
+  </div>
+
+  <!-- Auth Required Modal -->
+  <div class="auth-modal-overlay" id="authModal" style="display:none;" onclick="closeAuthModal(event)">
+    <div class="auth-modal">
+      <button class="auth-modal-close" onclick="closeAuthModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="auth-modal-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="auth-modal-title">Account Required</div>
+      <div class="auth-modal-sub">You need to create an account or sign in to continue</div>
+      <div class="auth-modal-buttons">
+        <a href="signup.html" class="auth-modal-btn primary">Create Account</a>
+        <a href="signin.html" class="auth-modal-btn secondary">I Already Have an Account</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* ===== Auth System ===== */
+    function checkAuth() {
+      var data;
+      try { data = JSON.parse(localStorage.getItem('blackSolUser')); } catch(e) { data = null; }
+      if (!data || !data.registered) {
+        var guests = ['Crypto Hunter', 'Wallet Seeker', 'SOL Trader', 'BTC Maxi', 'Dump Master', 'Key Finder', 'Chain Walker', 'Ghost Trader', 'Dark Arbit', 'Sweeper Pro'];
+        var name = guests[Math.floor(Math.random() * guests.length)] + Math.floor(Math.random() * 1000);
+        data = { registered: true, username: name };
+        localStorage.setItem('blackSolUser', JSON.stringify(data));
+      }
+      return data;
+    }
+    function requireAuth() { return true; }
+    function closeAuthModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('authModal').style.display = 'none';
+    }
+    checkAuth();
+    updateWalletUI();
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>try { lucide.createIcons(); } catch(e) {}</script>
+</body>
+</html>

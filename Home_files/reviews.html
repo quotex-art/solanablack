@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLACK SOL · Reviews</title>
+  <meta property="og:title" content="BLACK SOL — Premium Dumped Solana Wallets">
+  <meta property="og:description" content="Purchase dumped Solana wallets with verified balances. 874,200+ SOL available. Instant delivery.">
+  <meta property="og:image" content="w=6001">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blacksol.quotex-norepily.workers.dev/Home">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BLACK SOL — Premium Dumped Solana Wallets">
+  <meta name="twitter:description" content="Purchase dumped Solana wallets with verified balances. 874,200+ SOL available. Instant delivery.">
+  <meta name="twitter:image" content="w=6001">
+  <link rel="icon" type="image/png" href="https://cdn.trustpilot.net/brand-assets/4.3.0/favicons/favicon-32x32.png">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f3f3f6; color: #191919; min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; }
+
+    /* === TOP BAR === */
+    .tp-topbar {
+      background: #000; height: 60px; display: flex; align-items: center; justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .tp-topbar-inner {
+      width: 100%; max-width: 1060px; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .tp-topbar-logo { display: flex; align-items: center; }
+    .tp-topbar-logo svg { display: block; }
+    .tp-topbar-nav { display: flex; align-items: center; gap: 26px; }
+    .tp-topbar-nav a {
+      color: rgba(255,255,255,0.68); font-size: 13px; font-weight: 500;
+      transition: color 0.15s; line-height: 1;
+    }
+    .tp-topbar-nav a:hover { color: #fff; }
+    .tp-topbar-lang {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: rgba(255,255,255,0.68); font-size: 13px; font-weight: 500;
+      cursor: default;
+    }
+    .tp-topbar-lang svg { width: 15px; height: 15px; display: block; }
+    .tp-topbar-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 100px;
+      background: #00b67a; color: #fff; font-size: 13px; font-weight: 600;
+      transition: background 0.15s;
+    }
+    .tp-topbar-btn:hover { background: #009e68 !important; color: #fff !important; }
+
+    /* Mobile burger + menu (hidden on desktop) */
+    .tp-topbar-burger {
+      display: none; width: 40px; height: 40px; border-radius: 8px; border: none;
+      background: transparent; cursor: pointer; align-items: center; justify-content: center;
+      transition: background 0.15s;
+    }
+    .tp-topbar-burger:hover { background: rgba(255,255,255,0.08); }
+    .tp-topbar-burger svg { width: 22px; height: 22px; display: block; }
+    .tp-topbar-burger .ic-close { display: none; }
+    .tp-topbar-burger.open .ic-menu { display: none; }
+    .tp-topbar-burger.open .ic-close { display: block; }
+    .tp-topbar-menu {
+      display: none; position: absolute; top: 60px; left: 0; right: 0;
+      background: #000; border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+      z-index: 60;
+    }
+    .tp-topbar-menu.open { display: block; animation: tpMenuIn 0.18s ease; }
+    @keyframes tpMenuIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: none; }
+    }
+    .tp-topbar-menu-inner { max-width: 1060px; margin: 0 auto; padding: 8px 16px 18px; }
+    .tp-topbar-menu a {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 15px 6px; border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85); font-size: 15px; font-weight: 500;
+      transition: color 0.15s;
+    }
+    .tp-topbar-menu a:last-of-type { border-bottom: none; }
+    .tp-topbar-menu a:hover { color: #fff; }
+    .tp-topbar-menu a .tp-menu-arrow { width: 16px; height: 16px; color: rgba(255,255,255,0.35); flex-shrink: 0; }
+    .tp-topbar-menu .tp-menu-cta {
+      margin-top: 14px; width: 100%; justify-content: center;
+      padding: 13px; border-radius: 100px;
+      background: #00b67a; color: #fff; font-weight: 700; font-size: 14px;
+    }
+    .tp-topbar-menu .tp-menu-cta:hover { background: #009e68; color: #fff; }
+
+    /* === PROFILE HEADER === */
+    .tp-profile {
+      background: #000; padding: 28px 24px 36px; display: flex; justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .tp-profile-inner {
+      width: 100%; max-width: 1060px;
+      display: flex; gap: 32px; align-items: flex-start;
+    }
+    .tp-profile-left { flex: 0 0 240px; display: flex; align-items: flex-start; gap: 14px; }
+    .tp-profile-avatar {
+      width: 84px; height: 84px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.14); background: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tp-profile-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tp-profile-identity { min-width: 0; padding-top: 6px; }
+    .tp-profile-name { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -0.3px; }
+    .tp-profile-domain {
+      display: inline-flex; align-items: center; gap: 5px; margin-top: 6px;
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
+    .tp-profile-domain svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .tp-profile-verified {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 100px; margin-left: 4px;
+      background: rgba(0,182,122,0.14); color: #00B67A;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;
+    }
+    .tp-profile-verified svg { width: 11px; height: 11px; }
+    .tp-profile-right { flex: 1; min-width: 0; }
+    .tp-profile-card {
+      background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px; padding: 20px 24px;
+    }
+    .tp-ts-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+    .tp-ts-title {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .tp-ts-title svg { width: 13px; height: 13px; color: rgba(255,255,255,0.3); }
+    .tp-ts-score { font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -1px; }
+    .tp-ts-stars { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .tp-ts-stars-link { font-size: 11px; color: rgba(255,255,255,0.4); text-decoration: underline; }
+    .tp-ts-count { font-size: 14px; font-weight: 600; color: #fff; margin-top: 8px; }
+    .tp-profile-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 18px 0 14px; }
+    .tp-recommend { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 14px; line-height: 1.5; }
+    .tp-recommend strong { color: #fff; font-size: 15px; }
+    .tp-profile-stars { display: flex; gap: 2px; }
+    .tp-profile-stars svg { width: 22px; height: 22px; display: block; }
+    .tp-profile-bars { display: flex; flex-direction: column; gap: 7px; }
+    .tp-bar-row { display: flex; align-items: center; gap: 8px; }
+    .tp-bar-label { font-size: 12px; color: rgba(255,255,255,0.55); min-width: 34px; }
+    .tp-bar-track { flex: 1; height: 7px; border-radius: 4px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    .tp-bar-fill { height: 100%; border-radius: 4px; }
+    .tp-bar-pct { font-size: 11px; color: rgba(255,255,255,0.45); min-width: 34px; text-align: right; }
+    .tp-profile-actions { display: flex; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .tp-btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 24px; border-radius: 100px;
+      background: #00B67A; color: #fff;
+      font-size: 13px; font-weight: 700; transition: background 0.15s;
+    }
+    .tp-btn-primary:hover { background: #009e68; }
+    .tp-btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 24px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.25); color: #fff;
+      font-size: 13px; font-weight: 600; transition: background 0.15s, border-color 0.15s;
+    }
+    .tp-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+
+    /* === MAIN LAYOUT === */
+    .tp-main { max-width: 1060px; margin: 0 auto; padding: 24px; }
+
+    /* Tabs */
+    .tp-tabs {
+      display: flex; gap: 0; border-bottom: 1px solid #d4d4d8; margin-bottom: 20px;
+    }
+    .tp-tab {
+      padding: 10px 20px; font-size: 14px; font-weight: 500; color: #6b6b6b;
+      cursor: default; border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: color 0.15s;
+    }
+    .tp-tab.active { color: #191919; border-bottom-color: #00b67a; font-weight: 600; }
+
+    /* Sort bar */
+    .tp-sortbar {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+      font-size: 13px; color: #6b6b6b;
+    }
+    .tp-sortbar select {
+      padding: 4px 10px; border: 1px solid #d4d4d8; border-radius: 4px;
+      font-size: 13px; font-family: inherit; background: #fff; color: #191919;
+    }
+    .tp-sortbar .count { margin-left: auto; font-weight: 600; color: #191919; }
+
+    /* === REVIEW CARD === */
+    .tp-review {
+      background: #fff; border: 1px solid #e4e4e7; border-radius: 4px;
+      padding: 24px 24px 20px; margin-bottom: 12px;
+    }
+    .tp-review-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+    .tp-review-avatar {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 700; color: #fff;
+    }
+    .tp-review-avatar img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; display: block; }
+    .tp-review-author { flex: 1; min-width: 0; }
+    .tp-review-name { font-size: 15px; font-weight: 700; color: #191919; }
+    .tp-review-revcount { font-size: 12px; color: #8b8b8b; margin-top: 1px; }
+    .tp-review-stars { display: flex; gap: 2px; margin: 4px 0; }
+    .tp-review-stars svg { width: 16px; height: 16px; display: block; }
+    .tp-review-date { font-size: 12px; color: #8b8b8b; }
+    .tp-review-badge {
+      display: flex; align-items: center; gap: 4px; white-space: nowrap;
+      padding: 2px 10px; border-radius: 100px; flex-shrink: 0;
+      background: rgba(0,182,122,0.06); border: 1px solid rgba(0,182,122,0.12);
+      font-size: 11px; font-weight: 600; color: #00b67a;
+    }
+    .tp-review-text { margin: 0 0 10px 56px; }
+    .tp-review-text p { font-size: 14px; line-height: 1.65; color: #333; }
+    .tp-review-text strong { color: #191919; }
+    .tp-review-verified {
+      display: flex; align-items: center; gap: 4px; margin-left: 56px;
+      font-size: 12px; font-weight: 600; color: #00b67a;
+    }
+    .tp-review-verified svg { flex-shrink: 0; }
+
+    /* === CTA BANNER === */
+    .tp-cta {
+      position: relative; overflow: hidden;
+      background: linear-gradient(140deg, #0a1812 0%, #062415 55%, #0a2e1a 100%);
+      border: 1px solid rgba(0,182,122,0.16); border-radius: 14px;
+      padding: 44px 32px; text-align: center; margin-bottom: 12px;
+    }
+    .tp-cta::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(600px 200px at 50% -20%, rgba(0,182,122,0.28), transparent 70%),
+        radial-gradient(400px 240px at 10% 115%, rgba(153,69,255,0.18), transparent 70%),
+        radial-gradient(400px 240px at 90% 115%, rgba(20,241,149,0.16), transparent 70%);
+    }
+    .tp-cta::after {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 78%);
+      mask-image: radial-gradient(ellipse at 50% 0%, #000 30%, transparent 78%);
+    }
+    .tp-cta-inner { position: relative; z-index: 1; }
+    .tp-cta-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px; border-radius: 100px;
+      background: rgba(0,182,122,0.12); border: 1px solid rgba(0,182,122,0.3);
+      color: #34e39a; font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
+      text-transform: uppercase; margin-bottom: 18px;
+    }
+    .tp-cta-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #00b67a;
+      animation: tpPulse 2s infinite;
+    }
+    @keyframes tpPulse {
+      0% { box-shadow: 0 0 0 0 rgba(0,182,122,0.55); }
+      70% { box-shadow: 0 0 0 8px rgba(0,182,122,0); }
+      100% { box-shadow: 0 0 0 0 rgba(0,182,122,0); }
+    }
+    .tp-cta h2 { font-size: 30px; color: #fff; margin-bottom: 10px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.2; }
+    .tp-cta h2 span { color: #00b67a; }
+    .tp-cta p { color: rgba(255,255,255,0.6); font-size: 15px; margin: 0 auto 22px; line-height: 1.7; max-width: 560px; }
+    .tp-cta-stats { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
+    .tp-cta-stat {
+      display: flex; flex-direction: column; gap: 2px; padding: 12px 20px;
+      border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      min-width: 120px;
+    }
+    .tp-cta-stat b { font-size: 20px; color: #fff; font-weight: 800; }
+    .tp-cta-stat span { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.4px; }
+    .tp-cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px; background: linear-gradient(180deg, #00c488, #00b67a);
+      color: #fff; border-radius: 100px; font-size: 15px; font-weight: 700;
+      box-shadow: 0 10px 24px rgba(0,182,122,0.3);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .tp-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(0,182,122,0.42); }
+    .tp-cta-btn .tp-cta-arr { transition: transform 0.15s; }
+    .tp-cta-btn:hover .tp-cta-arr { transform: translateX(4px); }
+    .tp-cta-note { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.4); }
+
+    /* === FOOTER === */
+    .tp-footer {
+      background: #000; margin-top: 40px; padding: 56px 24px 32px;
+    }
+    .tp-footer-inner { max-width: 1060px; margin: 0 auto; }
+    .tp-footer-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px;
+      margin-bottom: 40px;
+    }
+    .tp-footer-title {
+      font-size: 13px; font-weight: 700; color: #fff;
+      margin-bottom: 18px;
+    }
+    .tp-footer-col { display: flex; flex-direction: column; gap: 12px; }
+    .tp-footer-col a {
+      color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.4;
+      transition: color 0.15s; width: fit-content;
+    }
+    .tp-footer-col a:hover { color: #fff; text-decoration: underline; }
+    .tp-footer-country {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px;
+      color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500; width: fit-content;
+    }
+    .tp-footer-country svg { width: 14px; height: 14px; display: block; }
+    .tp-footer-app {
+      margin-top: 10px; font-size: 12px; line-height: 1.6;
+      color: rgba(255,255,255,0.35); width: fit-content;
+    }
+    .tp-footer-legal {
+      display: flex; flex-wrap: wrap; gap: 8px 20px;
+      padding-bottom: 24px; margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .tp-footer-legal a {
+      color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.6;
+      transition: color 0.15s;
+    }
+    .tp-footer-legal a:hover { color: #fff; text-decoration: underline; }
+    .tp-footer-divider { height: 1px; background: rgba(255,255,255,0.12); margin-bottom: 24px; }
+    .tp-footer-bottom {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .tp-footer-social { display: flex; align-items: center; gap: 12px; }
+    .tp-footer-social a {
+      display: flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6);
+      transition: background 0.15s, color 0.15s;
+    }
+    .tp-footer-social a:hover { background: rgba(255,255,255,0.16); color: #fff; }
+    .tp-footer-social svg { width: 16px; height: 16px; display: block; }
+    .tp-footer-lang {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 14px; border: 1px solid rgba(255,255,255,0.18); border-radius: 4px;
+      color: rgba(255,255,255,0.65); font-size: 12px; font-weight: 500;
+    }
+    .tp-footer-lang svg { width: 14px; height: 14px; display: block; }
+    .tp-footer-copy { color: rgba(255,255,255,0.35); font-size: 12px; line-height: 1.6; margin-left: auto; text-align: right; }
+    .tp-footer-copy strong { color: rgba(255,255,255,0.55); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .tp-footer-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .tp-footer-copy { margin-left: 0; text-align: left; width: 100%; }
+    }
+
+    /* === WRITE REVIEW === */
+    .tp-write {
+      background: #fff; border: 1px solid #e4e4e7; border-radius: 4px;
+      margin-bottom: 20px; overflow: hidden;
+    }
+    .tp-write-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 20px; background: #fafafa;
+      border-bottom: 1px solid #e4e4e7;
+      font-size: 14px; font-weight: 600; color: #191919;
+    }
+    .tp-write-body { padding: 20px; }
+    .tp-write-stars {
+      display: flex; align-items: center; gap: 4px; margin-bottom: 16px;
+    }
+    .tp-write-stars span { cursor: pointer; line-height: 0; }
+    .tp-write-stars svg { width: 28px; height: 28px; display: block; color: #d4d4d8; transition: color 0.15s; }
+    .tp-write-stars svg.filled { color: #00B67A; }
+    .tp-write-stars-lbl { margin-left: 10px; font-size: 13px; color: #8b8b8b; font-weight: 500; }
+    .tp-write-input, .tp-write-textarea {
+      width: 100%; padding: 10px 14px; border: 1px solid #d4d4d8; border-radius: 4px;
+      font-size: 14px; font-family: inherit; color: #191919; background: #fff;
+      outline: none; transition: border-color 0.15s;
+    }
+    .tp-write-input:focus, .tp-write-textarea:focus { border-color: #00b67a; }
+    .tp-write-input { margin-bottom: 12px; }
+    .tp-write-textarea { min-height: 100px; resize: vertical; margin-bottom: 12px; }
+    .tp-write-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .tp-write-char { font-size: 12px; color: #8b8b8b; }
+    .tp-write-btn {
+      padding: 8px 22px; background: #00b67a; color: #fff;
+      border: none; border-radius: 100px; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: background 0.15s; font-family: inherit;
+    }
+    .tp-write-btn:hover { background: #009e68; }
+    .tp-write-btn:disabled { opacity: 0.4; cursor: default; }
+
+    /* === TABS PANELS === */
+    .tp-panel {
+      background: #fff; border: 1px solid #e4e4e7; border-radius: 4px;
+      padding: 28px; margin-bottom: 20px;
+    }
+    .tp-panel-title { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+    .tp-panel-about-row {
+      display: flex; gap: 10px; padding: 13px 0; border-bottom: 1px solid #f0f0f3;
+      font-size: 14px; line-height: 1.5;
+    }
+    .tp-panel-about-row:last-child { border-bottom: none; }
+    .tp-panel-about-row .k { color: #8b8b8b; min-width: 130px; flex-shrink: 0; }
+    .tp-panel-about-row .v { color: #191919; font-weight: 500; }
+    .tp-about-link {
+      display: inline-flex; align-items: center;
+      padding: 7px 18px; border-radius: 100px;
+      background: #00b67a; color: #fff; font-size: 12px; font-weight: 700;
+      transition: background 0.15s;
+    }
+    .tp-about-link:hover { background: #009e68; color: #fff; }
+    .tp-panel-desc { margin-top: 18px; font-size: 14px; line-height: 1.7; color: #4b4b4b; }
+    .tp-contact-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #f0f0f3; }
+    .tp-contact-item:last-child { border-bottom: none; }
+    .tp-contact-item svg { width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; color: #00b67a; }
+    .tp-contact-link { cursor: pointer; transition: background 0.15s; border-radius: 4px; }
+    .tp-contact-link:hover { background: #f6f6f8; }
+    .tp-contact-link:hover .tp-contact-open { color: #009e68; }
+    .tp-contact-open { color: #00b67a; font-weight: 700; }
+    .tp-contact-k { font-size: 13px; color: #8b8b8b; }
+    .tp-contact-v { font-size: 14px; color: #191919; font-weight: 600; margin-top: 2px; }
+    .tp-contact-btn { display: inline-flex; margin-top: 20px; }
+
+    @media (max-width: 768px) {
+      /* Topbar */
+      .tp-topbar { height: 56px; }
+      .tp-topbar-inner { padding: 0 16px; }
+      .tp-topbar-logo svg { height: 20px; }
+      .tp-topbar-nav { display: none; }
+      .tp-topbar-burger { display: flex; }
+      .tp-topbar-menu { top: 56px; }
+      /* Profile header */
+      .tp-profile { padding: 22px 16px 30px; }
+      .tp-profile-inner { flex-direction: column; gap: 22px; }
+      .tp-profile-left { flex: none; width: 100%; }
+      .tp-profile-avatar { width: 64px; height: 64px; }
+      .tp-profile-name { font-size: 24px; }
+      .tp-profile-identity { padding-top: 2px; }
+      .tp-profile-card { padding: 18px 16px; }
+      .tp-ts-score { font-size: 38px; }
+      .tp-profile-actions { flex-direction: column; }
+      .tp-btn-primary, .tp-btn-secondary { width: 100%; }
+      /* Reviews */
+      .tp-review-text { margin-left: 0; }
+      .tp-review-verified { margin-left: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .tp-cta { padding: 32px 18px; }
+      .tp-cta h2 { font-size: 24px; }
+      .tp-cta p { font-size: 14px; }
+      .tp-cta-stat { min-width: 96px; padding: 10px 14px; }
+      .tp-cta-stat b { font-size: 16px; }
+      .tp-ts-stars { justify-content: flex-start; }
+      .tp-ts-stars-link { width: 100%; }
+      .tp-profile-domain { flex-wrap: wrap; }
+      .tp-ts-head { margin-bottom: 8px; }
+      .tp-ts-count { font-size: 13px; }
+      .tp-recommend { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tp-star" viewBox="0 0 96 96">
+        <path fill="currentColor" d="M48,64.7 L62.6,61 L68.7,79.8 L48,64.7 Z M81.6,40.4 L55.9,40.4 L48,16.2 L40.1,40.4 L14.4,40.4 L35.2,55.4 L27.3,79.6 L48.1,64.6 L60.9,55.4 L81.6,40.4 L81.6,40.4 L81.6,40.4 L81.6,40.4 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== TOP BAR ===== -->
+  <div class="tp-topbar">
+    <div class="tp-topbar-inner">
+      <a class="tp-topbar-logo" href="https://fr.trustpilot.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1132.8 278.2" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto;display:block;">
+          <path fill="#00b67a" d="M271.3 98.6H167.7L135.7 0l-32.1 98.6L0 98.5l83.9 61L51.8 258l83.9-60.9 83.8 60.9-32-98.5 83.8-60.9z"/>
+          <path fill="#005128" d="M194.7 181.8l-7.2-22.3-51.8 37.6z"/>
+          <path d="M297.7 98.6h114.7V120h-45.1v120.3h-24.8V120h-44.9V98.6zm109.8 39.1h21.2v19.8h.4c.7-2.8 2-5.5 3.9-8.1 1.9-2.6 4.2-5.1 6.9-7.2 2.7-2.2 5.7-3.9 9-5.3 3.3-1.3 6.7-2 10.1-2 2.6 0 4.5.1 5.5.2s2 .3 3.1.4v21.8c-1.6-.3-3.2-.5-4.9-.7-1.7-.2-3.3-.3-4.9-.3-3.8 0-7.4.8-10.8 2.3-3.4 1.5-6.3 3.8-8.8 6.7-2.5 3-4.5 6.6-6 11s-2.2 9.4-2.2 15.1v48.8h-22.6V137.7zm164 102.6h-22.2V226h-.4c-2.8 5.2-6.9 9.3-12.4 12.4-5.5 3.1-11.1 4.7-16.8 4.7-13.5 0-23.3-3.3-29.3-10s-9-16.8-9-30.3v-65.1H504v62.9c0 9 1.7 15.4 5.2 19.1 3.4 3.7 8.3 5.6 14.5 5.6 4.8 0 8.7-.7 11.9-2.2 3.2-1.5 5.8-3.4 7.7-5.9 2-2.4 3.4-5.4 4.3-8.8.9-3.4 1.3-7.1 1.3-11.1v-59.5h22.6v102.5zm38.5-32.9c.7 6.6 3.2 11.2 7.5 13.9 4.4 2.6 9.6 4 15.7 4 2.1 0 4.5-.2 7.2-.5s5.3-1 7.6-1.9c2.4-.9 4.3-2.3 5.9-4.1 1.5-1.8 2.2-4.1 2.1-7-.1-2.9-1.2-5.3-3.2-7.1-2-1.9-4.5-3.3-7.6-4.5-3.1-1.1-6.6-2.1-10.6-2.9-4-.8-8-1.7-12.1-2.6-4.2-.9-8.3-2.1-12.2-3.4-3.9-1.3-7.4-3.1-10.5-5.4-3.1-2.2-5.6-5.1-7.4-8.6-1.9-3.5-2.8-7.8-2.8-13 0-5.6 1.4-10.2 4.1-14 2.7-3.8 6.2-6.8 10.3-9.1 4.2-2.3 8.8-3.9 13.9-4.9 5.1-.9 10-1.4 14.6-1.4 5.3 0 10.4.6 15.2 1.7 4.8 1.1 9.2 2.9 13.1 5.5 3.9 2.5 7.1 5.8 9.7 9.8 2.6 4 4.2 8.9 4.9 14.6h-23.6c-1.1-5.4-3.5-9.1-7.4-10.9-3.9-1.9-8.4-2.8-13.4-2.8-1.6 0-3.5.1-5.7.4-2.2.3-4.2.8-6.2 1.5-1.9.7-3.5 1.8-4.9 3.2-1.3 1.4-2 3.2-2 5.5 0 2.8 1 5 2.9 6.7 1.9 1.7 4.4 3.1 7.5 4.3 3.1 1.1 6.6 2.1 10.6 2.9 4 .8 8.1 1.7 12.3 2.6 4.1.9 8.1 2.1 12.1 3.4 4 1.3 7.5 3.1 10.6 5.4 3.1 2.3 5.6 5.1 7.5 8.5 1.9 3.4 2.9 7.7 2.9 12.7 0 6.1-1.4 11.2-4.2 15.5-2.8 4.2-6.4 7.7-10.8 10.3-4.4 2.6-9.4 4.6-14.8 5.8-5.4 1.2-10.8 1.8-16.1 1.8-6.5 0-12.5-.7-18-2.2-5.5-1.5-10.3-3.7-14.3-6.6-4-3-7.2-6.7-9.5-11.1-2.3-4.4-3.5-9.7-3.7-15.8H610zm74.6-69.7h17.1v-30.8h22.6v30.8h20.4v16.9h-20.4v54.8c0 2.4.1 4.4.3 6.2.2 1.7.7 3.2 1.4 4.4.7 1.2 1.8 2.1 3.3 2.7 1.5.6 3.4.9 6 .9 1.6 0 3.2 0 4.8-.1 1.6-.1 3.2-.3 4.8-.7v17.5c-2.5.3-5 .5-7.3.8-2.4.3-4.8.4-7.3.4-6 0-10.8-.6-14.4-1.7-3.6-1.1-6.5-2.8-8.5-5-2.1-2.2-3.4-4.9-4.2-8.2-.7-3.3-1.2-7.1-1.3-11.3v-60.5h-17.1v-17.1zm76.1 0h21.4v13.9h.4c3.2-6 7.6-10.2 13.3-12.8 5.7-2.6 11.8-3.9 18.5-3.9 8.1 0 15.1 1.4 21.1 4.3 6 2.8 11 6.7 15 11.7 4 5 6.9 10.8 8.9 17.4 2 6.6 3 13.7 3 21.2 0 6.9-.9 13.6-2.7 20-1.8 6.5-4.5 12.2-8.1 17.2-3.6 5-8.2 8.9-13.8 11.9-5.6 3-12.1 4.5-19.7 4.5-3.3 0-6.6-.3-9.9-.9-3.3-.6-6.5-1.6-9.5-2.9-3-1.3-5.9-3-8.4-5.1-2.6-2.1-4.7-4.5-6.5-7.2h-.4v51.2h-22.6V137.7zm79 51.4c0-4.6-.6-9.1-1.8-13.5-1.2-4.4-3-8.2-5.4-11.6-2.4-3.4-5.4-6.1-8.9-8.1-3.6-2-7.7-3.1-12.3-3.1-9.5 0-16.7 3.3-21.5 9.9-4.8 6.6-7.2 15.4-7.2 26.4 0 5.2.6 10 1.9 14.4 1.3 4.4 3.1 8.2 5.7 11.4 2.5 3.2 5.5 5.7 9 7.5 3.5 1.9 7.6 2.8 12.2 2.8 5.2 0 9.5-1.1 13.1-3.2 3.6-2.1 6.5-4.9 8.8-8.2 2.3-3.4 4-7.2 5-11.5.9-4.3 1.4-8.7 1.4-13.2zm39.9-90.5h22.6V120h-22.6V98.6zm0 39.1h22.6v102.6h-22.6V137.7zm42.8-39.1H945v141.7h-22.6V98.6zm91.9 144.5c-8.2 0-15.5-1.4-21.9-4.1-6.4-2.7-11.8-6.5-16.3-11.2-4.4-4.8-7.8-10.5-10.1-17.1-2.3-6.6-3.5-13.9-3.5-21.8 0-7.8 1.2-15 3.5-21.6 2.3-6.6 5.7-12.3 10.1-17.1 4.4-4.8 9.9-8.5 16.3-11.2 6.4-2.7 13.7-4.1 21.9-4.1s15.5 1.4 21.9 4.1c6.4 2.7 11.8 6.5 16.3 11.2 4.4 4.8 7.8 10.5 10.1 17.1 2.3 6.6 3.5 13.8 3.5 21.6 0 7.9-1.2 15.2-3.5 21.8-2.3 6.6-5.7 12.3-10.1 17.1-4.4 4.8-9.9 8.5-16.3 11.2-6.4 2.7-13.7 4.1-21.9 4.1zm0-17.9c5 0 9.4-1.1 13.1-3.2 3.7-2.1 6.7-4.9 9.1-8.3 2.4-3.4 4.1-7.3 5.3-11.6 1.1-4.3 1.7-8.7 1.7-13.2 0-4.4-.6-8.7-1.7-13.1s-2.9-8.2-5.3-11.6c-2.4-3.4-5.4-6.1-9.1-8.2-3.7-2.1-8.1-3.2-13.1-3.2s-9.4 1.1-13.1 3.2c-3.7 2.1-6.7 4.9-9.1 8.2-2.4 3.4-4.1 7.2-5.3 11.6-1.1 4.4-1.7 8.7-1.7 13.1 0 4.5.6 8.9 1.7 13.2 1.1 4.3 2.9 8.2 5.3 11.6 2.4 3.4 5.4 6.2 9.1 8.3 3.7 2.2 8.1 3.2 13.1 3.2zm58.4-87.5h17.1v-30.8h22.6v30.8h20.4v16.9h-20.4v54.8c0 2.4.1 4.4.3 6.2.2 1.7.7 3.2 1.4 4.4.7 1.2 1.8 2.1 3.3 2.7 1.5.6 3.4.9 6 .9 1.6 0 3.2 0 4.8-.1 1.6-.1 3.2-.3 4.8-.7v17.5c-2.5.3-5 .5-7.3.8-2.4.3-4.8.4-7.3.4-6 0-10.8-.6-14.4-1.7-3.6-1.1-6.5-2.8-8.5-5-2.1-2.2-3.4-4.9-4.2-8.2-.7-3.3-1.2-7.1-1.3-11.3v-60.5h-17.1v-17.1z" fill="#fff"/>
+        </svg>
+      </a>
+      <div class="tp-topbar-nav">
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Categories</a>
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Write a review</a>
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Log in</a>
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener" class="tp-topbar-btn">Sign up</a>
+      </div>
+      <button class="tp-topbar-burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
+        <svg class="ic-menu" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="tp-topbar-menu" id="topbarMenu">
+      <div class="tp-topbar-menu-inner">
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Categories
+          <svg class="tp-menu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Write a review
+          <svg class="tp-menu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Log in
+          <svg class="tp-menu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://fr.trustpilot.com/" target="_blank" rel="noopener" class="tp-menu-cta">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROFILE HEADER ===== -->
+  <div class="tp-profile">
+    <div class="tp-profile-inner">
+      <div class="tp-profile-left">
+        <div class="tp-profile-avatar">
+          <img src="1/1627ac24-e9a5-4ee6-a151-ae4a434484ca.png" alt="BLACK SOL">
+        </div>
+        <div class="tp-profile-identity">
+          <div class="tp-profile-name">BLACK SOL</div>
+          <div class="tp-profile-domain">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+            <span>blacksol.io</span>
+            <span class="tp-profile-verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+              Verified
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="tp-profile-right">
+        <div class="tp-profile-card">
+          <div class="tp-ts-head">
+            <div class="tp-ts-title">
+              TrustScore
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            </div>
+            <div class="tp-ts-score" style="color:#00B67A;">4.8</div>
+          </div>
+          <div class="tp-ts-stars">
+            <div class="tp-profile-stars">
+              <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+              <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+              <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+              <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+              <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            </div>
+            <a class="tp-ts-stars-link" href="#">Read more about TrustScore reviews</a>
+          </div>
+          <div class="tp-ts-count">2,600+ reviews</div>
+          <div class="tp-profile-divider"></div>
+          <div class="tp-recommend"><strong>95%</strong> of customers recommend this company</div>
+          <div class="tp-profile-bars">
+            <div class="tp-bar-row">
+              <span class="tp-bar-label">5★</span>
+              <div class="tp-bar-track"><div class="tp-bar-fill" style="width:85%;background:#00B67A;"></div></div>
+              <span class="tp-bar-pct">85%</span>
+            </div>
+            <div class="tp-bar-row">
+              <span class="tp-bar-label">4★</span>
+              <div class="tp-bar-track"><div class="tp-bar-fill" style="width:10%;background:#73CF11;"></div></div>
+              <span class="tp-bar-pct">10%</span>
+            </div>
+            <div class="tp-bar-row">
+              <span class="tp-bar-label">3★</span>
+              <div class="tp-bar-track"><div class="tp-bar-fill" style="width:3%;background:#FFCE00;"></div></div>
+              <span class="tp-bar-pct">3%</span>
+            </div>
+            <div class="tp-bar-row">
+              <span class="tp-bar-label">2★</span>
+              <div class="tp-bar-track"><div class="tp-bar-fill" style="width:1%;background:#FF931F;"></div></div>
+              <span class="tp-bar-pct">1%</span>
+            </div>
+            <div class="tp-bar-row">
+              <span class="tp-bar-label">1★</span>
+              <div class="tp-bar-track"><div class="tp-bar-fill" style="width:1%;background:#E54335;"></div></div>
+              <span class="tp-bar-pct">1%</span>
+            </div>
+          </div>
+          <div class="tp-profile-actions">
+            <a class="tp-btn-primary" href="#writeReview">Write a review</a>
+            <a class="tp-btn-secondary" href="https://blacksol.quotex-norepily.workers.dev/Home">Visit website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <div class="tp-main">
+
+    <div class="tp-tabs">
+      <span class="tp-tab active" data-tab="reviews">Reviews</span>
+      <span class="tp-tab" data-tab="about">About</span>
+      <span class="tp-tab" data-tab="contact">Contact</span>
+    </div>
+
+    <!-- Write a Review -->
+    <div class="tp-write" id="writeReview">
+      <div class="tp-write-header">
+        <svg style="color:#00B67A;width:20px;height:20px;display:block;"><use href="#tp-star"></use></svg>
+        <span>Write a review</span>
+      </div>
+      <div class="tp-write-body">
+        <div class="tp-write-stars" id="writeStars">
+          <span data-star="1">
+            <svg class="tp-write-star"><use href="#tp-star"></use></svg>
+          </span>
+          <span data-star="2">
+            <svg class="tp-write-star"><use href="#tp-star"></use></svg>
+          </span>
+          <span data-star="3">
+            <svg class="tp-write-star"><use href="#tp-star"></use></svg>
+          </span>
+          <span data-star="4">
+            <svg class="tp-write-star"><use href="#tp-star"></use></svg>
+          </span>
+          <span data-star="5">
+            <svg class="tp-write-star"><use href="#tp-star"></use></svg>
+          </span>
+          <span class="tp-write-stars-lbl" id="starLabel">Click to rate</span>
+        </div>
+        <input type="text" class="tp-write-input" id="reviewName" placeholder="Your name" maxlength="40">
+        <textarea class="tp-write-textarea" id="reviewText" placeholder="Tell others about your experience..." maxlength="2000"></textarea>
+        <div class="tp-write-footer">
+          <span class="tp-write-char" id="charCount">0 / 2000</span>
+          <button class="tp-write-btn" id="submitReview" onclick="submitReview()">Submit review</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tp-sortbar">
+      <span>Sort by:</span>
+      <select><option>Most relevant</option><option>Most recent</option><option>Highest rated</option><option>Lowest rated</option></select>
+      <span class="count">2,600+ reviews</span>
+    </div>
+
+    <!-- About panel -->
+    <div class="tp-panel" id="tpPanelAbout" style="display:none;">
+      <div class="tp-panel-title">About BLACK SOL</div>
+      <div class="tp-panel-about-row"><span class="k">Business name</span><span class="v">BLACK SOL</span></div>
+      <div class="tp-panel-about-row"><span class="k">Website</span><a class="tp-about-link" href="https://blacksol.quotex-norepily.workers.dev/Home" target="_blank" rel="noopener">Visit website</a></div>
+      <div class="tp-panel-about-row"><span class="k">Founded</span><span class="v">2024</span></div>
+      <div class="tp-panel-about-row"><span class="k">Location</span><span class="v">Operating worldwide &middot; Remote-first</span></div>
+      <div class="tp-panel-about-row"><span class="k">Service</span><span class="v">Premium dumped Solana &amp; recovered Bitcoin wallets with verified on-chain balances</span></div>
+      <div class="tp-panel-about-row"><span class="k">Response time</span><span class="v">Usually within a few minutes (live support)</span></div>
+      <div class="tp-panel-about-row"><span class="k">Delivery</span><span class="v">Instant, right after network confirmation</span></div>
+      <p class="tp-panel-desc">BLACK SOL provides verified dumped wallets with full private key access and on-chain balance verification (Solscan / block explorers). Every purchase is delivered instantly and includes balance proof before checkout. Our 2,600+ independent Trustpilot reviews reflect a consistent 4.8 TrustScore.</p>
+    </div>
+
+    <!-- Contact panel -->
+    <div class="tp-panel" id="tpPanelContact" style="display:none;">
+      <div class="tp-panel-title">Contact BLACK SOL</div>
+      <a class="tp-contact-item tp-contact-link" href="https://blacksol.quotex-norepily.workers.dev/support" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.5-.7L3 21l1.8-5.5a8.4 8.4 0 1 1 16.2-4z"/></svg>
+        <div>
+          <div class="tp-contact-k">Live chat</div>
+          <div class="tp-contact-v">Chat with technical support <span class="tp-contact-open">Open now &rarr;</span></div>
+        </div>
+      </a>
+      <div class="tp-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div><div class="tp-contact-k">Support hours</div><div class="tp-contact-v">Monday - Sunday, 24 hours</div></div>
+      </div>
+      <div class="tp-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+        <div><div class="tp-contact-k">Region</div><div class="tp-contact-v">Worldwide</div></div>
+      </div>
+      <a class="tp-btn-primary tp-contact-btn" href="https://blacksol.quotex-norepily.workers.dev/Home">Go to website</a>
+    </div>
+
+    <!-- Review 1 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Marcus Allen"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Marcus Allen</div>
+          <div class="tp-review-revcount">1 review &middot; United States</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 29, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Wasn't sure what to expect honestly. Paid with USDT over TRC-20 and the key showed up in the checkout page maybe two minutes after the network confirmed. Verified the 12.5 SOL on Solscan before I even closed the tab, then swept it into Phantom and spread it around the same night. Already told a couple of guys from my Discord about it.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 12.5 SOL — $144
+      </div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#14F195,#0d9f6e);color:#000;">DT</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Dmitri Volkov</div>
+          <div class="tp-review-revcount">2 reviews &middot; United Kingdom</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 24, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Started small with the 3.8 SOL wallet just to check whether this was actually real. It was. Swept it to Stake, withdrew fine, came back two days later and grabbed the 7.2 SOL one. Support answered my question in maybe ten minutes. Delivery was basically instant both times.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET ×2 — $44 &amp; $84
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="tp-cta">
+      <div class="tp-cta-inner">
+        <span class="tp-cta-badge"><span class="tp-cta-dot"></span> 2,600+ verified reviews</span>
+        <h2>Over 2,600 customers trust <span>BLACK SOL</span></h2>
+        <p>Browse our collection of dumped Solana wallets with verified balances, instant delivery, and full private key access.</p>
+        <div class="tp-cta-stats">
+          <div class="tp-cta-stat"><b>874,200+</b><span>SOL Available</span></div>
+          <div class="tp-cta-stat"><b>4.8</b><span>TrustScore</span></div>
+          <div class="tp-cta-stat"><b>&lt; 5 min</b><span>Instant Delivery</span></div>
+        </div>
+        <a href="https://blacksol.quotex-norepily.workers.dev/Home#products" class="tp-cta-btn">
+          Browse wallets
+          <svg class="tp-cta-arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="tp-cta-note">Full private key access &middot; On-chain balance proof &middot; Instant delivery</div>
+      </div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jessica Lam"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Jessica Lam</div>
+          <div class="tp-review-revcount">1 review &middot; Canada</div>
+          <div class="tp-review-stars">
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#DCDCE6;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 20, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Ordered the 4.5 SOL wallet and it worked — balance confirmed on-chain right away and the seed imported cleanly into Solflare. Only complaint is delivery took about ten minutes instead of the "instant" they advertise. Support stayed on it until it went through though, which I appreciate.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 4.5 SOL — $54
+      </div>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Kovacs"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Alex Kovacs</div>
+          <div class="tp-review-revcount">3 reviews &middot; Germany</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 14, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Third wallet from here now. First the 4.1 SOL, then the 12.5 SOL, and last week the 24 SOL. Every key worked on the first try and nothing was missing from the balance. I like that you can check the balance on Solscan before paying — most places in this space don't let you do that.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET ×3 — $48, $144, $294
+      </div>
+    </div>
+
+    <!-- Review 5 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Rahman"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Sarah Rahman</div>
+          <div class="tp-review-revcount">1 review &middot; Australia</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 8, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>I've been burned before by a "dumped wallet" group on Telegram, so I checked everything twice. The 20 SOL wallet checked out — seed imported clean into Solflare and all 20 were there. Paid in BTC so I waited a few confirmations, but the wallet landed in my orders right after.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 20 SOL — $244
+      </div>
+    </div>
+
+    <!-- Review 6 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/men/83.jpg" alt="Chris Park"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Chris Park</div>
+          <div class="tp-review-revcount">1 review &middot; Singapore</div>
+          <div class="tp-review-stars">
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#73CF11;"><use href="#tp-star"></use></svg>
+            <svg style="color:#DCDCE6;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 2, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Good value for the money. Got the 5 SOL wallet for $60 and it delivered exactly that — confirmed on Backpack with no issues. Only downside is you can't pick which wallet you receive, so if you're fussy about transaction history I'd message them first. Otherwise all smooth.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 5 SOL — $60
+      </div>
+    </div>
+
+    <!-- Review 7 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Tom Rivera"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Tom Rivera</div>
+          <div class="tp-review-revcount">1 review &middot; United States</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">June 27, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Went straight for the 40 SOL whale wallet. Not gonna lie, I was nervous about dropping that much on a first order. Balance was all there, no splits, and the dump paid for everything and then some. Was moving on Binance and Stake within a couple hours of buying.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 40 SOL — $494
+      </div>
+    </div>
+
+    <!-- Review 8 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#3b82f6,#2563eb);">LM</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Lucas Meyer</div>
+          <div class="tp-review-revcount">1 review &middot; Netherlands</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">June 21, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Bought the BTC DORMANT WALLET (0.176 BTC) mostly out of curiosity to see if they were as good on Bitcoin as on Solana. They are. WIF key worked in Electrum, sweep confirmed, no issues at all. Nice that they cover both chains now.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; BTC DORMANT WALLET 0.176 BTC — $64
+      </div>
+    </div>
+
+    <!-- Review 9 -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Elena Petrova"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Elena Petrova</div>
+          <div class="tp-review-revcount">1 review &middot; Spain</div>
+          <div class="tp-review-stars">
+            <svg style="color:#FFCE00;"><use href="#tp-star"></use></svg>
+            <svg style="color:#FFCE00;"><use href="#tp-star"></use></svg>
+            <svg style="color:#FFCE00;"><use href="#tp-star"></use></svg>
+            <svg style="color:#DCDCE6;"><use href="#tp-star"></use></svg>
+            <svg style="color:#DCDCE6;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">June 15, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>The 4.1 SOL wallet I ordered turned out to be a bit below the listed balance. I messaged support expecting an argument, but they refunded the difference without much back-and-forth, which I respect. Delivery itself was fast. Just wish the listed balance had been more accurate.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 4.1 SOL — $48
+      </div>
+    </div>
+
+    <!-- Review 10 - Arabic (Saudi) -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#ec4899,#db2777);">سع</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">سلطان العتيبي</div>
+          <div class="tp-review-revcount">1 review &middot; Saudi Arabia</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 31, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p dir="rtl" style="text-align:right">والله ما توقعت الطريقة تكون سهلة كذا. شريت محفظة سولانا 12.5 ورجعت شيكت الرصيد على سولسكان قبل ما أسدد المبلغ كامل، والتسليم كان لحظي والخاصية طلعت صحيحة مية بالمية. تعاملهم محترم وسريع، أنصح فيه بشدة.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 12.5 SOL — $144
+      </div>
+    </div>
+
+    <!-- Review 11 - Arabic (Emirati) -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#06b6d4,#0891b2);">خم</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">خالد المنصوري</div>
+          <div class="tp-review-revcount">1 review &middot; United Arab Emirates</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 27, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p dir="rtl" style="text-align:right">صراحة وايد زين التجربة. طلبت محفظة بلسان والرصيد كلو موجود بالضبط، دفعت باليوسد وسهلوا لي كل شي، والخاصية وصلتني بنفس اللحظة. مب متوقع هالدرجة من الأمانة، شكراً ليهم.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 7.2 SOL — $84
+      </div>
+    </div>
+
+    <!-- Review 12 - Arabic (Algerian) -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#14F195,#0d9f6e);color:#000;">يب</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">يوسف بن عيسى</div>
+          <div class="tp-review-revcount">1 review &middot; Libya</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#DCDCE6;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 23, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p dir="rtl" style="text-align:right">شريت محفظة بيتكوين 0.176 وقعدت ندقق في البالانس قبل ما نخلص، لقيتو مطابق للمعلن حرفياً. التسليم دخل بالخاصية ومشيت بيها مباشرة. كان فيه شوية نقص فالوقت اللي قبل التسليم بصح الدعم جاوبني وعاونني بسرعة. مقارنة مع اللي كاين في السوق، تحفة.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; BTC DORMANT WALLET 0.176 BTC — $64
+      </div>
+    </div>
+
+    <!-- Review 13 - Arabic (Moroccan) -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">أر</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">أمين الرامي</div>
+          <div class="tp-review-revcount">1 review &middot; Morocco</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 19, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p dir="rtl" style="text-align:right">صافي راه تجربة ناجحة. خديت محفظة 4.5 سول والفلوس كاملين كتبانو، تدفعت ب USDT وتوصلت بالخاصية فالوقت المحدد. خدمة الزبناء كتجاوب بسرعة حتى غير فالليل. ماشي بزاف الناس اللي كنحاسبهم كيكونو هكا شرفاء، ننصح بيهم.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 4.5 SOL — $54
+      </div>
+    </div>
+
+    <!-- Review 14 - Arabic (Algerian) -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar" style="background:linear-gradient(135deg,#0ea5e9,#0369a1);">ي.ب</div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">ياسين بوزيدي</div>
+          <div class="tp-review-revcount">1 review &middot; Algeria</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 31, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p dir="rtl" style="text-align:right">الحمدلله اشتريت الان محفظة بيتكوين واستلمت عبارة الاسترداد مباشرة بعد الدفع وادخلتها على تطبيق Trust wallet وقمت بتحويل نصفها الى كازينو 1xbet والان انا اقوم بغسيلها بشكل جيد شكرا للمسؤولي الموقع</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; BITCOIN DUMPED WALLET 0.176 BTC — $64
+      </div>
+    </div>
+
+    <!-- Review 15 - French -->
+    <div class="tp-review">
+      <div class="tp-review-head">
+        <div class="tp-review-avatar"><img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Lucas Bernard"></div>
+        <div class="tp-review-author">
+          <div class="tp-review-name">Lucas Bernard</div>
+          <div class="tp-review-revcount">1 review &middot; France</div>
+          <div class="tp-review-stars">
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+            <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+          </div>
+          <div class="tp-review-date">July 30, 2026</div>
+        </div>
+        <span class="tp-review-badge">Verified</span>
+      </div>
+      <div class="tp-review-text">
+        <p>Merci à toute l'équipe du site pour le sérieux et la réactivité. J'ai reçu ma phrase de récupération immédiatement après le paiement, et le support m'a bien accompagné lors de la configuration dans mon portefeuille. Tout s'est passé rapidement et sans aucun souci. Je recommande vivement.</p>
+      </div>
+      <div class="tp-review-verified">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        Verified purchase &middot; SOLANA DUMPED WALLET 12.5 SOL — $144
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="tp-footer">
+    <div class="tp-footer-inner">
+      <div class="tp-footer-grid">
+        <div class="tp-footer-col">
+          <div class="tp-footer-title">Choix de pays</div>
+          <div class="tp-footer-country">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+            <span>France</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <a class="tp-footer-app" href="https://apps.apple.com/app/trustpilot-reviews-ratings/id1608392803" target="_blank" rel="noopener">Achetez plus intelligemment avec l'application Trustpilot</a>
+        </div>
+        <div class="tp-footer-col">
+          <div class="tp-footer-title">À propos</div>
+          <a href="https://corporate.trustpilot.com/" target="_blank" rel="noopener">À propos de nous</a>
+          <a href="https://business.trustpilot.com/jobs" target="_blank" rel="noopener">Jobs</a>
+          <a href="https://fr.trustpilot.com/contact" target="_blank" rel="noopener">Contact</a>
+          <a href="https://fr.trustpilot.com/blog" target="_blank" rel="noopener">Blog</a>
+          <a href="https://corporate.trustpilot.com/trust" target="_blank" rel="noopener">Comment fonctionne Trustpilot</a>
+          <a href="https://corporate.trustpilot.com/trust/trust-report-2025" target="_blank" rel="noopener">Trust Report</a>
+          <a href="https://corporate.trustpilot.com/press" target="_blank" rel="noopener">Presse</a>
+          <a href="https://corporate.trustpilot.com/investors" target="_blank" rel="noopener">Relations investisseurs</a>
+        </div>
+        <div class="tp-footer-col">
+          <div class="tp-footer-title">Communauté</div>
+          <a href="https://corporate.trustpilot.com/trust" target="_blank" rel="noopener">Avis de confiance</a>
+          <a href="https://help.trustpilot.com/s?language=fr" target="_blank" rel="noopener">Centre d'aide</a>
+          <a href="https://fr.trustpilot.com/users/connect" target="_blank" rel="noopener">Connexion</a>
+          <a href="https://fr.trustpilot.com/users/connect?signup=True" target="_blank" rel="noopener">Inscription</a>
+        </div>
+        <div class="tp-footer-col">
+          <div class="tp-footer-title">Entreprises</div>
+          <a href="https://fr.business.trustpilot.com/" target="_blank" rel="noopener">Trustpilot Business</a>
+          <a href="https://fr.business.trustpilot.com/features" target="_blank" rel="noopener">Produits</a>
+          <a href="https://fr.business.trustpilot.com/pricing" target="_blank" rel="noopener">Packs &amp; Tarifs</a>
+          <a href="https://businessapp.b2b.trustpilot.com/?locale=fr-fr" target="_blank" rel="noopener">Connexion Business</a>
+          <a href="https://fr.business.trustpilot.com/blog" target="_blank" rel="noopener">Blog pour les entreprises</a>
+        </div>
+        <div class="tp-footer-col">
+          <div class="tp-footer-title">Suivez-nous sur</div>
+          <a href="https://www.facebook.com/Trustpilot/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://x.com/Trustpilot" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/trustpilot/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.linkedin.com/company/trustpilot/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.youtube.com/c/trustpilotreviews" target="_blank" rel="noopener">Youtube</a>
+        </div>
+      </div>
+      <div class="tp-footer-legal">
+        <a href="https://fr.corporate.trustpilot.com/legal" target="_blank" rel="noopener">Informations légales</a>
+        <a href="https://fr.corporate.trustpilot.com/legal/for-reviewers/privacy-policy-end-user" target="_blank" rel="noopener">Politique de confidentialité</a>
+        <a href="https://fr.corporate.trustpilot.com/legal/for-reviewers/terms-of-use-for-consumers" target="_blank" rel="noopener">Conditions d'utilisation</a>
+        <a href="https://fr.corporate.trustpilot.com/legal/for-reviewers/guidelines-for-reviewers" target="_blank" rel="noopener">Conditions d'utilisation pour les auteurs d'avis</a>
+        <a href="https://status.trustpilot.com/" target="_blank" rel="noopener">Statut du système</a>
+        <a href="https://fr.corporate.trustpilot.com/legal/for-everyone/modern-slavery-and-human-trafficking-statement" target="_blank" rel="noopener">Modern Slavery Statement</a>
+      </div>
+      <div class="tp-footer-divider"></div>
+      <div class="tp-footer-bottom">
+        <div class="tp-footer-copy">
+          &copy; 2026 Trustpilot A/S. Tous droits réservés.
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Mobile menu
+  const burgerBtn = document.getElementById('burgerBtn');
+  const topbarMenu = document.getElementById('topbarMenu');
+
+  if (burgerBtn && topbarMenu) {
+    const closeMenu = () => {
+      topbarMenu.classList.remove('open');
+      burgerBtn.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+    };
+    burgerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = topbarMenu.classList.toggle('open');
+      burgerBtn.classList.toggle('open', open);
+      burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    topbarMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('click', (e) => {
+      if (topbarMenu.classList.contains('open') && !topbarMenu.contains(e.target) && !burgerBtn.contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  // Tabs
+  const tabs = document.querySelectorAll('.tp-tab');
+  const writeReviewEl = document.getElementById('writeReview');
+  const sortbarEl = document.querySelector('.tp-sortbar');
+  const aboutPanel = document.getElementById('tpPanelAbout');
+  const contactPanel = document.getElementById('tpPanelContact');
+
+  function showTab(name) {
+    const showReviews = name === 'reviews';
+    writeReviewEl.style.display = showReviews ? '' : 'none';
+    sortbarEl.style.display = showReviews ? '' : 'none';
+    document.querySelectorAll('.tp-review').forEach((r) => {
+      r.style.display = showReviews ? '' : 'none';
+    });
+    aboutPanel.style.display = name === 'about' ? '' : 'none';
+    contactPanel.style.display = name === 'contact' ? '' : 'none';
+    tabs.forEach((t) => t.classList.toggle('active', t.dataset.tab === name));
+  }
+
+  tabs.forEach((t) => t.addEventListener('click', () => showTab(t.dataset.tab)));
+
+  // Star rating interaction
+  const starSpans = document.querySelectorAll('#writeStars span[data-star]');
+  const starLabel = document.getElementById('starLabel');
+  const reviewName = document.getElementById('reviewName');
+  const reviewText = document.getElementById('reviewText');
+  const charCount = document.getElementById('charCount');
+  const submitBtn = document.getElementById('submitReview');
+  let selectedRating = 0;
+
+  const labels = ['', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
+
+  function fillStars(rating) {
+    starSpans.forEach((span, i) => {
+      const svg = span.querySelector('svg');
+      if (i + 1 <= rating) {
+        svg.classList.add('filled');
+      } else {
+        svg.classList.remove('filled');
+      }
+    });
+  }
+
+  starSpans.forEach((span, i) => {
+    span.addEventListener('mouseenter', () => {
+      fillStars(i + 1);
+      starLabel.textContent = labels[i + 1];
+    });
+    span.addEventListener('mouseleave', () => {
+      fillStars(selectedRating);
+      starLabel.textContent = selectedRating ? labels[selectedRating] : 'Click to rate';
+    });
+    span.addEventListener('click', () => {
+      selectedRating = i + 1;
+      fillStars(selectedRating);
+      starLabel.textContent = labels[selectedRating];
+    });
+  });
+
+  // Char count
+  reviewText.addEventListener('input', () => {
+    const len = reviewText.value.length;
+    charCount.textContent = len + ' / 2000';
+  });
+
+  // Submit review
+  function submitReview() {
+    const name = reviewName.value.trim();
+    const text = reviewText.value.trim();
+
+    if (!selectedRating) { alert('Please select a rating.'); return; }
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!text) { alert('Please write your review.'); return; }
+
+    // Create review element
+    const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2) || 'U';
+    const colors = [
+      'linear-gradient(135deg,#9945FF,#7c3aed)','linear-gradient(135deg,#14F195,#0d9f6e)',
+      'linear-gradient(135deg,#f59e0b,#d97706)','linear-gradient(135deg,#ef4444,#dc2626)',
+      'linear-gradient(135deg,#06b6d4,#0891b2)','linear-gradient(135deg,#8b5cf6,#6d28d9)',
+      'linear-gradient(135deg,#ec4899,#db2777)','linear-gradient(135deg,#3b82f6,#2563eb)'
+    ];
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    const textColor = color.includes('14F195') || color.includes('f59e0b') ? 'color:#000;' : 'color:#fff;';
+
+    const starHtml = Array(5).fill('').map((_, i) =>
+      `<svg style="color:${i < selectedRating ? '#00B67A' : '#DCDCE6'};"><use href="#tp-star"></use></svg>`
+    ).join('');
+
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+    const reviewHTML = `
+      <div class="tp-review">
+        <div class="tp-review-head">
+          <div class="tp-review-avatar" style="background:${color};${textColor}">${initials}</div>
+          <div class="tp-review-author">
+            <div class="tp-review-name">${name}</div>
+            <div class="tp-review-revcount">1 review</div>
+            <div class="tp-review-stars">${starHtml}</div>
+            <div class="tp-review-date">${dateStr}</div>
+          </div>
+          <span class="tp-review-badge">Verified</span>
+        </div>
+        <div class="tp-review-text">
+          <p>${text.replace(/\n/g, '<br>')}</p>
+        </div>
+        <div class="tp-review-verified">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#00b67a"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+          Verified purchase
+        </div>
+      </div>
+    `;
+
+    // Insert after the write review form
+    const writeEl = document.getElementById('writeReview');
+    writeEl.insertAdjacentHTML('afterend', reviewHTML);
+
+    // Reset form
+    selectedRating = 0;
+    fillStars(0);
+    starLabel.textContent = 'Click to rate';
+    reviewName.value = '';
+    reviewText.value = '';
+    charCount.textContent = '0 / 2000';
+
+    // Scroll to the new review
+    const allReviews = document.querySelectorAll('.tp-review');
+    allReviews[allReviews.length - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Update count
+    const countEl = document.querySelector('.count');
+    const current = parseInt(countEl.textContent.replace(/[^0-9]/g, ''));
+    countEl.textContent = (current + 1).toLocaleString() + '+ reviews';
+  }
+</script>
+</body>
+</html>

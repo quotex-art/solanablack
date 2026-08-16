@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLACK SOL · Login</title>
+  <meta property="og:title" content="BLACK SOL — Customer Sign In">
+  <meta property="og:description" content="Sign in to your BLACK SOL account to manage purchases and access your wallets.">
+  <meta property="og:image" content="w=6001">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blacksol.quotex-norepily.workers.dev/Home.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BLACK SOL — Customer Sign In">
+  <meta name="twitter:description" content="Sign in to your BLACK SOL account.">
+  <meta name="twitter:image" content="w=6001">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html, body { height: 100%; }
+    body { background: #08080c; }
+
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(8,8,12,0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    #header .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-nav { display: flex; align-items: center; gap: 6px; }
+    .header-nav a {
+      padding: 6px 14px; border-radius: 6px;
+      color: rgba(255,255,255,0.5); text-decoration: none;
+      font-size: 13px; font-weight: 500; transition: all 0.2s;
+    }
+    .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+    .header-nav .back-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 14px 6px 10px; border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px; color: rgba(255,255,255,0.5); text-decoration: none;
+      font-size: 13px; font-weight: 500; transition: all 0.2s;
+    }
+    .header-nav .back-btn:hover { border-color: rgba(153,69,255,0.2); color: #fff; background: rgba(153,69,255,0.04); }
+
+    .auth-page {
+      min-height: 100dvh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 80px 24px 40px; position: relative;
+    }
+    .auth-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
+    .auth-bg-glow {
+      position: absolute; top: -15%; right: -8%;
+      width: 650px; height: 650px;
+      background: radial-gradient(circle, rgba(153,69,255,0.06) 0%, transparent 70%);
+      animation: heroFloat 8s ease-in-out infinite;
+    }
+    .auth-bg-glow-2 {
+      position: absolute; bottom: -25%; left: -5%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(20,241,149,0.04) 0%, transparent 70%);
+      animation: heroFloat 10s ease-in-out infinite reverse;
+    }
+
+    .auth-card {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 420px;
+      background: rgba(12,12,18,0.85);
+      backdrop-filter: blur(32px);
+      -webkit-backdrop-filter: blur(32px);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 44px 40px 36px;
+      box-shadow: 0 0 0 1px rgba(153,69,255,0.02), 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .auth-logo {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; margin-bottom: 10px;
+    }
+    .auth-logo svg { color: var(--accent); }
+    .auth-logo span {
+      font-size: 20px; font-weight: 800; letter-spacing: 2px;
+      background: linear-gradient(135deg, var(--accent), var(--solana-green));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .auth-title {
+      text-align: center; font-size: 23px; font-weight: 700;
+      margin-bottom: 3px; letter-spacing: -0.3px;
+    }
+    .auth-subtitle {
+      text-align: center; color: rgba(255,255,255,0.35);
+      font-size: 14px; margin-bottom: 30px;
+    }
+
+    .form-group {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .form-group + .form-group { margin-top: 18px; }
+    .form-group label {
+      font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.4);
+      text-transform: uppercase; letter-spacing: 0.8px;
+    }
+    .form-group input {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      color: var(--text-primary); font-size: 15px; font-family: inherit;
+      outline: none; transition: all 0.2s;
+    }
+    .form-group input:focus {
+      border-color: rgba(153,69,255,0.25);
+      background: rgba(153,69,255,0.015);
+      box-shadow: 0 0 0 3px rgba(153,69,255,0.04);
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.12); }
+
+    .btn-auth {
+      width: 100%; padding: 13px;
+      background: linear-gradient(135deg, #9945FF, #7c3aed);
+      color: #fff; border: none; border-radius: 10px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      transition: all 0.3s; letter-spacing: 0.3px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-top: 24px;
+    }
+    .btn-auth:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(153,69,255,0.25);
+    }
+    .btn-auth:active { transform: translateY(0); }
+
+    .form-options {
+      display: flex; align-items: center; justify-content: space-between;
+      margin: 14px 0 0;
+    }
+    .form-options label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; color: rgba(255,255,255,0.3); cursor: pointer;
+    }
+    .form-options label input[type="checkbox"] {
+      width: 14px; height: 14px; accent-color: var(--accent); cursor: pointer;
+    }
+    .form-options a {
+      font-size: 12px; color: rgba(153,69,255,0.5); text-decoration: none; transition: color 0.2s;
+    }
+    .form-options a:hover { color: var(--accent); }
+
+    .auth-divider {
+      display: flex; align-items: center; gap: 16px; margin: 20px 0 18px;
+    }
+    .auth-divider::before, .auth-divider::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.04);
+    }
+    .auth-divider span {
+      font-size: 11px; color: rgba(255,255,255,0.15);
+      text-transform: uppercase; letter-spacing: 0.8px;
+    }
+
+    .auth-footer {
+      text-align: center; margin-top: 24px;
+      font-size: 13px; color: rgba(255,255,255,0.25);
+    }
+    .auth-footer a {
+      color: var(--accent); text-decoration: none; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .auth-footer a:hover { opacity: 0.8; }
+
+    @media (max-width: 768px) {
+      .auth-page { padding: 72px 16px 30px; }
+      #header .header-inner { padding: 0 16px; height: 56px; }
+      #header .header-nav a { font-size: 12px; padding: 5px 10px; }
+      #header .header-nav .back-btn { font-size: 12px; padding: 5px 10px 5px 8px; }
+      .auth-card { padding: 32px 28px; border-radius: 16px; }
+      .auth-title { font-size: 20px; }
+      .auth-subtitle { font-size: 13px; margin-bottom: 24px; }
+      .form-options { flex-direction: column; gap: 8px; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .auth-page { padding: 62px 12px 24px; }
+      #header .header-inner { height: 50px; padding: 0 12px; }
+      #header .logo { font-size: 16px; gap: 8px; }
+      #header .logo svg { width: 16px; height: 12px; }
+      #header .header-nav { gap: 4px; }
+      #header .header-nav a { font-size: 11px; padding: 4px 8px; }
+      #header .header-nav .back-btn { font-size: 11px; padding: 4px 8px 4px 6px; }
+      #header .header-nav .back-btn span { display: none; }
+      .auth-card { padding: 24px 20px; border-radius: 14px; }
+      .auth-logo span { font-size: 17px; }
+      .auth-logo svg { width: 20px; height: 15px; }
+      .auth-title { font-size: 18px; }
+      .auth-subtitle { font-size: 12px; margin-bottom: 20px; }
+      .form-group input { padding: 10px 14px; font-size: 14px; }
+      .btn-auth { padding: 12px; font-size: 14px; }
+      .auth-footer { font-size: 12px; margin-top: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-inner">
+      <a href="Home.html" class="logo">
+        <svg viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:14px;">
+          <linearGradient id="solLogoSignIn" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9945FF"/>
+            <stop offset="100%" stop-color="#14F195"/>
+          </linearGradient>
+          <path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#solLogoSignIn)"/>
+          <path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#solLogoSignIn)"/>
+          <path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#solLogoSignIn)"/>
+        </svg>
+        BLACK SOL
+      </a>
+      <div class="header-nav">
+        <a href="Home.html">Store</a>
+        <a href="Home.html#products">Products</a>
+        <a href="signup.html" class="back-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7"/></svg>
+          <span>Create Account</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="auth-page">
+    <div class="auth-bg">
+      <div class="auth-bg-glow"></div>
+      <div class="auth-bg-glow-2"></div>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-logo">
+        <svg viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:24px;height:19px;">
+          <linearGradient id="solLogoAuthSI" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9945FF"/>
+            <stop offset="100%" stop-color="#14F195"/>
+          </linearGradient>
+          <path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#solLogoAuthSI)"/>
+          <path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#solLogoAuthSI)"/>
+          <path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#solLogoAuthSI)"/>
+        </svg>
+        <span>BLACK SOL</span>
+      </div>
+      <div class="auth-title">Welcome back</div>
+      <div class="auth-subtitle">Sign in to your account to continue</div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="you@example.com">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+
+      <div class="form-options">
+        <label>
+          <input type="checkbox" id="rememberMe">
+          Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button class="btn-auth" onclick="signIn()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13 12H3"/></svg>
+        Sign In
+      </button>
+
+      <div class="auth-divider">
+        <span>New here?</span>
+      </div>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="signup.html">Create one</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <span class="toast-icon"></span>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const DEMO_EMAIL = 'demo@blacksol.io';
+    const DEMO_PASS = 'Demo1234';
+
+    function signIn() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (!email || !password) {
+        return showToast('Please enter both email and password');
+      }
+
+      if (email === DEMO_EMAIL && password === DEMO_PASS) {
+        localStorage.setItem('blackSolUser', JSON.stringify({
+          registered: true,
+          username: email.split('@')[0],
+          email: email
+        }));
+        window.location.href = 'Home.html';
+      } else {
+        showToast('Invalid email or password. Try demo@blacksol.io / Demo1234');
+      }
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = 'toast show';
+      setTimeout(() => t.className = 'toast', 3000);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('email').addEventListener('keydown', e => { if (e.key === 'Enter') signIn(); });
+      document.getElementById('password').addEventListener('keydown', e => { if (e.key === 'Enter') signIn(); });
+    });
+  </script>
+</body>
+</html>

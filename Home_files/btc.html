@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTC DORMANT · Bitcoin Wallet Recovery</title>
+  <meta property="og:title" content="BTC DORMANT — Premium Recovered Bitcoin Wallets">
+  <meta property="og:description" content="Purchase recovered Bitcoin wallets with verified on-chain balances. Full private key access, instant delivery.">
+  <meta property="og:image" content="w=6001">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blacksol.quotex-norepily.workers.dev/btc">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BTC DORMANT — Premium Recovered Bitcoin Wallets">
+  <meta name="twitter:description" content="Purchase recovered Bitcoin wallets with verified on-chain balances. Full private key access, instant delivery.">
+  <meta name="twitter:image" content="w=6001">
+  <link rel="icon" type="image/png" href="https://cryptologos.cc/logos/bitcoin-btc-logo.png">
+  <link rel="shortcut icon" href="https://cryptologos.cc/logos/bitcoin-btc-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --btc: #F7931A;
+      --btc-light: #FFA940;
+      --btc-dark: #d47e15;
+      --btc-glow: rgba(247, 147, 26, 0.3);
+    }
+
+    .btc-hero .hero-grid {
+      background-image:
+        linear-gradient(rgba(247,147,26,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.02) 1px, transparent 1px);
+    }
+    .btc-hero .hero-glow {
+      background: radial-gradient(ellipse at 30% 50%, rgba(247,147,26,0.08) 0%, transparent 60%);
+    }
+    .btc-hero .hero-glow-2 {
+      background: radial-gradient(ellipse at 70% 30%, rgba(247,147,26,0.04) 0%, transparent 50%);
+    }
+    .btc-hero .hero-glow-3 {
+      background: radial-gradient(ellipse at 50% 80%, rgba(247,147,26,0.03) 0%, transparent 50%);
+    }
+
+    .btc-hero .hero-text h1 .highlight {
+      color: #FFFFFF;
+      -webkit-text-fill-color: #FFFFFF;
+    }
+
+    .btc-hero .hero-text h1 {
+      font-size: 48px;
+      letter-spacing: -1.4px;
+    }
+    .btc-hero .hero-inner {
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+      max-width: 1200px;
+    }
+    .btc-hero .hero-text p {
+      margin: 0 0 28px;
+    }
+    .btc-hero .hero-stats-row {
+      margin: 0 0 28px;
+    }
+    .btc-hero .hero-buttons {
+      justify-content: flex-start;
+    }
+    .btc-hero .hero-bottom-row {
+      justify-content: flex-start;
+    }
+    .btc-hero .hero-visual {
+      display: none;
+    }
+
+    .btc-hero .btn-primary {
+      background: linear-gradient(135deg, var(--btc), #e07d10);
+    }
+    .btc-hero .btn-primary::before {
+      background: linear-gradient(135deg, #ffb347, var(--btc));
+    }
+    .btc-hero .btn-primary:hover {
+      box-shadow: 0 8px 32px rgba(247,147,26,0.35), 0 0 0 1px rgba(247,147,26,0.15);
+    }
+    .btc-hero .btn-secondary:hover {
+      border-color: rgba(247,147,26,0.3);
+      background: rgba(247,147,26,0.06);
+      box-shadow: 0 8px 32px rgba(247,147,26,0.1);
+    }
+
+    .btc-accent { color: var(--btc); }
+    .btc-border { border-color: rgba(247,147,26,0.2); }
+
+    .btc-hero .network-line { stroke: var(--btc) !important; }
+    .btc-hero .center-bg {
+      background: radial-gradient(circle, rgba(247,147,26,0.2) 0%, rgba(247,147,26,0.05) 60%, transparent 100%);
+    }
+    .btc-hero .center-bg-2 {
+      background: radial-gradient(circle, rgba(247,147,26,0.1) 0%, transparent 70%);
+    }
+    .btc-hero .node-label-center { color: var(--btc); }
+
+    .btc-hero .hero-trustpilot {
+      border-color: rgba(247,147,26,0.08);
+      background: rgba(247,147,26,0.02);
+    }
+    .btc-hero .hero-trustpilot:hover {
+      border-color: rgba(247,147,26,0.15);
+      background: rgba(247,147,26,0.04);
+    }
+    .btc-hero .trustpilot-stars svg { fill: #00B67A !important; }
+    .btc-hero .trustpilot-text strong { color: #00B67A; }
+    .btc-hero .trustpilot-text { color: rgba(0,182,122,0.7); }
+
+    .btc-hero .hero-stat-value { color: var(--btc); }
+    .btc-hero .hero-stat-divider { background: rgba(247,147,26,0.15); }
+
+    .btc-hero .btc-watermark { color: var(--btc); }
+    .btc-hero .badge-popular { background: linear-gradient(135deg, var(--btc), #e07d10); }
+    .btc-hero .badge-whale { background: linear-gradient(135deg, var(--btc), #e07d10); }
+    .btc-hero .badge-new { background: linear-gradient(135deg, var(--btc), #e07d10); }
+
+    .btc-hero .solscan-verify {
+      color: var(--btc);
+      border-color: rgba(247,147,26,0.15);
+    }
+    .btc-hero .solscan-verify:hover {
+      background: rgba(247,147,26,0.04);
+      border-color: rgba(247,147,26,0.3);
+    }
+
+    .btc-hero .btn-buy {
+      background: linear-gradient(135deg, var(--btc), #e07d10);
+    }
+    .btc-hero .btn-buy:hover {
+      box-shadow: 0 4px 16px rgba(247,147,26,0.3);
+    }
+
+    .btc-hero .product-price { color: var(--btc); }
+
+    body.btc-page .step-badge {
+      background: #F7931A !important;
+      color: #fff !important;
+    }
+    body.btc-page .step-icon {
+      background: rgba(247,147,26,0.1) !important;
+      color: #F7931A !important;
+    }
+    body.btc-page .step-line {
+      background: rgba(247,147,26,0.15) !important;
+    }
+
+    body.btc-page .reviews-tp-logo svg circle { fill: #00B67A !important; }
+    body.btc-page .reviews-stars-large svg circle { fill: #00B67A !important; }
+    body.btc-page .reviews-stars-large span { color: #00B67A; }
+    body.btc-page .reviews-cta {
+      border-color: rgba(0,182,122,0.15);
+      color: #00B67A;
+      background: rgba(0,182,122,0.04) !important;
+    }
+    body.btc-page .reviews-cta:hover {
+      background: rgba(0,182,122,0.08) !important;
+      border-color: rgba(0,182,122,0.3);
+      box-shadow: 0 8px 24px rgba(0,182,122,0.08);
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px 6px 10px;
+      background: rgba(247,147,26,0.04);
+      border: 1px solid rgba(247,147,26,0.08);
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      animation: fadeSlideUp 0.8s ease 0.1s both;
+    }
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #F7931A;
+      animation: dotPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes dotPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-bottom-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+    .hero-recent-tx {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.3px;
+      animation: fadeSlideUp 0.8s ease 0.7s both;
+      position: relative;
+    }
+    .tx-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #F7931A;
+      animation: dotPulse 1.2s ease-in-out infinite;
+    }
+    .tx-pulse {
+      position: absolute;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #F7931A;
+      opacity: 0.4;
+      animation: txPulse 1.8s ease-in-out infinite;
+    }
+    @keyframes txPulse {
+      0% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(3); opacity: 0; }
+      100% { transform: scale(3); opacity: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-bottom-row { justify-content: center; }
+      .hero-recent-tx { font-size: 10px; }
+      .btc-hero .hero-text h1 { font-size: 32px; letter-spacing: -0.8px; }
+    }
+    @media (max-width: 480px) {
+      .btc-hero .hero-text h1 { font-size: 26px; letter-spacing: -0.5px; line-height: 1.15; }
+      .btc-hero .hero-text p { font-size: 13px; margin-bottom: 20px; }
+      .btc-hero .hero-badge-pill { font-size: 9px; padding: 5px 12px 5px 8px; gap: 6px; flex-wrap:wrap; justify-content:center; }
+      .btc-hero .hero-stats-row { padding: 10px 14px; gap: 8px; }
+      .btc-hero .hero-stat-value { font-size: 16px; }
+      .btc-hero .hero-stat-label { font-size: 9px; }
+      .btc-hero .hero-buttons { flex-direction: column; gap: 10px; align-items:stretch; }
+      .btc-hero .btn-primary,.btc-hero .btn-secondary { justify-content:center; padding:14px 20px; font-size:12px; }
+      .btc-hero .hero-trustpilot { padding:8px 14px; gap:8px; }
+      .btc-hero .trustpilot-text { font-size:10px; }
+      .btc-hero .trustpilot-stars svg { width:12px; height:12px; }
+      .btc-hero .hero-stat { gap:2px; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { flex-wrap:wrap; height:auto; padding:10px 16px 8px; }
+      .logo-wrap { flex:1; }
+      .logo { font-size:16px; gap:6px; }
+      .logo img { width:16px; height:16px; }
+      .nav-dropdown-btn { width:28px; height:28px; }
+      .header-icons { margin-left:auto; gap:6px; flex-shrink:0; }
+      .header-icons .cart-btn { width:36px; height:36px; }
+      .header-icons .cart-btn i { width:16px !important; height:16px !important; }
+      .header-icons .cart-count { width:16px; height:16px; font-size:8px; top:-3px; right:-3px; }
+      .header-icons .wallet-btn { width:36px; height:36px; }
+      .header-icons .wallet-btn i { width:16px !important; height:16px !important; }
+      .header-icons .wallet-btn-dot { width:7px; height:7px; top:2px; right:2px; }
+      nav { width:100%; display:flex; align-items:center; justify-content:center; gap:4px; border-top:1px solid rgba(255,255,255,0.04); padding-top:8px; margin-top:4px; }
+      nav a { font-size:11px; padding:5px 10px; white-space:nowrap; letter-spacing:0.3px; font-weight:500; border-radius:6px; transition:background 0.2s; }
+      nav a.active { background:rgba(247,147,26,0.08); }
+      #navSignUp { font-size:11px; padding:5px 10px; }
+      .nav-user .nav-user-name { font-size:11px; max-width:80px; }
+      .nav-user { gap:6px; }
+      .nav-logout { padding:4px 10px; font-size:10px; border-radius:5px; }
+      .btc-hero .hero-text h1 { font-size: 28px; letter-spacing:-0.8px; line-height:1.2; }
+      .btc-hero .hero-text p { font-size: 13px; margin-bottom:20px; }
+      .btc-hero .hero-badge-pill { font-size:9px; padding:5px 12px 5px 8px; gap:6px; }
+      .btc-hero .hero-stats-row { padding:10px 14px; gap:8px; }
+      .btc-hero .hero-stat-value { font-size:16px; }
+      .btc-hero .hero-stat-label { font-size:9px; }
+      .btc-hero .hero-buttons { flex-direction:column; gap:10px; align-items:stretch; }
+      .btc-hero .btn-primary,.btc-hero .btn-secondary { justify-content:center; padding:14px 20px; font-size:12px; }
+      .btc-hero .hero-trustpilot { padding:8px 14px; gap:8px; }
+      .btc-hero .trustpilot-text { font-size:10px; }
+      .btc-hero .trustpilot-stars svg { width:12px; height:12px; }
+      .hero-bottom-row { justify-content:center; }
+      .hero-recent-tx { font-size:10px; }
+    }
+    @media (max-width: 370px) {
+      .header-inner { padding:8px 10px 6px; }
+      .logo { font-size:13px; gap:4px; }
+      .logo img { width:14px; height:14px; }
+      .nav-dropdown-btn { width:24px; height:24px; }
+      .nav-dropdown-btn svg { width:12px; height:12px; }
+      .header-icons { gap:3px; }
+      .header-icons .cart-btn { width:30px; height:30px; }
+      .header-icons .cart-btn i { width:13px !important; height:13px !important; }
+      .header-icons .cart-count { width:13px; height:13px; font-size:7px; top:-2px; right:-2px; }
+      .header-icons .wallet-btn { width:30px; height:30px; }
+      .header-icons .wallet-btn i { width:13px !important; height:13px !important; }
+      .header-icons .wallet-btn-dot { width:6px; height:6px; }
+      nav { gap:2px; padding-top:5px; }
+      nav a { font-size:10px; padding:4px 7px; }
+      #navSignUp { font-size:10px; padding:4px 7px; }
+      .nav-user .nav-user-name { font-size:10px; max-width:60px; }
+      .nav-user { gap:4px; }
+      .nav-logout { padding:3px 7px; font-size:9px; }
+      .btc-hero .hero-text h1 { font-size: 22px; }
+      .btc-hero .hero-text p { font-size: 12px; margin-bottom:16px; }
+      .btc-hero .hero-badge-pill { font-size:8px; padding:4px 10px 4px 6px; }
+      .btc-hero .hero-stats-row { padding:8px 10px; gap:6px; }
+      .btc-hero .hero-stat-value { font-size:14px; }
+      .btc-hero .hero-stat-label { font-size:8px; }
+      .btn-primary,.btn-secondary { padding:12px 16px; font-size:11px; }
+      .btc-hero .hero-bottom-row { flex-direction:column; align-items:center; gap:8px; }
+      .btc-hero .hero-recent-tx { font-size:9px; }
+    }
+
+    /* ===== Full BTC Identity Overrides ===== */
+
+    /* ===== Full BTC Identity Overrides ===== */
+    .logo {
+      background: linear-gradient(135deg, #F7931A, #FFA940) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+    .logo svg {
+      -webkit-text-fill-color: initial !important;
+      color: #F7931A !important;
+    }
+    nav a.active {
+      color: #F7931A !important;
+    }
+    nav a::after {
+      background: #F7931A !important;
+    }
+    .nav-user-name {
+      color: #F7931A !important;
+    }
+    .cart-btn:hover {
+      border-color: #F7931A !important;
+    }
+    .cart-count {
+      background: #F7931A !important;
+    }
+    .qty-btn:hover {
+      border-color: #F7931A !important;
+      color: #F7931A !important;
+    }
+    .cart-item-remove:hover {
+      color: #F7931A !important;
+    }
+    .checkout-btn {
+      background: linear-gradient(135deg, #F7931A, #e07d10) !important;
+    }
+    .checkout-btn:hover {
+      background: #e07d10 !important;
+      box-shadow: 0 8px 30px rgba(247,147,26,0.3) !important;
+    }
+    .cart-total-price {
+      color: #F7931A !important;
+    }
+    .support-float {
+      overflow: visible;
+      background: transparent;
+      box-shadow: none;
+      width: 112px;
+      height: 112px;
+    }
+    .support-float:hover {
+      background: transparent;
+      box-shadow: none;
+    }
+    .support-float-icon {
+      width: inherit;
+      height: inherit;
+      object-fit: contain;
+    }
+    .support-tooltip {
+      background: #1a1a20 !important;
+      color: #F7931A !important;
+    }
+    @media (max-width: 768px) {
+      .support-float { width: 84px; height: 84px; }
+    }
+    .add-to-cart:hover {
+      border-color: #F7931A !important;
+      color: #F7931A !important;
+      background: rgba(247,147,26,0.08) !important;
+    }
+    .product-card-whale {
+      border-color: rgba(247,147,26,0.2) !important;
+    }
+    .step-arrow svg {
+      stroke: #F7931A !important;
+    }
+    .modal-close:hover {
+      background: rgba(247,147,26,0.06) !important;
+      color: #F7931A !important;
+    }
+    .diagram-connector svg {
+      stroke: #F7931A !important;
+    }
+    .diagram-split-label {
+      color: #F7931A !important;
+      border-color: rgba(247,147,26,0.15) !important;
+    }
+    .diagram-node.diagram-source,
+    .diagram-node.diagram-exit {
+      border-color: rgba(247,147,26,0.2) !important;
+    }
+    .diagram-node.diagram-source svg {
+      color: #F7931A !important;
+    }
+    .pgp-copy:hover {
+      color: #F7931A !important;
+      border-color: rgba(247,147,26,0.2) !important;
+      background: rgba(247,147,26,0.08) !important;
+    }
+    .footer-link:hover {
+      color: #F7931A !important;
+    }
+    .footer-contact a {
+      color: #F7931A !important;
+    }
+    .footer-contact a:hover {
+      color: #FFA940 !important;
+    }
+    .hero-bottom-row {
+      margin-top: 4px;
+    }
+    .section-title span {
+      color: #F7931A !important;
+    }
+    .product-card:hover {
+      border-color: rgba(247,147,26,0.2) !important;
+    }
+    .product-stock.sold-out {
+      color: #ef4444 !important;
+    }
+    .badge-soldout {
+      background: #ef4444;
+      color: #fff;
+    }
+    .step-number {
+      color: #F7931A !important;
+    }
+
+    /* === TRUSTPILOT PROFILE HERO === */
+    .tp-profile {
+      background: #000; padding: 28px 24px 36px; display: flex; justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06); border-radius: 12px;
+    }
+    .tp-profile-inner {
+      width: 100%; max-width: 1060px;
+      display: flex; gap: 32px; align-items: flex-start;
+    }
+    .tp-profile-left { flex: 0 0 240px; display: flex; align-items: flex-start; gap: 14px; }
+    .tp-profile-avatar {
+      width: 84px; height: 84px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.14); background: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tp-profile-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tp-profile-identity { min-width: 0; padding-top: 6px; }
+    .tp-profile-name { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -0.3px; }
+    .tp-profile-domain {
+      display: inline-flex; align-items: center; gap: 5px; margin-top: 6px;
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
+    .tp-profile-domain svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .tp-profile-verified {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 100px; margin-left: 4px;
+      background: rgba(0,182,122,0.14); color: #00B67A;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;
+    }
+    .tp-profile-verified svg { width: 11px; height: 11px; }
+    .tp-profile-right { flex: 1; min-width: 0; }
+    .tp-profile-card {
+      background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px; padding: 20px 24px;
+    }
+    .tp-ts-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+    .tp-ts-title {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .tp-ts-title svg { width: 13px; height: 13px; color: rgba(255,255,255,0.3); }
+    .tp-ts-score { font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -1px; }
+    .tp-ts-stars { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .tp-ts-stars-link { font-size: 11px; color: rgba(255,255,255,0.4); text-decoration: underline; }
+    .tp-ts-count { font-size: 14px; font-weight: 600; color: #fff; margin-top: 8px; }
+    .tp-profile-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 18px 0 14px; }
+    .tp-recommend { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 14px; line-height: 1.5; }
+    .tp-recommend strong { color: #fff; font-size: 15px; }
+    .tp-profile-stars { display: flex; gap: 2px; }
+    .tp-profile-stars svg { width: 22px; height: 22px; display: block; }
+    .tp-profile-bars { display: flex; flex-direction: column; gap: 7px; }
+    .tp-bar-row { display: flex; align-items: center; gap: 8px; }
+    .tp-bar-label { font-size: 12px; color: rgba(255,255,255,0.55); min-width: 34px; }
+    .tp-bar-track { flex: 1; height: 7px; border-radius: 4px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    .tp-bar-fill { height: 100%; border-radius: 4px; }
+    .tp-bar-pct { font-size: 11px; color: rgba(255,255,255,0.45); min-width: 34px; text-align: right; }
+    .tp-profile-actions { display: flex; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .tp-btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 24px; border-radius: 100px;
+      background: #00B67A; color: #fff;
+      font-size: 13px; font-weight: 700; transition: background 0.15s;
+    }
+    .tp-btn-primary:hover { background: #009e68; }
+    .tp-btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 24px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.25); color: #fff;
+      font-size: 13px; font-weight: 600; transition: background 0.15s, border-color 0.15s;
+    }
+    .tp-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+    @media (max-width: 768px) {
+      .tp-profile-inner { flex-direction: column; gap: 22px; }
+      .tp-profile-left { flex: none; width: 100%; }
+      .tp-profile-avatar { width: 64px; height: 64px; }
+      .tp-profile-name { font-size: 24px; }
+      .tp-profile-identity { padding-top: 2px; }
+      .tp-profile-card { padding: 18px 16px; }
+      .tp-ts-score { font-size: 38px; }
+      .tp-profile-actions { flex-direction: column; }
+      .tp-btn-primary, .tp-btn-secondary { width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .tp-ts-stars { justify-content: flex-start; }
+      .tp-ts-stars-link { width: 100%; }
+      .tp-profile-domain { flex-wrap: wrap; }
+    }
+
+    /* === FOOTER OFFICIAL REDESIGN === */
+    .footer-inner { grid-template-columns: 1.45fr 0.85fr 0.9fr 1.15fr; gap: 36px; }
+    .footer-brand-top { flex-wrap: wrap; }
+    .footer-official-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 9px; border-radius: 100px;
+      background: rgba(20,241,149,0.07);
+      border: 1px solid rgba(20,241,149,0.22);
+      color: #14F195;
+      font-size: 8px; font-weight: 800; letter-spacing: 0.8px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .footer-assets { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 10px; }
+    .footer-asset {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 48px;
+      padding: 5px 12px; border-radius: 8px;
+      font-size: 10px; font-weight: 800; letter-spacing: 0.6px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.03);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .footer-asset:hover { transform: translateY(-2px); }
+    .footer-asset.btc { color: #F7931A; border-color: rgba(247,147,26,0.3); background: rgba(247,147,26,0.08); }
+    .footer-asset.usdt { color: #2ABE81; border-color: rgba(42,190,129,0.3); background: rgba(42,190,129,0.08); }
+    .footer-asset.ltc { color: #B6B7BB; border-color: rgba(182,183,187,0.3); background: rgba(182,183,187,0.08); }
+    .footer-vendor-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-vendor-item { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; }
+    .footer-vendor-item strong { color: var(--text-primary); }
+    .footer-vendor-sep { opacity: 0.35; margin: 0 2px; }
+    .footer-link i { opacity: 0.85; }
+    .footer-link:hover i { opacity: 1; }
+    .footer-contact { font-size: 12px; }
+    .footer-legal {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 10.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.16);
+    }
+    .footer-bottom { padding-bottom: 26px; }
+
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 560px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 22px; }
+    }
+
+    /* === TRUST STRIP PROFESSIONAL REDESIGN === */
+    .trust-badges { padding: 0 24px 24px; }
+    .trust-badges-inner {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .trust-badges-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(247,147,26,0.5), rgba(20,241,149,0.5), transparent);
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: all 0.2s;
+    }
+    .trust-item:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(247,147,26,0.22);
+      transform: translateY(-1px);
+    }
+    .trust-item-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-item-icon svg { width: 14px; height: 14px; }
+    .trust-item-text {
+      font-size: 9.5px; font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+    .trust-item-text strong { color: #fff; font-weight: 700; }
+    .trust-item-sep { width: 1px; height: 26px; background: rgba(255,255,255,0.05); }
+    .ti-secure { color: #14F195; background: rgba(20,241,149,0.08); }
+    .ti-trust { color: #00B67A; background: rgba(0,182,122,0.08); }
+    .ti-pay { color: #F7931A; background: rgba(247,147,26,0.1); }
+    .ti-escrow { color: #FACC15; background: rgba(250,204,21,0.08); }
+    .ti-ver { color: #3B82F6; background: rgba(59,130,246,0.08); }
+    .ti-refund { color: #ef4444; background: rgba(239,68,68,0.08); }
+    .ti-fast { color: #14F195; background: rgba(20,241,149,0.08); }
+    .ti-cust { color: #22d3ee; background: rgba(34,211,238,0.08); }
+
+    @media (max-width: 768px) {
+      .trust-badges { padding: 0 16px 16px; }
+      .trust-badges-inner { gap: 6px; padding: 12px; }
+      .trust-item { padding: 7px 10px; gap: 6px; }
+      .trust-item-icon { width: 24px; height: 24px; }
+      .trust-item-icon svg { width: 12px; height: 12px; }
+      .trust-item-text { font-size: 8.5px; }
+      .trust-item-sep { display: none; }
+    }
+    @media (max-width: 480px) {
+      .trust-item-text { letter-spacing: 0; }
+    }
+
+    /* === PAGE UNAVAILABLE OVERLAY — REDESIGNED === */
+    .unavailable-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background:
+        radial-gradient(ellipse at 50% 32%, rgba(247,147,26,0.09) 0%, rgba(10,10,15,0.85) 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(153,69,255,0.05) 0%, transparent 55%),
+        rgba(10,10,15,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow-y: auto;
+    }
+    .unavailable-overlay::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 42px 42px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at 50% 40%, #000 0%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 0%, transparent 75%);
+    }
+    .unavailable-card {
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      padding: 46px 40px 34px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.012) 55%, rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(247,147,26,0.07),
+        inset 0 1px 0 rgba(255,255,255,0.06);
+      overflow: hidden;
+      animation: unavailableIn 0.7s cubic-bezier(0.22,1,0.36,1) backwards;
+    }
+    @keyframes unavailableIn {
+      from { opacity: 0; transform: translateY(24px) scale(0.98); }
+      to { opacity: 1; transform: none; }
+    }
+    .unavailable-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 12%; right: 12%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, rgba(247,147,26,0.75), rgba(255,255,255,0.15), rgba(247,147,26,0.75), transparent);
+      background-size: 200% 100%;
+      animation: unavailableShine 4s ease-in-out infinite;
+    }
+    @keyframes unavailableShine {
+      0%,100% { background-position: 0% 0; }
+      50% { background-position: 100% 0; }
+    }
+    .unavailable-card::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle at 50% 0%, rgba(247,147,26,0.06), transparent 45%);
+      pointer-events: none;
+    }
+    .unavailable-emblem {
+      width: 74px; height: 74px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: radial-gradient(circle at 50% 30%, rgba(247,147,26,0.22), rgba(247,147,26,0.05));
+      border: 1px solid rgba(247,147,26,0.4);
+      color: #F7931A;
+      box-shadow: 0 0 0 6px rgba(247,147,26,0.06), 0 0 34px rgba(247,147,26,0.18);
+      position: relative;
+    }
+    .unavailable-emblem svg {
+      animation: unavailablePulse 2.6s ease-in-out infinite;
+    }
+    @keyframes unavailablePulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.08); opacity: 0.85; }
+    }
+    .unavailable-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+      background: rgba(247,147,26,0.09);
+      border: 1px solid rgba(247,147,26,0.28);
+      color: #F7931A;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    .unavailable-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.6px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .unavailable-id {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: rgba(255,255,255,0.32);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .unavailable-desc {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .unavailable-desc strong { color: rgba(255,255,255,0.85); }
+    .unavailable-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      text-align: left;
+      margin-bottom: 18px;
+      padding: 18px 18px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .unavailable-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.62);
+    }
+    .unavailable-item-icon {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      margin-top: 1px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(247,147,26,0.09);
+      border: 1px solid rgba(247,147,26,0.18);
+      color: #F7931A;
+    }
+    .unavailable-item strong { color: rgba(255,255,255,0.88); font-weight: 600; }
+    .unavailable-note {
+      font-size: 12px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.42);
+      margin-bottom: 22px;
+      padding: 13px 16px;
+      border-radius: 12px;
+      background: rgba(20,241,149,0.055);
+      border: 1px solid rgba(20,241,149,0.14);
+    }
+    .unavailable-note strong { color: rgba(20,241,149,0.85); font-weight: 600; }
+    .unavailable-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .unavailable-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, #F7931A, #d47e15);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(247,147,26,0.3);
+      transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+    }
+    .unavailable-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(247,147,26,0.4);
+      filter: brightness(1.06);
+    }
+    .unavailable-btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.16);
+      color: rgba(255,255,255,0.75);
+      box-shadow: none;
+    }
+    .unavailable-btn.ghost:hover {
+      border-color: rgba(255,255,255,0.35);
+      color: #fff;
+      background: rgba(255,255,255,0.05);
+    }
+    .unavailable-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 10.5px;
+      letter-spacing: 0.3px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+    }
+    .unavailable-footer .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+    @media (max-width: 480px) {
+      .unavailable-card { padding: 36px 20px 26px; }
+      .unavailable-title { font-size: 21px; }
+      .unavailable-actions { flex-direction: column; }
+      .unavailable-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="btc-page">
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tp-star" viewBox="0 0 96 96">
+        <path fill="currentColor" d="M48,64.7 L62.6,61 L68.7,79.8 L48,64.7 Z M81.6,40.4 L55.9,40.4 L48,16.2 L40.1,40.4 L14.4,40.4 L35.2,55.4 L27.3,79.6 L48.1,64.6 L60.9,55.4 L81.6,40.4 L81.6,40.4 L81.6,40.4 L81.6,40.4 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <a href="#" class="logo">
+          <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" style="width:18px;height:18px;">
+          BTC DORMANT
+        </a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" onclick="toggleDropdown(event)" id="navDropdownBtn" aria-label="Menu">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a class="nav-dropdown-item" href="https://blacksol.quotex-norepily.workers.dev/Home">
+              <svg viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:12px;"><defs><linearGradient id="solGrad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9945FF"/><stop offset="100%" stop-color="#14F195"/></linearGradient></defs><path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#solGrad)"/><path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#solGrad)"/><path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#solGrad)"/></svg>
+              BLACK SOL
+            </a>
+            <a class="nav-dropdown-item" href="signup.html">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              Sign Up
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-icons">
+        <button class="cart-btn" onclick="toggleCart()">
+          <i data-lucide="shopping-bag" style="width:18px;height:18px;"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="wallet-btn" onclick="toggleWallet()" id="walletBtn" title="My Wallet">
+          <i data-lucide="wallet" style="width:18px;height:18px;"></i>
+          <span class="wallet-btn-dot" id="walletDot"></span>
+        </button>
+      </div>
+      <nav>
+        <a href="https://blacksol.quotex-norepily.workers.dev/Home">Home</a>
+        <a href="#" class="active">Bitcoin</a>
+        <a href="https://blacksol.quotex-norepily.workers.dev/Home#products">Wallets</a>
+        <a href="signup.html" id="navSignUp">Sign Up</a>
+        <div class="nav-user hidden" id="navUser">
+          <span class="nav-user-name" id="navUserName">User</span>
+          <button class="nav-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero btc-hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-glow-3"></div>
+      <div class="hero-bg-img" style="position:absolute;inset:0;z-index:0;">
+        <img src="1/cd28a072-bb87-4261-bf9c-0f93f301b377.png" alt="" style="width:100%;height:100%;object-fit:cover;opacity:0.15;pointer-events:none;">
+      </div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge-pill">
+          <span class="pill-dot"></span>
+          <span>100% On-Chain Verified · 3,200+ Wallets Delivered</span>
+        </div>
+
+        <h1>Dormant Bitcoin<br><span class="highlight">Wallet Recovery</span></h1>
+        <p>Verified dormant BTC wallets with confirmed on-chain balances — private keys tested, WIF format ready, delivered instantly after payment.</p>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat">
+            <span class="hero-stat-value" id="totalBtc">0</span>
+            <span class="hero-stat-label">BTC Recovered</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">12+</span>
+            <span class="hero-stat-label">Verified Sources</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">99.2%</span>
+            <span class="hero-stat-label">Delivery Rate</span>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary">
+            <i data-lucide="shopping-bag" style="width:18px;height:18px;"></i>
+            BROWSE WALLETS
+          </a>
+          <a href="#" class="btn-secondary" onclick="event.preventDefault(); openDumpModal();">
+            <i data-lucide="search" style="width:18px;height:18px;"></i>
+            HOW IT WORKS
+          </a>
+        </div>
+        <div class="hero-bottom-row">
+          <a href="reviews.html" class="hero-trustpilot">
+            <div class="trustpilot-stars">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7931A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7931A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7931A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7931A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#F7931A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <span class="trustpilot-text">TrustScore <strong>4.8</strong> · 1,200+ reviews</span>
+            <svg class="trustpilot-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <span class="hero-recent-tx">
+            <span class="tx-dot"></span>
+            <span class="tx-pulse"></span>
+            142 verifications today
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start Guide -->
+  <section class="guide-section">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Quick Start <span>Guide</span></div>
+        <div class="section-subtitle">How to claim your dumped Bitcoin wallet in 5 simple steps</div>
+      </div>
+    </div>
+    <div class="guide-steps">
+      <div class="guide-step">
+        <div class="step-line"></div>
+        <div class="step-badge">1</div>
+        <div class="step-icon"><i data-lucide="shopping-bag" style="width:22px;height:22px;"></i></div>
+        <div class="step-content">
+          <div class="step-title">Select a Wallet & Complete Payment</div>
+          <div class="step-desc">Browse the available BTC wallets below and click <strong>BUY NOW</strong>. Complete your payment via USDT (TRC-20), BTC, or LTC. Your order is reserved immediately upon checkout.</div>
+        </div>
+        <div class="step-arrow"><i data-lucide="chevron-right" style="width:20px;height:20px;"></i></div>
+      </div>
+      <div class="guide-step">
+        <div class="step-line"></div>
+        <div class="step-badge">2</div>
+        <div class="step-icon"><i data-lucide="check-circle" style="width:22px;height:22px;"></i></div>
+        <div class="step-content">
+          <div class="step-title">Payment Confirmation & Wallet Delivery</div>
+          <div class="step-desc">Once your payment is detected and verified by our system, the wallet details — including the <strong>private key and WIF format</strong> — are delivered instantly within the checkout page. No email required.</div>
+        </div>
+        <div class="step-arrow"><i data-lucide="chevron-right" style="width:20px;height:20px;"></i></div>
+      </div>
+      <div class="guide-step">
+        <div class="step-line"></div>
+        <div class="step-badge">3</div>
+        <div class="step-icon"><i data-lucide="wallet" style="width:22px;height:22px;"></i></div>
+        <div class="step-content">
+          <div class="step-title">Install a Bitcoin Wallet</div>
+          <div class="step-desc">Download <strong>Electrum</strong>, <strong>BlueWallet</strong>, or use <strong>Sparrow Wallet</strong> for desktop — widely recognized as the most secure Bitcoin wallet providers with full key control.</div>
+        </div>
+        <div class="step-arrow"><i data-lucide="chevron-right" style="width:20px;height:20px;"></i></div>
+      </div>
+      <div class="guide-step">
+        <div class="step-line"></div>
+        <div class="step-badge">4</div>
+        <div class="step-icon"><i data-lucide="key-round" style="width:22px;height:22px;"></i></div>
+        <div class="step-content">
+          <div class="step-title">Import Wallet Using Private Key</div>
+          <div class="step-desc">Open your wallet → select <strong>"Import wallet"</strong> or <strong>"Sweep private key"</strong> → paste the WIF private key received on the checkout page. The dumped BTC is now under your full control.</div>
+        </div>
+        <div class="step-arrow"><i data-lucide="chevron-right" style="width:20px;height:20px;"></i></div>
+      </div>
+      <div class="guide-step">
+        <div class="step-line" style="display:none;"></div>
+        <div class="step-badge">5</div>
+        <div class="step-icon"><i data-lucide="arrow-up-right" style="width:22px;height:22px;"></i></div>
+        <div class="step-content">
+          <div class="step-title">Transfer BTC & Verify Balance</div>
+          <div class="step-desc">Transfer BTC to your personal wallet or exchange address. Use the <strong>"Verify on Blockchain"</strong> button on each product to confirm the on-chain balance prior to purchase.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products-section btc-hero" id="products">
+    <div class="neon-bg">
+      <div class="neon-line neon-h-1"></div>
+      <div class="neon-line neon-h-2"></div>
+      <div class="neon-line neon-h-3"></div>
+      <div class="neon-line neon-v-1"></div>
+      <div class="neon-line neon-v-2"></div>
+      <div class="neon-dot neon-dot-1"></div>
+      <div class="neon-dot neon-dot-2"></div>
+      <div class="neon-dot neon-dot-3"></div>
+      <div class="neon-dot neon-dot-4"></div>
+      <div class="neon-dot neon-dot-5"></div>
+    </div>
+    <div class="disclaimer-bar">
+      <i data-lucide="shield" style="width:16px;height:16px;flex-shrink:0;"></i>
+      <span>Disclaimer: All wallets are sold as-is with no guarantee of future activity or balance retention. By purchasing, you acknowledge that the seller bears no responsibility for any changes to wallet contents after the transaction is complete.</span>
+    </div>
+    <div class="section-header">
+      <div>
+        <div class="section-title">Bitcoin Wallet <span>Inventory</span></div>
+        <div class="section-subtitle">Dormant BTC wallets with verified on-chain balances — private keys and WIF formats included, tested, and ready for sweep</div>
+      </div>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <div class="reviews-inner">
+
+      <!-- Trustpilot Profile Hero -->
+      <div class="tp-profile">
+        <div class="tp-profile-inner">
+          <div class="tp-profile-left">
+            <div class="tp-profile-avatar">
+              <img src="1/1627ac24-e9a5-4ee6-a151-ae4a434484ca.png" alt="BLACK SOL">
+            </div>
+            <div class="tp-profile-identity">
+              <div class="tp-profile-name">BLACK SOL</div>
+              <div class="tp-profile-domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+                <span>blacksol.io</span>
+                <span class="tp-profile-verified">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+                  Verified
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="tp-profile-right">
+            <div class="tp-profile-card">
+              <div class="tp-ts-head">
+                <div class="tp-ts-title">
+                  TrustScore
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                </div>
+                <div class="tp-ts-score" style="color:#00B67A;">4.8</div>
+              </div>
+              <div class="tp-ts-stars">
+                <div class="tp-profile-stars">
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                </div>
+                <a class="tp-ts-stars-link" href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Read more about TrustScore reviews</a>
+              </div>
+              <div class="tp-ts-count">2,600+ reviews</div>
+              <div class="tp-profile-divider"></div>
+              <div class="tp-recommend"><strong>95%</strong> of customers recommend this company</div>
+              <div class="tp-profile-bars">
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">5★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:85%;background:#00B67A;"></div></div>
+                  <span class="tp-bar-pct">85%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">4★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:10%;background:#73CF11;"></div></div>
+                  <span class="tp-bar-pct">10%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">3★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:3%;background:#FFCE00;"></div></div>
+                  <span class="tp-bar-pct">3%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">2★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:1%;background:#FF931F;"></div></div>
+                  <span class="tp-bar-pct">1%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">1★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:1%;background:#E54335;"></div></div>
+                  <span class="tp-bar-pct">1%</span>
+                </div>
+              </div>
+              <div class="tp-profile-actions">
+                <a class="tp-btn-primary" href="reviews.html">Write a review</a>
+                <a class="tp-btn-secondary" href="#products">Visit website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-divider"></div>
+
+      <div class="reviews-stats">
+        <div class="reviews-stat-item">
+          <span class="reviews-stat-num">2,600+</span>
+          <span class="reviews-stat-lbl">Total Reviews</span>
+        </div>
+        <div class="reviews-stat-dot"></div>
+        <div class="reviews-stat-item">
+          <span class="reviews-stat-num">4.8 ★★★★★</span>
+          <span class="reviews-stat-lbl">Average Rating</span>
+        </div>
+        <div class="reviews-stat-dot"></div>
+        <div class="reviews-stat-item">
+          <span class="reviews-stat-num">98%</span>
+          <span class="reviews-stat-lbl">Delivery Success</span>
+        </div>
+      </div>
+
+      <a href="reviews.html" class="reviews-cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>
+        View All Reviews on Trustpilot
+      </a>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" onclick="toggleCart()"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-price" id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="goToBtcCheckout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast-icon"></span>
+  </div>
+
+  <!-- Auth Required Modal -->
+  <div class="auth-modal-overlay" id="authModal" style="display:none;" onclick="closeAuthModal(event)">
+    <div class="auth-modal">
+      <button class="auth-modal-close" onclick="closeAuthModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="auth-modal-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="auth-modal-title">Account Required</div>
+      <div class="auth-modal-sub">You need to create an account or sign in to access this feature</div>
+      <div class="auth-modal-buttons">
+        <a href="signup.html" class="auth-modal-btn primary">Create Account</a>
+        <a href="signin.html" class="auth-modal-btn secondary">I Already Have an Account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dump Process Modal -->
+  <div class="modal-overlay" id="dumpModal" onclick="closeDumpModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDumpModal()"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+
+      <div class="modal-step">
+        <div class="step-number">01</div>
+        <div class="step-body">
+          <h3>Purchase &amp; Receive</h3>
+          <p>Select a dumped BTC wallet from the inventory. Upon purchase, you receive the private key or WIF format instantly — full control transferred immediately. No KYC, no delays.</p>
+        </div>
+      </div>
+
+      <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <div class="modal-step">
+        <div class="step-number">02</div>
+        <div class="step-body">
+          <h3>Verify &amp; Prepare</h3>
+          <p>Import the wallet into your preferred interface (Electrum, Sparrow, BlueWallet). Confirm the BTC balance, check for unspent outputs, and ensure the wallet is clean with no freeze authorities.</p>
+        </div>
+      </div>
+
+      <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <div class="modal-step">
+        <div class="step-number">03</div>
+        <div class="step-body">
+          <h3>Connect &amp; Dump</h3>
+          <p>Link the wallet to your target platform. Execute transfers across exchanges, betting sites, or mixers. Distribute amounts strategically to avoid flags — each destination gets a fraction of the total.</p>
+        </div>
+      </div>
+
+      <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <div class="modal-step">
+        <div class="step-number">04</div>
+        <div class="step-body">
+          <h3>Liquidate &amp; Exit</h3>
+          <p>Withdraw profits to your personal wallet or exchange account. The dumped wallet is now spent — no trace back, no recovery. Repeat the cycle with a fresh wallet from the inventory.</p>
+        </div>
+      </div>
+
+      <div class="modal-diagram">
+        <div class="diagram-title">Dump Flow Architecture</div>
+        <div class="diagram-grid">
+          <div class="diagram-node diagram-source">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Dumped Wallet</span>
+          </div>
+
+          <div class="diagram-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7931A" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+
+          <div class="diagram-split">
+            <div class="diagram-split-line"></div>
+            <div class="diagram-split-label">Split &amp; Route</div>
+          </div>
+
+          <div class="diagram-row">
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span>Exchanges<br><small>Binance · Kraken</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+              <span>P2P Markets<br><small>LocalBitcoins · Paxful</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M6 4l2 4M18 4l-2 4M4 16l3-2M20 16l-3-2M12 22v-6M8 18l-1-3M16 18l1-3"/></svg>
+              <span>Mixers<br><small>Chipmixer · Sinbad</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Casinos<br><small>Stake · BC.Game</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>Lightning<br><small>Wallet · Nodes</small></span>
+            </div>
+          </div>
+
+          <div class="diagram-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7931A" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+
+          <div class="diagram-node diagram-exit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+            <span>Liquidated · Exited</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bg">
+      <div class="footer-glow"></div>
+    </div>
+    <div class="footer-inner">
+
+      <div class="footer-section">
+        <div class="footer-brand-top">
+          <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" style="width:20px;height:20px;">
+          <span class="footer-brand-text-btc">BTC DORMANT</span>
+          <span class="footer-official-badge">
+            <i data-lucide="badge-check" style="width:11px;height:11px;"></i>
+            Verified Operator
+          </span>
+        </div>
+        <div class="footer-desc">
+          Premium recovered Bitcoin wallets with verified on-chain balances. Full private-key access, instant delivery, escrow-protected checkout — no KYC required.
+        </div>
+        <div class="footer-assets">
+          <span class="footer-asset btc">BTC</span>
+          <span class="footer-asset usdt">USDT</span>
+          <span class="footer-asset ltc">LTC</span>
+        </div>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="footer-stat-value">3,200+</span>
+            <span class="footer-stat-label">Sales Completed</span>
+          </div>
+          <div class="footer-stat">
+            <span class="footer-stat-value">5.7+</span>
+            <span class="footer-stat-label">BTC Circulated</span>
+          </div>
+        </div>
+        <div class="footer-vendor-row">
+          <span class="footer-vendor-item"><i data-lucide="landmark" style="width:12px;height:12px;color:#F7931A;"></i> <strong>BTC DORMANT OPERATIONS</strong></span>
+          <span class="footer-vendor-sep">•</span>
+          <span class="footer-vendor-item"><i data-lucide="shield-check" style="width:12px;height:12px;color:#14F195;"></i> <strong>Escrow-backed</strong></span>
+          <span class="footer-vendor-sep">•</span>
+          <span class="footer-vendor-item"><i data-lucide="clock" style="width:12px;height:12px;color:#60A5FA;"></i> <strong>24/7</strong> operations</span>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-section-title">Platform</div>
+        <a href="Home.html" class="footer-link">
+          <i data-lucide="home" style="width:13px;height:13px;color:#9945FF;"></i>
+          Home
+        </a>
+        <a href="#" class="footer-link">
+          <i data-lucide="bitcoin" style="width:13px;height:13px;color:#F7931A;"></i>
+          Bitcoin Wallets
+        </a>
+        <a href="signup.html" class="footer-link">
+          <i data-lucide="user-plus" style="width:13px;height:13px;color:#9945FF;"></i>
+          Create Account
+        </a>
+        <a href="signin.html" class="footer-link">
+          <i data-lucide="log-in" style="width:13px;height:13px;color:#60A5FA;"></i>
+          Sign In
+        </a>
+        <a href="support.html" class="footer-link">
+          <i data-lucide="headset" style="width:13px;height:13px;color:#60A5FA;"></i>
+          Support
+        </a>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-section-title">Explorers &amp; Tools</div>
+        <a href="https://blockchain.info/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="globe" style="width:13px;height:13px;color:#F7931A;"></i>
+          Blockchain Explorer
+        </a>
+        <a href="https://mempool.space/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="activity" style="width:13px;height:13px;color:#14F195;"></i>
+          Mempool.space
+        </a>
+        <a href="https://electrum.org/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="shield" style="width:13px;height:13px;color:#F7931A;"></i>
+          Electrum Wallet
+        </a>
+        <a href="https://coingecko.com/en/coins/bitcoin" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="trending-up" style="width:13px;height:13px;color:#14F195;"></i>
+          BTC Price — CoinGecko
+        </a>
+        <a href="legal.html" class="footer-link">
+          <i data-lucide="scroll-text" style="width:13px;height:13px;color:#9945FF;"></i>
+          Terms of Service
+        </a>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-section-title">Compliance &amp; Security</div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Escrow-protected checkout</span>
+        </div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>PGP-encrypted communications</span>
+        </div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Non-custodial · self-custody keys</span>
+        </div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span>Risk disclosure &amp; AML policy</span>
+        </div>
+        <div class="footer-pgp-row">
+          <code class="pgp-key">09BA 9522 83D7 4740 B4DB  5625 42AD 7947 1A2B 3C4D</code>
+          <button class="pgp-copy" onclick="copyPGP()">Copy</button>
+        </div>
+        <div class="footer-badges">
+          <span class="footer-badge">Since 2024</span>
+          <span class="footer-badge">3.2K+ Sales</span>
+          <span class="footer-badge">XMR Escrow</span>
+          <span class="footer-badge">Instant Delivery</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-legal">
+      Trading digital assets involves substantial risk and can result in total loss. Wallets are supplied "as-is" with no guarantees of future balance retention — always verify balances on-chain before purchasing.
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 BTC DORMANT. All rights reserved.</div>
+      <div class="footer-tagline">Don't trust, verify.</div>
+    </div>
+  </footer>
+
+  <div class="trust-badges">
+    <div class="trust-badges-inner">
+      <div class="trust-item">
+        <span class="trust-item-icon ti-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span class="trust-item-text">256-Bit SSL Encryption</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-trust"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="trust-item-text">Trustpilot <strong>4.8</strong> ★★★★★</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg></span>
+        <span class="trust-item-text">USDT · BTC · LTC</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-escrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+        <span class="trust-item-text">Escrow Protected</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01L8 10"/></svg></span>
+        <span class="trust-item-text">Verified Operator</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-refund"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>
+        <span class="trust-item-text">100% Money-Back</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-fast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+        <span class="trust-item-text">Instant Delivery</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-cust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+        <span class="trust-item-text">Non-Custodial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Support Button -->
+  <button class="support-float" onclick="window.location.href='support.html'" aria-label="Support">
+    <img src="8e0ae981-86d9-4d04-8f5c-147f566a1bc8.png" alt="Support" class="support-float-icon">
+    <span class="support-tooltip">Contact Support</span>
+  </button>
+
+  <script>
+    // ===== BTC Product Data =====
+    const btcProducts = [
+      { id: 102, title: 'BTC DORMANT WALLET', btc: 0.015, desc: 'Budget recovered wallet from inactive exchange account. Private key access.', price: 55, stock: 8, icon: 'landmark', badge: null, rating: 4.6, addr: '1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2' },
+      { id: 103, title: 'BTC DORMANT WALLET', btc: 0.022, desc: 'Quick-access wallet sourced from abandoned betting platform. WIF tested.', price: 55, stock: 9, icon: 'zap', badge: null, rating: 4.5, addr: '3Fh4DBQqSWAszBvqBDagB17bAwFxoWDeLk' },
+      { id: 104, title: 'BTC DORMANT WALLET', btc: 0.028, desc: 'Recovered seed phrase wallet, fully sweepable. No historical txns.', price: 55, stock: 7, icon: 'key-round', badge: null, rating: 4.5, addr: '3L6u9Vfmzm22yDZiguF7pkPkEGX3AbcUfL' },
+      { id: 105, title: 'BTC DORMANT WALLET', btc: 0.176, desc: 'Clean wallet with zero transaction history. Compressed WIF format.', price: 55, stock: 10, icon: 'droplets', badge: 'new', rating: 4.7, addr: 'bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq' },
+      { id: 106, title: 'BTC DORMANT WALLET', btc: 0.085, desc: 'Mid-balance wallet ideal for multi-platform distribution. Key tested.', price: 55, stock: 7, icon: 'target', badge: null, rating: 4.6, addr: 'bc1qvv4dsck69ea5dkw2q74eu5t090g8lslnpxetyz' },
+      { id: 107, title: 'BTC DORMANT WALLET', btc: 0.11, desc: 'Verified active address with confirmed spendable outputs. No flags.', price: 60, stock: 11, icon: 'check-circle', badge: null, rating: 4.7, addr: 'bc1qz9lata05aenkfgq6r0gqpsuxrz9788y8wg8p6x' },
+      { id: 108, title: 'BTC DORMANT WALLET', btc: 3.69, desc: 'High-potential wallet sourced from darknet marketplace closure.', price: 66, stock: 5, icon: 'trending-up', badge: 'popular', rating: 4.8, addr: 'bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh' },
+      { id: 109, title: 'BTC DORMANT WALLET', btc: 0.023, desc: 'Pristine wallet with full key access and confirmed balance.', price: 76, stock: 10, icon: 'shield', badge: null, rating: 4.7, addr: '1P5ZEDWTKTFGxQjZphgWPQUpe554WKDfHQ' },
+      { id: 110, title: 'BTC DORMANT WALLET', btc: 0.13, desc: 'Premium recovered wallet with instant sweep capability.', price: 87, stock: 6, icon: 'gem', badge: 'popular', rating: 4.8, addr: 'bc1qz0s7q0g3c2rfz6gnglxj5qk0lrl6pk8hegcnaz' },
+      { id: 111, title: 'BTC DORMANT WALLET', btc: 0.18, desc: 'High-balance wallet from institutional account recovery.', price: 101, stock: 8, icon: 'crown', badge: 'popular', rating: 4.8, addr: '3EFJJaj8sA5LxE6jX47JZzHYwFwP7LJVm1' },
+      { id: 112, title: 'BTC DORMANT WALLET', btc: 0.082, desc: 'Full seed phrase recovered, all keys verified and working.', price: 144, stock: 9, icon: 'lock', badge: 'new', rating: 4.9, addr: '1Lbcfr7sAHTD9CgdQo3HTMTkV8LK4ZnX71' },
+      { id: 113, title: 'BTC DORMANT WALLET', btc: 0.45, desc: 'Whale-grade wallet with substantial confirmed balance.', price: 202, stock: 5, icon: 'diamond', badge: 'whale', rating: 4.9, addr: 'bc1qr6tz2vzmfn0fhumt6gutttzy8y97eamjxc400c' },
+      { id: 114, title: 'BTC DORMANT WALLET', btc: 0.72, desc: 'Institutional-grade recovery — highest available balance.', price: 298, stock: 6, icon: 'diamond', badge: 'whale', rating: 4.9, addr: 'bc1q5yu8wl6cyrfrl097tc6fq0vquxwdvqxvwz98y548cea5sgpr434s6max5t' },
+    ];
+
+    let btcCart = [];
+    try { btcCart = JSON.parse(localStorage.getItem('btcCart') || '[]'); } catch { btcCart = []; }
+
+    function getBtcStockQty(id) {
+      const product = btcProducts.find(p => p.id === id);
+      if (product && product.stock === 0) return 0;
+      const key = 'btc_qty_v3_' + id;
+      let qty = localStorage.getItem(key);
+      if (!qty) {
+        qty = Math.floor(Math.random() * 7) + 5;
+        localStorage.setItem(key, qty);
+      }
+      return parseInt(qty);
+    }
+
+    function renderBtcProducts() {
+      const grid = document.getElementById('productsGrid');
+
+      grid.innerHTML = btcProducts.map(p => {
+        const inCart = btcCart.find(c => c.id === p.id);
+        const qty = getBtcStockQty(p.id);
+        const badgeClass = qty === 0 ? 'badge-soldout' : p.badge === 'new' ? 'badge-new' : p.badge === 'popular' ? 'badge-popular' : p.badge === 'whale' ? 'badge-whale' : '';
+        const badgeText = qty === 0 ? 'SOLD OUT' : p.badge === 'new' ? 'New' : p.badge === 'popular' ? 'Popular' : p.badge === 'whale' ? 'WHALE' : '';
+        const stars = '★'.repeat(Math.floor(p.rating)) + (p.rating % 1 >= 0.5 ? '½' : '');
+
+        const whaleClass = p.badge === 'whale' ? ' product-card-whale' : '';
+        return `
+          <div class="product-card${whaleClass}">
+            <div class="product-image" style="background: var(--bg-secondary);">
+              ${badgeText ? '<span class="badge ' + badgeClass + '">' + badgeText + '</span>' : ''}
+              <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" style="width:100%;height:100%;object-fit:contain;padding:12px;position:absolute;top:0;left:0;">
+              <div class="btc-watermark" style="color:#F7931A;">${p.btc}<span class="btc-unit">BTC</span></div>
+              <div style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.5);border-radius:8px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);">
+                <i data-lucide="${p.icon}" style="width:16px;height:16px;color:#fff;"></i>
+              </div>
+            </div>
+            <div class="product-info">
+              <div class="product-title">${p.title} <span style="color:#F7931A;font-size:14px;font-weight:400;">${p.btc} BTC</span></div>
+              <div class="product-desc">${p.desc}</div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+                <span style="color:#f59e0b;font-size:12px;">${stars}</span>
+                <span class="product-stock${qty === 0 ? ' sold-out' : qty <= 7 ? ' low' : ''}">${qty === 0 ? 'Sold Out' : qty + ' in stock'}</span>
+              </div>
+              ${qty === 0 ? '' : `<a href="https://blockchain.info/address/${p.addr}" target="_blank" rel="noopener" class="solscan-verify" style="color:#F7931A;border-color:rgba(247,147,26,0.15);" title="Verify UTXO on Blockchain.com">
+                <i data-lucide="external-link" style="width:12px;height:12px;"></i> Verify UTXO
+              </a>`}
+              <div class="product-footer">
+                <div class="product-price" style="color:#F7931A;">$${p.price}</div>
+                <div class="product-actions">
+                  <button class="btn-buy" style="background:linear-gradient(135deg,#F7931A,#e07d10);${qty === 0 ? 'opacity:0.4;cursor:not-allowed;' : ''}" ${qty === 0 ? 'disabled' : ''} onclick="${qty === 0 ? '' : "buyWithAuth(" + p.id + ")"}">${qty === 0 ? 'SOLD OUT' : 'BUY NOW'}</button>
+                  <button class="add-to-cart" onclick="addBtcToCart(${p.id})" ${inCart ? 'style="background:#F7931A;border-color:#F7931A;color:#fff;"' : ''} ${qty === 0 ? 'style="opacity:0.4;cursor:not-allowed;" disabled' : ''}>
+                    <i data-lucide="shopping-cart" style="width:16px;height:16px;"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function addBtcToCart(id) {
+      const existing = btcCart.find(c => c.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        const product = btcProducts.find(p => p.id === id);
+        btcCart.push({ ...product, qty: 1 });
+      }
+      updateBtcCart();
+      showToast('Added to cart', '+');
+    }
+
+    function removeBtcFromCart(id) {
+      btcCart = btcCart.filter(c => c.id !== id);
+      updateBtcCart();
+    }
+
+    function changeBtcQty(id, delta) {
+      const item = btcCart.find(c => c.id === id);
+      if (item) {
+        item.qty += delta;
+        if (item.qty <= 0) {
+          removeBtcFromCart(id);
+          return;
+        }
+        updateBtcCart();
+      }
+    }
+
+    function updateBtcCart() {
+      localStorage.setItem('btcCart', JSON.stringify(btcCart));
+      renderBtcCart();
+      updateBtcCartCount();
+
+      const total = btcCart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      document.getElementById('cartTotal').textContent = '$' + total;
+    }
+
+    function updateBtcCartCount() {
+      const count = btcCart.reduce((sum, item) => sum + item.qty, 0);
+      const badge = document.getElementById('cartCount');
+      if (count > 0) {
+        badge.textContent = count;
+        badge.classList.add('visible');
+      } else {
+        badge.classList.remove('visible');
+      }
+    }
+
+    function renderBtcCart() {
+      const container = document.getElementById('cartItems');
+
+      if (btcCart.length === 0) {
+        container.innerHTML = '<div class="cart-empty"><div class="cart-empty-icon"><i data-lucide="shopping-bag" style="width:40px;height:40px;color:var(--text-muted);"></i></div><p>Your cart is empty</p></div>';
+        return;
+      }
+
+      container.innerHTML = btcCart.map(item => '<div class="cart-item"><div class="cart-item-icon"><i data-lucide="wallet" style="width:24px;height:24px;"></i></div><div class="cart-item-info"><div class="cart-item-title">' + item.title + '</div><div class="cart-item-price">$' + (item.price * item.qty) + '</div></div><div class="cart-item-qty"><button class="qty-btn" onclick="changeBtcQty(' + item.id + ', -1)">\u2212</button><span class="qty-num">' + item.qty + '</span><button class="qty-btn" onclick="changeBtcQty(' + item.id + ', 1)">+</button></div><button class="cart-item-remove" onclick="removeBtcFromCart(' + item.id + ')">\u2715</button></div>').join('');
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function toggleCart() {
+      document.getElementById('cartOverlay').classList.toggle('open');
+      document.getElementById('cartSidebar').classList.toggle('open');
+    }
+
+    function goToBtcCheckout() {
+      if (!btcCart || btcCart.length === 0) {
+        showToast('Cart is empty', '!');
+        return;
+      }
+      if (!requireAuth()) return;
+      localStorage.setItem('btcCheckoutCart', JSON.stringify(btcCart));
+      window.location.href = 'checkout.html?btcCart=1';
+    }
+
+    function showToast(msg, icon) {
+      if (!icon) icon = '\u2713';
+      const toast = document.getElementById('toast');
+      toast.innerHTML = '<span class="toast-icon">' + icon + '</span> ' + msg;
+      toast.classList.add('show');
+      clearTimeout(toast._timeout);
+      toast._timeout = setTimeout(function() { toast.classList.remove('show'); }, 2000);
+    }
+
+    function openDumpModal() {
+      document.getElementById('dumpModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDumpModal(e) {
+      if (e && e.target !== document.getElementById('dumpModal')) return;
+      document.getElementById('dumpModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function copyPGP() {
+      const key = document.querySelector('.pgp-key');
+      if (!key) return;
+      navigator.clipboard.writeText(key.textContent).catch(function() {});
+      const btn = document.querySelector('.pgp-copy');
+      const og = btn.textContent;
+      btn.textContent = 'Copied';
+      setTimeout(function() { btn.textContent = og; }, 2000);
+    }
+
+    function checkAuth() {
+      var data;
+      try { data = JSON.parse(localStorage.getItem('blackSolUser')); } catch(e) { data = null; }
+      if (!data || !data.registered) {
+        var guests = ['BTC Hunter', 'Wallet Seeker', 'SOL Trader', 'BTC Maxi', 'Dump Master', 'Key Finder', 'Chain Walker', 'Ghost Trader', 'Dark Arbit', 'Sweeper Pro'];
+        var name = guests[Math.floor(Math.random() * guests.length)] + Math.floor(Math.random() * 1000);
+        data = { registered: true, username: name };
+        localStorage.setItem('blackSolUser', JSON.stringify(data));
+      }
+      return data;
+    }
+    function requireAuth() { return true; }
+    function closeAuthModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('authModal').style.display = 'none';
+    }
+    function buyWithAuth(productId) {
+      checkAuth();
+      window.open(productId ? 'checkout.html?id=' + productId : 'checkout.html', '_blank');
+    }
+    function updateAuthUI() {
+      const userData = JSON.parse(localStorage.getItem('blackSolUser') || 'null');
+      const signUpLink = document.getElementById('navSignUp');
+      const userDiv = document.getElementById('navUser');
+      const userName = document.getElementById('navUserName');
+      if (userData && userData.registered) {
+        signUpLink.style.display = 'none';
+        userDiv.classList.remove('hidden');
+        userName.textContent = userData.username || 'User';
+      } else {
+        signUpLink.style.display = '';
+        userDiv.classList.add('hidden');
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('blackSolUser');
+      updateAuthUI();
+      showToast('Logged out successfully', '\u2192');
+    }
+
+    function initBtcCounter() {
+      const el = document.getElementById('totalBtc');
+      const total = 5.71;
+      let start = null;
+      const duration = 2000;
+
+      function animate(timestamp) {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * total * 10) / 10;
+        el.textContent = current.toLocaleString('en-US') + ' BTC+';
+        if (progress < 1) requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+      var header = document.getElementById('header');
+      var currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScroll = currentScroll;
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initBtcCounter();
+      renderBtcProducts();
+      updateBtcCart();
+      updateAuthUI();
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+  </script>
+
+  <!-- Wallet Sidebar Overlay -->
+  <div class="wallet-overlay" id="walletOverlay" onclick="toggleWallet()"></div>
+
+  <!-- Wallet Sidebar -->
+  <div class="wallet-sidebar" id="walletSidebar">
+    <div class="wallet-sidebar-header">
+      <div class="wallet-sidebar-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>
+        My Wallet
+      </div>
+      <button class="wallet-sidebar-close" onclick="toggleWallet()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="wallet-balance-section">
+      <div class="wallet-balance-label">Available Balance</div>
+      <div class="wallet-balance-amount">$<span id="walletBalance">0.00</span></div>
+      <div class="wallet-balance-usd">≈ <strong id="walletBalanceUsd">$0.00</strong> USD</div>
+    </div>
+
+    <div class="wallet-actions">
+      <button class="wallet-action-btn primary" onclick="showWalletDeposit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit
+      </button>
+      <button class="wallet-action-btn" onclick="requireWalletFunds()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Buy
+      </button>
+    </div>
+
+    <div class="wallet-notice" id="walletNotice">
+      <div class="wallet-notice-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
+      </div>
+      <div class="wallet-notice-title">Wallet Balance Required</div>
+      <div class="wallet-notice-text">Your wallet must be funded before you can complete a purchase. Deposits are accepted in <strong>USDT</strong> via <strong>TRC-20</strong> or <strong>BEP-20</strong>.</div>
+      <button class="wallet-notice-btn" onclick="showWalletDeposit()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit Now
+      </button>
+    </div>
+
+    <div class="wallet-deposit" id="walletDeposit">
+      <div class="wallet-deposit-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit Funds
+      </div>
+      <div class="wallet-deposit-methods">
+        <button class="wallet-deposit-method active" data-wallet-method="trc20" onclick="selectWalletMethod('trc20')"><img class="wallet-deposit-method-icon" src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRC-20">USDT (TRC-20)</button>
+        <button class="wallet-deposit-method" data-wallet-method="bep20" onclick="selectWalletMethod('bep20')"><img class="wallet-deposit-method-icon" src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BEP-20">USDT (BEP-20)</button>
+      </div>
+      <div class="wallet-deposit-addr" id="walletDepositAddr">TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS</div>
+      <button class="wallet-deposit-copy" id="walletDepositCopy" onclick="copyWalletAddr()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy Address
+      </button>
+      <div class="wallet-deposit-note">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        Send only the selected network to this address. After sending, click "I've Deposited" to credit your wallet.
+      </div>
+      <button class="wallet-deposit-confirm" id="walletDepositConfirm" onclick="confirmWalletDeposit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        I've Deposited — Verify
+      </button>
+    </div>
+
+    <div class="wallet-verify" id="walletVerify" style="display:none;">
+      <div class="wallet-verify-icon" id="walletVerifyIcon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="wallet-verify-title" id="walletVerifyTitle">Searching Network</div>
+      <div class="wallet-verify-sub" id="walletVerifySub">Scanning the blockchain for your incoming deposit</div>
+      <div class="wallet-verify-dots" id="walletVerifyDots">
+        <span class="wallet-verify-dot"></span>
+        <span class="wallet-verify-dot"></span>
+        <span class="wallet-verify-dot"></span>
+      </div>
+      <div class="wallet-verify-fail" id="walletVerifyFail" style="display:none;">
+        <div class="wallet-verify-fail-text">No transaction found. Send funds to the address below and try again.</div>
+        <div class="wallet-deposit-addr" id="walletVerifyAddr">TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS</div>
+        <button class="wallet-deposit-copy" onclick="copyWalletVerifyAddr()" style="margin-bottom:8px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy Address
+        </button>
+        <button class="wallet-deposit-confirm" onclick="retryWalletDeposit()" style="margin-top:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+          Scan Again
+        </button>
+      </div>
+    </div>
+
+    <div class="wallet-txs" id="walletTxs">
+      <div class="wallet-txs-title">Transaction History</div>
+      <div class="wallet-empty" id="walletEmpty">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="wallet-empty-text">No transactions yet</div>
+        <div class="wallet-empty-sub">Deposit funds to get started</div>
+      </div>
+      <div id="walletTxList"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ===== Wallet System ===== */
+    const WALLET_KEY = 'userWalletBalance';
+    const WALLET_TXS_KEY = 'userWalletTxs';
+    const WALLET_ADDRS = {
+      trc20: { addr: 'TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS', label: 'USDT (TRC-20)' },
+      bep20: { addr: '0xD8F73264fDb89b8Ff5EfCBd97001190556A45Bd3', label: 'USDT (BEP-20)' },
+    };
+    let walletMethod = 'trc20';
+
+    function getWalletBalance() { return parseFloat(localStorage.getItem(WALLET_KEY)) || 0; }
+    function setWalletBalance(val) { localStorage.setItem(WALLET_KEY, val.toString()); }
+    function getWalletTxs() { return JSON.parse(localStorage.getItem(WALLET_TXS_KEY)) || []; }
+    function setWalletTxs(txs) { localStorage.setItem(WALLET_TXS_KEY, JSON.stringify(txs)); }
+
+    function updateWalletUI() {
+      const bal = getWalletBalance();
+      document.getElementById('walletBalance').textContent = bal.toFixed(2);
+      document.getElementById('walletBalanceUsd').textContent = '$' + bal.toFixed(2);
+      const dot = document.getElementById('walletDot');
+      if (dot) { dot.classList.toggle('has-balance', bal > 0); }
+      renderWalletTxs();
+    }
+
+    function toggleWallet() {
+      if (!requireAuth()) return;
+      const sidebar = document.getElementById('walletSidebar');
+      const overlay = document.getElementById('walletOverlay');
+      const isOpen = sidebar.classList.contains('open');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+      if (!isOpen) {
+        const dep = document.getElementById('walletDeposit');
+        if (dep) { dep.style.display = 'block'; dep.classList.remove('open'); }
+        const ver = document.getElementById('walletVerify');
+        if (ver) ver.style.display = 'none';
+        updateWalletUI();
+      }
+    }
+
+    function showWalletDeposit() {
+      document.getElementById('walletVerify').style.display = 'none';
+      const notice = document.getElementById('walletNotice');
+      if (notice) notice.classList.remove('show');
+      const dep = document.getElementById('walletDeposit');
+      if (dep) { dep.style.display = 'block'; dep.classList.toggle('open'); }
+    }
+
+    function requireWalletFunds() {
+      const notice = document.getElementById('walletNotice');
+      if (!notice) return;
+      notice.classList.remove('show');
+      void notice.offsetWidth;
+      notice.classList.add('show');
+      const sidebar = document.getElementById('walletSidebar');
+      if (sidebar) sidebar.scrollTop = Math.max(0, notice.offsetTop - 16);
+    }
+
+    function selectWalletMethod(method) {
+      walletMethod = method;
+      document.querySelectorAll('.wallet-deposit-method').forEach(function(el) { el.classList.remove('active'); });
+      document.querySelector('.wallet-deposit-method[data-wallet-method="' + method + '"]').classList.add('active');
+      document.getElementById('walletDepositAddr').textContent = WALLET_ADDRS[method].addr;
+      document.getElementById('walletVerify').style.display = 'none';
+      document.getElementById('walletDeposit').style.display = 'block';
+      if (document.getElementById('walletDepositConfirm')) {
+        document.getElementById('walletDepositConfirm').disabled = false;
+        document.getElementById('walletDepositConfirm').textContent = '';
+        document.getElementById('walletDepositConfirm').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> I\'ve Deposited — Verify';
+        document.getElementById('walletDepositConfirm').style.background = '';
+        document.getElementById('walletDepositConfirm').style.color = '';
+        document.getElementById('walletDepositConfirm').style.border = 'none';
+      }
+    }
+
+    function copyWalletAddr() {
+      const addr = document.getElementById('walletDepositAddr').textContent;
+      navigator.clipboard.writeText(addr).catch(function(){});
+      const btn = document.getElementById('walletDepositCopy');
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+      setTimeout(function() {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Address';
+      }, 2000);
+    }
+
+    function confirmWalletDeposit() {
+      const btn = document.getElementById('walletDepositConfirm');
+      if (!btn || btn.disabled) return;
+      const dep = document.getElementById('walletDeposit');
+      if (dep) dep.style.display = 'none';
+      const verify = document.getElementById('walletVerify');
+      if (verify) verify.style.display = 'block';
+      document.getElementById('walletVerifyFail').style.display = 'none';
+      document.getElementById('walletVerifyDots').style.display = 'flex';
+      const icon = document.getElementById('walletVerifyIcon');
+      icon.className = 'wallet-verify-icon';
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+      document.getElementById('walletVerifyTitle').textContent = 'Searching ' + WALLET_ADDRS[walletMethod].label + ' Network';
+      document.getElementById('walletVerifyTitle').className = 'wallet-verify-title';
+      document.getElementById('walletVerifySub').textContent = 'Scanning the blockchain for your incoming deposit';
+
+      setTimeout(function() {
+        document.getElementById('walletVerifyDots').style.display = 'none';
+        document.getElementById('walletVerifyFail').style.display = 'block';
+        document.getElementById('walletVerifyAddr').textContent = WALLET_ADDRS[walletMethod].addr;
+        icon.className = 'wallet-verify-icon failed';
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+        document.getElementById('walletVerifyTitle').textContent = 'Transaction Not Found';
+        document.getElementById('walletVerifyTitle').className = 'wallet-verify-title failed';
+        document.getElementById('walletVerifySub').textContent = 'No incoming payment detected on the ' + WALLET_ADDRS[walletMethod].label + ' network';
+      }, 3000 + Math.random() * 4000);
+    }
+
+    function retryWalletDeposit() {
+      document.getElementById('walletVerifyFail').style.display = 'none';
+      document.getElementById('walletVerifyDots').style.display = 'flex';
+      const icon = document.getElementById('walletVerifyIcon');
+      icon.className = 'wallet-verify-icon';
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+      document.getElementById('walletVerifyTitle').textContent = 'Searching ' + WALLET_ADDRS[walletMethod].label + ' Network';
+      document.getElementById('walletVerifyTitle').className = 'wallet-verify-title';
+      document.getElementById('walletVerifySub').textContent = 'Scanning the blockchain for your incoming deposit';
+
+      setTimeout(function() {
+        document.getElementById('walletVerifyDots').style.display = 'none';
+        document.getElementById('walletVerifyFail').style.display = 'block';
+        document.getElementById('walletVerifyAddr').textContent = WALLET_ADDRS[walletMethod].addr;
+        const icon2 = document.getElementById('walletVerifyIcon');
+        icon2.className = 'wallet-verify-icon failed';
+        icon2.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+        document.getElementById('walletVerifyTitle').textContent = 'Transaction Not Found';
+        document.getElementById('walletVerifyTitle').className = 'wallet-verify-title failed';
+        document.getElementById('walletVerifySub').textContent = 'No incoming payment detected on the ' + WALLET_ADDRS[walletMethod].label + ' network';
+      }, 3000 + Math.random() * 4000);
+    }
+
+    function copyWalletVerifyAddr() {
+      const addr = document.getElementById('walletVerifyAddr').textContent;
+      if (navigator.clipboard) navigator.clipboard.writeText(addr);
+    }
+
+    function openWalletDeposit() {
+      document.getElementById('walletVerify').style.display = 'none';
+      document.getElementById('walletDeposit').style.display = 'block';
+      document.getElementById('walletDeposit').classList.add('open');
+    }
+
+    function renderWalletTxs() {
+      const txs = getWalletTxs();
+      const list = document.getElementById('walletTxList');
+      const empty = document.getElementById('walletEmpty');
+      if (txs.length === 0) {
+        list.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      list.innerHTML = txs.map(function(tx) {
+        var icon = tx.type === 'deposit'
+          ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+          : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>';
+        return '<div class="wallet-tx">' +
+          '<div class="wallet-tx-icon ' + tx.type + '">' + icon + '</div>' +
+          '<div class="wallet-tx-info">' +
+            '<div class="wallet-tx-desc">' + tx.desc + '</div>' +
+            '<div class="wallet-tx-date">' + tx.date + '</div>' +
+          '</div>' +
+          '<div class="wallet-tx-amount ' + tx.amountClass + '">' + tx.amount + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    updateWalletUI();
+
+    /* Dropdown toggle */
+    function toggleDropdown(e) {
+      e.stopPropagation();
+      document.getElementById('navDropdownMenu').classList.toggle('open');
+    }
+    document.addEventListener('click', function() {
+      var menu = document.getElementById('navDropdownMenu');
+      if (menu) menu.classList.remove('open');
+    });
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

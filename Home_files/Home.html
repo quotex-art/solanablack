@@ -1,0 +1,1992 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLACK SOL</title>
+  <meta property="og:title" content="BLACK SOL — Premium Dumped Solana Wallets">
+  <meta property="og:description" content="Purchase dumped Solana wallets with verified balances. 874,200+ SOL available. Instant delivery.">
+  <meta property="og:image" content="w=6001">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blacksol.quotex-norepily.workers.dev/Home">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BLACK SOL — Premium Dumped Solana Wallets">
+  <meta name="twitter:description" content="Purchase dumped Solana wallets with verified balances. 874,200+ SOL available. Instant delivery.">
+  <meta name="twitter:image" content="w=6001">
+  <link rel="icon" type="image/png" href="https://cryptologos.cc/logos/solana-sol-logo.png">
+  <link rel="shortcut icon" href="https://cryptologos.cc/logos/solana-sol-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media (max-width: 600px) {
+      .header-inner { flex-wrap:wrap; height:auto; padding:10px 16px 8px; }
+      .logo-wrap { flex:1; }
+      .logo { font-size:16px; gap:6px; }
+      .logo svg { width:16px; height:12px; }
+      .nav-dropdown-btn { width:28px; height:28px; }
+      .header-icons { margin-left:auto; gap:6px; flex-shrink:0; }
+      .header-icons .cart-btn { width:36px; height:36px; }
+      .header-icons .cart-btn i { width:16px !important; height:16px !important; }
+      .header-icons .cart-count { width:16px; height:16px; font-size:8px; top:-3px; right:-3px; }
+      .header-icons .wallet-btn { width:36px; height:36px; }
+      .header-icons .wallet-btn i { width:16px !important; height:16px !important; }
+      .header-icons .wallet-btn-dot { width:7px; height:7px; top:2px; right:2px; }
+      nav { width:100%; display:flex; align-items:center; justify-content:center; gap:4px; border-top:1px solid rgba(255,255,255,0.04); padding-top:8px; margin-top:4px; }
+      nav a { font-size:11px; padding:5px 14px; white-space:nowrap; letter-spacing:0.3px; font-weight:500; border-radius:6px; transition:background 0.2s; }
+      nav a.active { background:rgba(153,69,255,0.08); }
+      #navSignUp { font-size:11px; padding:5px 14px; }
+      .nav-user .nav-user-name { font-size:11px; max-width:80px; }
+      .nav-user { gap:6px; }
+      .nav-logout { padding:4px 10px; font-size:10px; border-radius:5px; }
+      .hero { min-height:auto; padding:72px 0 36px; }
+      .hero-inner { grid-template-columns:1fr; text-align:center; gap:0; padding:32px 16px; }
+      .hero-text h1 { font-size:30px; letter-spacing:-1px; }
+      .hero-text p { font-size:13px; margin:0 auto 20px; max-width:100%; }
+      .hero-stats-row { margin:0 auto 20px; flex-wrap:wrap; justify-content:center; gap:8px; padding:12px 14px; }
+      .hero-stat-value { font-size:16px; }
+      .hero-stat-label { font-size:10px; }
+      .hero-buttons { justify-content:center; flex-direction:column; gap:10px; align-items:stretch; }
+      .btn-primary,.btn-secondary { justify-content:center; padding:12px 20px; font-size:12px; }
+      .hero-visual { display:none; }
+      .hero-trustpilot { justify-content:center; margin:0 auto; max-width:fit-content; }
+      .hero-solana-bg { max-width:500px; opacity:0.3; }
+    }
+    @media (max-width: 370px) {
+      .header-inner { padding:8px 10px 6px; }
+      .logo { font-size:13px; gap:4px; }
+      .logo svg { width:14px; height:10px; }
+      .nav-dropdown-btn { width:24px; height:24px; }
+      .nav-dropdown-btn svg { width:12px; height:12px; }
+      .header-icons { gap:3px; }
+      .header-icons .cart-btn { width:30px; height:30px; }
+      .header-icons .cart-btn i { width:13px !important; height:13px !important; }
+      .header-icons .cart-count { width:13px; height:13px; font-size:7px; top:-2px; right:-2px; }
+      .header-icons .wallet-btn { width:30px; height:30px; }
+      .header-icons .wallet-btn i { width:13px !important; height:13px !important; }
+      .header-icons .wallet-btn-dot { width:6px; height:6px; }
+      nav { gap:2px; padding-top:5px; }
+      nav a { font-size:10px; padding:4px 10px; }
+      #navSignUp { font-size:10px; padding:4px 10px; }
+      .nav-user .nav-user-name { font-size:10px; max-width:60px; }
+      .nav-user { gap:4px; }
+      .nav-logout { padding:3px 7px; font-size:9px; }
+      .hero { padding:60px 0 24px; }
+      .hero-inner { padding:24px 12px; }
+      .hero-text h1 { font-size:22px; letter-spacing:-0.5px; }
+      .hero-text p { font-size:12px; margin-bottom:16px; }
+      .hero-stats-row { padding:8px 10px; gap:6px; }
+      .hero-stat-value { font-size:14px; }
+      .hero-stat-label { font-size:9px; }
+      .btn-primary,.btn-secondary { padding:11px 16px; font-size:11px; }
+      .hero-bottom-row { flex-direction:column; align-items:center; gap:8px; }
+    }
+    .hero-badge-pill { display:inline-flex; align-items:center; gap:8px; padding:6px 16px 6px 10px; background:rgba(20,241,149,0.04); border:1px solid rgba(20,241,149,0.08); border-radius:50px; font-size:10px; font-weight:600; color:rgba(255,255,255,0.35); letter-spacing:0.5px; margin-bottom:20px; }
+    .pill-dot { width:6px; height:6px; border-radius:50%; background:#14F195; animation:dotPulse 1.5s ease-in-out infinite; display:inline-block; }
+    .hero-bottom-row { display:flex; align-items:center; gap:16px; margin-top:4px; flex-wrap:wrap; }
+    .hero-recent-tx { display:flex; align-items:center; gap:6px; font-size:11px; color:rgba(255,255,255,0.2); letter-spacing:0.3px; }
+    .tx-dot { width:5px; height:5px; border-radius:50%; background:var(--accent); animation:dotPulse 1.2s ease-in-out infinite; display:inline-block; }
+    @keyframes dotPulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+    /* === TRUSTPILOT PROFILE HERO === */
+    .tp-profile {
+      background: #000; padding: 28px 24px 36px; display: flex; justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06); border-radius: 12px;
+    }
+    .tp-profile-inner {
+      width: 100%; max-width: 1060px;
+      display: flex; gap: 32px; align-items: flex-start;
+    }
+    .tp-profile-left { flex: 0 0 240px; display: flex; align-items: flex-start; gap: 14px; }
+    .tp-profile-avatar {
+      width: 84px; height: 84px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.14); background: #fff;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tp-profile-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .tp-profile-identity { min-width: 0; padding-top: 6px; }
+    .tp-profile-name { font-size: 26px; font-weight: 800; color: #fff; line-height: 1.15; letter-spacing: -0.3px; }
+    .tp-profile-domain {
+      display: inline-flex; align-items: center; gap: 5px; margin-top: 6px;
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
+    .tp-profile-domain svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .tp-profile-verified {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 100px; margin-left: 4px;
+      background: rgba(0,182,122,0.14); color: #00B67A;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;
+    }
+    .tp-profile-verified svg { width: 11px; height: 11px; }
+    .tp-profile-right { flex: 1; min-width: 0; }
+    .tp-profile-card {
+      background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px; padding: 20px 24px;
+    }
+    .tp-ts-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+    .tp-ts-title {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.75);
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .tp-ts-title svg { width: 13px; height: 13px; color: rgba(255,255,255,0.3); }
+    .tp-ts-score { font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -1px; }
+    .tp-ts-stars { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .tp-ts-stars-link { font-size: 11px; color: rgba(255,255,255,0.4); text-decoration: underline; }
+    .tp-ts-count { font-size: 14px; font-weight: 600; color: #fff; margin-top: 8px; }
+    .tp-profile-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 18px 0 14px; }
+    .tp-recommend { font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 14px; line-height: 1.5; }
+    .tp-recommend strong { color: #fff; font-size: 15px; }
+    .tp-profile-stars { display: flex; gap: 2px; }
+    .tp-profile-stars svg { width: 22px; height: 22px; display: block; }
+    .tp-profile-bars { display: flex; flex-direction: column; gap: 7px; }
+    .tp-bar-row { display: flex; align-items: center; gap: 8px; }
+    .tp-bar-label { font-size: 12px; color: rgba(255,255,255,0.55); min-width: 34px; }
+    .tp-bar-track { flex: 1; height: 7px; border-radius: 4px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    .tp-bar-fill { height: 100%; border-radius: 4px; }
+    .tp-bar-pct { font-size: 11px; color: rgba(255,255,255,0.45); min-width: 34px; text-align: right; }
+    .tp-profile-actions { display: flex; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .tp-btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 24px; border-radius: 100px;
+      background: #00B67A; color: #fff;
+      font-size: 13px; font-weight: 700; transition: background 0.15s;
+    }
+    .tp-btn-primary:hover { background: #009e68; }
+    .tp-btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 24px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.25); color: #fff;
+      font-size: 13px; font-weight: 600; transition: background 0.15s, border-color 0.15s;
+    }
+    .tp-btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
+    @media (max-width: 768px) {
+      .tp-profile-inner { flex-direction: column; gap: 22px; }
+      .tp-profile-left { flex: none; width: 100%; }
+      .tp-profile-avatar { width: 64px; height: 64px; }
+      .tp-profile-name { font-size: 24px; }
+      .tp-profile-identity { padding-top: 2px; }
+      .tp-profile-card { padding: 18px 16px; }
+      .tp-ts-score { font-size: 38px; }
+      .tp-profile-actions { flex-direction: column; }
+      .tp-btn-primary, .tp-btn-secondary { width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .tp-ts-stars { justify-content: flex-start; }
+      .tp-ts-stars-link { width: 100%; }
+      .tp-profile-domain { flex-wrap: wrap; }
+    }
+
+    /* === QUICK START GUIDE — PROFESSIONAL FLOW DIAGRAM === */
+    .guide-flow { margin-top: 42px; position: relative; }
+    .guide-flow-row {
+      display: grid;
+      grid-template-columns: 1fr 34px 1fr 34px 1fr 34px 1fr 34px 1fr;
+      align-items: start;
+    }
+    .guide-node {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 30px 16px 18px;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, background 0.3s;
+      animation: nodeIn 0.6s cubic-bezier(0.22,1,0.36,1) backwards;
+    }
+    .guide-node::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 12%; right: 12%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, transparent, rgba(153,69,255,0.55), rgba(20,241,149,0.55), transparent);
+      opacity: 0.5;
+    }
+    .guide-node:hover {
+      transform: translateY(-6px);
+      border-color: rgba(153,69,255,0.35);
+      box-shadow: 0 20px 44px rgba(0,0,0,0.45), 0 0 30px rgba(153,69,255,0.1);
+      background: linear-gradient(180deg, rgba(153,69,255,0.05), rgba(255,255,255,0.015));
+    }
+    .guide-node-icon {
+      position: relative;
+      width: 62px; height: 62px;
+      margin: 0 auto 14px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--node-c);
+      background: var(--node-bg);
+      border: 1px solid var(--node-ring);
+      box-shadow: inset 0 0 18px rgba(255,255,255,0.02);
+      transition: transform 0.3s;
+    }
+    .guide-node:hover .guide-node-icon { transform: scale(1.08) rotate(-4deg); }
+    .guide-node-num {
+      position: absolute;
+      top: -9px; right: -9px;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #9945FF, #14F195);
+      color: #fff;
+      font-size: 12px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 3px #0a0a0f, 0 4px 14px rgba(153,69,255,0.45);
+    }
+    .guide-node-title { font-size: 14.5px; font-weight: 800; color: #fff; margin-bottom: 7px; letter-spacing: 0.2px; }
+    .guide-node-desc { font-size: 12px; line-height: 1.65; color: rgba(255,255,255,0.42); margin-bottom: 13px; }
+    .guide-node-desc strong { color: rgba(255,255,255,0.72); font-weight: 600; }
+    .guide-node-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 4px 11px;
+      border-radius: 100px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.4px;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .guide-connector {
+      height: 62px;
+      margin-top: 30px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(20,241,149,0.55);
+    }
+    .guide-connector i { animation: connPulse 2s ease-in-out infinite; }
+    @keyframes connPulse { 0%,100% { opacity: 0.3; transform: translateX(-2px); } 50% { opacity: 1; transform: translateX(2px); } }
+    @keyframes nodeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    .guide-flow-row .guide-node:nth-child(1) { animation-delay: 0.05s; }
+    .guide-flow-row .guide-node:nth-child(3) { animation-delay: 0.12s; }
+    .guide-flow-row .guide-node:nth-child(5) { animation-delay: 0.19s; }
+    .guide-flow-row .guide-node:nth-child(7) { animation-delay: 0.26s; }
+    .guide-flow-row .guide-node:nth-child(9) { animation-delay: 0.33s; }
+
+    @media (max-width: 900px) {
+      .guide-flow-row { grid-template-columns: 1fr; }
+      .guide-node { padding: 24px 18px 18px; }
+      .guide-connector { height: 24px; margin-top: 0; }
+      .guide-connector i { animation: connPulseV 2s ease-in-out infinite; }
+      @keyframes connPulseV { 0%,100% { opacity: 0.3; transform: rotate(90deg) translateY(-2px); } 50% { opacity: 1; transform: rotate(90deg) translateY(2px); } }
+    }
+
+    /* === HERO REDESIGN — BACKGROUND PHOTO === */
+    .hero { min-height: calc(100dvh - 64px); padding-top: 64px; }
+    .hero-bg { background: #0a0a0f; }
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      animation: heroZoom 18s ease-in-out infinite;
+    }
+    @keyframes heroZoom { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: radial-gradient(circle at 20% 50%, rgba(10, 10, 15, 0.92) 0%, rgba(10, 10, 15, 0.75) 45%, rgba(10, 10, 15, 0.35) 100%);
+    }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: left;
+      justify-items: start;
+      padding: 90px 24px 110px;
+      gap: 0;
+      z-index: 2;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 600px;
+    }
+    .hero-text h1 {
+      font-size: 62px;
+      text-align: left;
+      text-shadow: 0 2px 10px rgba(10,10,15,0.65), 0 1px 3px rgba(10,10,15,0.6), 0 0 32px rgba(153,69,255,0.25);
+    }
+    .hero-text p {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+      text-shadow: 0 1px 8px rgba(10,10,15,0.7);
+    }
+    .hero-badge-pill {
+      background: rgba(153, 69, 255, 0.08);
+      border: 1px solid rgba(153, 69, 255, 0.22);
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      text-shadow: 0 1px 8px rgba(10,10,15,0.7);
+    }
+    .hero-stats-row {
+      margin-left: 0;
+      margin-right: auto;
+      background: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .hero-stat-value { text-shadow: 0 1px 8px rgba(10,10,15,0.65); }
+    .hero-stat-label { text-shadow: 0 1px 6px rgba(10,10,15,0.6); }
+    .hero-stat-divider { background: rgba(255,255,255,0.35); }
+    .hero-buttons { justify-content: flex-start; }
+    .hero-trustpilot {
+      margin-left: 0;
+      margin-right: auto;
+      background: transparent;
+      border-color: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      text-shadow: 0 1px 6px rgba(10,10,15,0.6);
+    }
+    .hero-recent-tx { text-shadow: 0 1px 6px rgba(10,10,15,0.6); }
+    .hero-visual { display: none; }
+
+    @media (max-width: 768px) {
+      .hero-inner { padding: 60px 16px 70px; }
+      .hero-text h1 { font-size: 36px; }
+    }
+    @media (max-width: 600px) {
+      .hero { min-height: auto; padding: 76px 0 36px; }
+      .hero-inner { padding: 34px 14px 54px; }
+      .hero-text h1 { font-size: 30px; }
+      .hero-text p { font-size: 13px; margin-bottom: 20px; }
+      .hero-photo img { object-position: center 40%; }
+    }
+    @media (max-width: 370px) {
+      .hero-inner { padding: 26px 12px 46px; }
+      .hero-text h1 { font-size: 24px; }
+    }
+
+    /* === FOOTER OFFICIAL REDESIGN === */
+    .footer-inner { grid-template-columns: 1.45fr 0.85fr 0.9fr 1.15fr; gap: 36px; }
+    .footer-brand-top { flex-wrap: wrap; }
+    .footer-official-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 9px; border-radius: 100px;
+      background: rgba(20,241,149,0.07);
+      border: 1px solid rgba(20,241,149,0.22);
+      color: #14F195;
+      font-size: 8px; font-weight: 800; letter-spacing: 0.8px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .footer-assets { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 10px; }
+    .footer-asset {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 48px;
+      padding: 5px 12px; border-radius: 8px;
+      font-size: 10px; font-weight: 800; letter-spacing: 0.6px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: rgba(255,255,255,0.03);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .footer-asset:hover { transform: translateY(-2px); }
+    .footer-asset.sol { color: #14F195; border-color: rgba(20,241,149,0.28); background: rgba(20,241,149,0.07); }
+    .footer-asset.usdt { color: #2ABE81; border-color: rgba(42,190,129,0.3); background: rgba(42,190,129,0.08); }
+    .footer-asset.btc { color: #F7931A; border-color: rgba(247,147,26,0.3); background: rgba(247,147,26,0.08); }
+    .footer-asset.ltc { color: #B6B7BB; border-color: rgba(182,183,187,0.3); background: rgba(182,183,187,0.08); }
+    .footer-vendor-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-vendor-item { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; }
+    .footer-vendor-item strong { color: var(--text-primary); }
+    .footer-link i { opacity: 0.85; }
+    .footer-link:hover i { opacity: 1; }
+    .footer-contact { font-size: 12px; }
+    .footer-legal {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 10.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.16);
+    }
+    .footer-bottom { padding-bottom: 26px; }
+
+    @media (max-width: 900px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 640px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
+      .footer-section:first-child { grid-column: 1 / -1; text-align: center; align-items: center; }
+      .footer-section:nth-child(2) { text-align: left; align-items: flex-start; }
+      .footer-section:nth-child(3) { text-align: left; align-items: flex-start; }
+      .footer-section:last-child { grid-column: 1 / -1; text-align: left; align-items: flex-start; }
+      .footer-section-title { text-align: left; }
+      .footer-link { justify-content: flex-start; }
+      .footer-vendor-row { justify-content: center; }
+      .footer-contact { justify-content: flex-start; }
+      .footer-pgp-row { justify-content: flex-start; }
+      .footer-badges { justify-content: flex-start; }
+      .footer-section:first-child .footer-link { justify-content: center; }
+      .footer-brand-top { justify-content: center; }
+      .footer-assets { justify-content: center; }
+    }
+
+    /* === TRUST STRIP PROFESSIONAL REDESIGN === */
+    .trust-badges { padding: 0 24px 24px; }
+    .trust-badges-inner {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .trust-badges-inner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(153,69,255,0.5), rgba(20,241,149,0.5), transparent);
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: all 0.2s;
+    }
+    .trust-item:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(153,69,255,0.22);
+      transform: translateY(-1px);
+    }
+    .trust-item-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-item-icon svg { width: 14px; height: 14px; }
+    .trust-item-text {
+      font-size: 9.5px; font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+    .trust-item-text strong { color: #fff; font-weight: 700; }
+    .trust-item-sep { width: 1px; height: 26px; background: rgba(255,255,255,0.05); }
+    .ti-secure { color: #14F195; background: rgba(20,241,149,0.08); }
+    .ti-trust { color: #00B67A; background: rgba(0,182,122,0.08); }
+    .ti-pay { color: #9945FF; background: rgba(153,69,255,0.1); }
+    .ti-escrow { color: #FACC15; background: rgba(250,204,21,0.08); }
+    .ti-ver { color: #3B82F6; background: rgba(59,130,246,0.08); }
+    .ti-refund { color: #ef4444; background: rgba(239,68,68,0.08); }
+    .ti-fast { color: #14F195; background: rgba(20,241,149,0.08); }
+    .ti-cust { color: #22d3ee; background: rgba(34,211,238,0.08); }
+
+    @media (max-width: 768px) {
+      .trust-badges { padding: 0 16px 16px; }
+      .trust-badges-inner { gap: 6px; padding: 12px; }
+      .trust-item { padding: 7px 10px; gap: 6px; }
+      .trust-item-icon { width: 24px; height: 24px; }
+      .trust-item-icon svg { width: 12px; height: 12px; }
+      .trust-item-text { font-size: 8.5px; }
+      .trust-item-sep { display: none; }
+    }
+    @media (max-width: 480px) {
+      .trust-item-text { letter-spacing: 0; }
+    }
+
+    /* === FLOATING SUPPORT ICON === */
+    .support-float { overflow: visible; background: transparent; box-shadow: none; width: 112px; height: 112px; }
+    .support-float:hover { background: transparent; box-shadow: none; }
+    .support-float-icon {
+      width: inherit; height: inherit;
+      object-fit: contain;
+    }
+    .support-tooltip {
+      right: calc(100% + 14px);
+      white-space: nowrap;
+    }
+    @media (max-width: 768px) {
+      .support-float { width: 84px; height: 84px; }
+    }
+
+    /* BTC Promotional Banner */
+    .btc-promo {
+      position: relative;
+      margin: 32px 0 0;
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      background: linear-gradient(135deg, rgba(247,147,26,0.08), rgba(10,10,16,0.4) 45%, rgba(10,10,16,0.5));
+      border: 1px solid rgba(247,147,26,0.18);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+    .btc-promo-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .btc-promo-glow {
+      position: absolute; top: -40%; left: -20%; width: 70%; height: 140%;
+      background: radial-gradient(ellipse at center, rgba(247,147,26,0.14) 0%, transparent 60%);
+    }
+    .btc-promo-glow-2 {
+      position: absolute; bottom: -50%; right: -10%; width: 60%; height: 140%;
+      background: radial-gradient(ellipse at center, rgba(247,147,26,0.08) 0%, transparent 55%);
+    }
+    .btc-promo-halo {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(247,147,26,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247,147,26,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+    .btc-promo-img {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: stretch;
+      min-height: 320px;
+      border-right: 1px solid rgba(247,147,26,0.12);
+      background: rgba(247,147,26,0.06);
+    }
+    .btc-promo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 40%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,1) 40%);
+    }
+    .btc-promo-content {
+      position: relative;
+      z-index: 2;
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .btc-promo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      color: var(--btc, #F7931A);
+      background: rgba(247,147,26,0.08);
+      border: 1px solid rgba(247,147,26,0.22);
+      width: fit-content;
+      margin-bottom: 20px;
+    }
+    .btc-promo-pill-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--btc, #F7931A);
+      box-shadow: 0 0 10px rgba(247,147,26,0.8);
+    }
+    .btc-promo-title {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1.2px;
+      line-height: 1.08;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .btc-promo-title span {
+      background: linear-gradient(135deg, #FFA940, #F7931A);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .btc-promo-desc {
+      color: rgba(255,255,255,0.62);
+      font-size: 14px;
+      line-height: 1.65;
+      max-width: 540px;
+      margin: 0 0 26px;
+    }
+    .btc-promo-stats {
+      display: flex;
+      gap: 36px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .btc-promo-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .btc-promo-stat strong {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--btc, #F7931A);
+    }
+    .btc-promo-stat span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.6px;
+    }
+    .btc-promo-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btc-promo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btc-promo-btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #F7931A, #e07d10);
+    }
+    .btc-promo-btn-primary:hover {
+      box-shadow: 0 8px 32px rgba(247,147,26,0.4);
+      transform: translateY(-1px);
+    }
+    .btc-promo-btn-secondary {
+      color: var(--btc, #F7931A);
+      border: 1px solid rgba(247,147,26,0.3);
+      background: rgba(247,147,26,0.05);
+    }
+    .btc-promo-btn-secondary:hover {
+      border-color: rgba(247,147,26,0.5);
+      background: rgba(247,147,26,0.1);
+    }
+    @media (max-width: 860px) {
+      .btc-promo { grid-template-columns: 1fr; }
+      .btc-promo-img { min-height: 200px; border-right: 0; border-bottom: 1px solid rgba(247,147,26,0.12); }
+      .btc-promo-img img { object-fit: cover; opacity: 0.35; }
+      .btc-promo-content { padding: 32px 24px; }
+      .btc-promo-title { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="tp-star" viewBox="0 0 96 96">
+        <path fill="currentColor" d="M48,64.7 L62.6,61 L68.7,79.8 L48,64.7 Z M81.6,40.4 L55.9,40.4 L48,16.2 L40.1,40.4 L14.4,40.4 L35.2,55.4 L27.3,79.6 L48.1,64.6 L60.9,55.4 L81.6,40.4 L81.6,40.4 L81.6,40.4 L81.6,40.4 Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <a href="#" class="logo">
+          <svg viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:16px;">
+            <defs>
+              <linearGradient id="solLogoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#9945FF"/>
+                <stop offset="100%" stop-color="#14F195"/>
+              </linearGradient>
+            </defs>
+            <path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#solLogoGrad)"/>
+            <path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#solLogoGrad)"/>
+            <path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#solLogoGrad)"/>
+          </svg>
+          BLACK SOL
+        </a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" onclick="toggleDropdown(event)" id="navDropdownBtn" aria-label="Menu">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" id="navDropdownMenu">
+            <a class="nav-dropdown-item" href="btc.html">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="32" fill="#F7931A"/><path d="M46.1 27.4c.6-3.9-2.4-6-6.4-7.4l1.3-5.3-3.2-.8-1.3 5.1c-.8-.2-1.7-.4-2.6-.6l1.3-5.2-3.2-.8-1.3 5.3c-.7-.2-1.4-.3-2.1-.5l0 0-4.4-1.1-.9 3.4s2.4.6 2.3.6c1.3.3 1.6 1.2 1.5 1.9l-1.5 6c.1 0 .2.1.3.1l-.3-.1-2.1 8.4c-.2.4-.6 1-1.5.8 0 0-2.3-.6-2.3-.6l-1.6 3.8 4.2 1c.8.2 1.5.4 2.3.6l-1.3 5.3 3.2.8 1.3-5.3c.9.2 1.7.5 2.6.7l-1.3 5.2 3.2.8 1.3-5.3c5.4 1 9.5.6 11.3-4.3 1.4-4-.1-6.2-2.9-7.7 2.1-.5 3.6-1.9 4-4.7zm-7.5 8.2c-1 3.9-7.6 1.8-9.8 1.3l1.8-7c2.1.5 9.1 1.6 8 5.7zm1-10.2c-.9 3.6-6.5 1.8-8.3 1.3l1.6-6.4c1.8.5 7.7 1.3 6.7 5.1z" fill="#fff"/></svg>
+              BTC Dormant
+            </a>
+            <a class="nav-dropdown-item" href="signup.html">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              Sign Up
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-icons">
+        <button class="cart-btn" onclick="toggleCart()">
+          <i data-lucide="shopping-bag" style="width:18px;height:18px;"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="wallet-btn" onclick="toggleWallet()" id="walletBtn" title="My Wallet">
+          <i data-lucide="wallet" style="width:18px;height:18px;"></i>
+          <span class="wallet-btn-dot" id="walletDot"></span>
+        </button>
+      </div>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#" onclick="event.preventDefault(); toggleWallet();">Wallets</a>
+        <a href="signup.html" id="navSignUp">Sign Up</a>
+        <div class="nav-user hidden" id="navUser">
+          <span class="nav-user-name" id="navUserName">User</span>
+          <button class="nav-logout" onclick="logout()">Logout</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <picture class="hero-photo">
+        <source media="(max-width: 768px)" srcset="2eb4c75b-aae4-43e6-9945-bf039fac8551.png">
+        <img src="5b0858d7-1850-4ac1-b133-1f73abf9ddcd.png" alt="BLACK SOL — Dumped Solana Wallets">
+      </picture>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-badge-pill">
+          <span class="pill-dot" style="background:#14F195;"></span>
+          <span>100% On-Chain Verified · 5,000+ Wallets Delivered</span>
+        </div>
+        <h1>Dumped SOL Wallets,<br><span class="highlight">Delivered Instantly</span></h1>
+        <p>Recovered wallets with full private-key access — verified on-chain, connected across betting, exchanges, and DeFi. No KYC, instant delivery, verified balances.</p>
+        <div class="hero-stats-row">
+          <div class="hero-stat">
+            <span class="hero-stat-value" id="totalSol">0</span>
+            <span class="hero-stat-label">SOL in Circulation</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">15+</span>
+            <span class="hero-stat-label">Platforms Connected</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">5K+</span>
+            <span class="hero-stat-label">Wallets Delivered</span>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary">
+            <i data-lucide="shopping-bag" style="width:18px;height:18px;"></i>
+            BROWSE WALLETS
+          </a>
+          <a href="#" class="btn-secondary" onclick="event.preventDefault(); openDumpModal();">
+            <i data-lucide="info" style="width:18px;height:18px;"></i>
+            HOW IT WORKS
+          </a>
+        </div>
+        <a href="reviews.html" class="hero-trustpilot">
+          <div class="trustpilot-stars">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#14F195"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#14F195"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#14F195"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#14F195"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#14F195"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <span class="trustpilot-text">TrustScore <strong>4.8</strong> · 1,200+ reviews</span>
+          <svg class="trustpilot-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="hero-bottom-row">
+          <span class="hero-recent-tx">
+            <span class="tx-dot"></span>
+            873 verifications today
+          </span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-network">
+          <!-- SOL Central Node -->
+          <div class="network-node center-node">
+            <div class="center-bg"></div>
+            <div class="center-bg-2"></div>
+            <div class="node-icon">
+              <svg viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;">
+                <path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#solanaGrad)"/>
+                <path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#solanaGrad)"/>
+                <path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#solanaGrad)"/>
+                <defs>
+                  <linearGradient id="solanaGrad" x1="1" y1="155" x2="396" y2="155" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9945FF"/>
+                    <stop offset="1" stop-color="#14F195"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="node-label-center">SOLANA</span>
+          </div>
+
+          <!-- SVG Network Lines -->
+          <svg class="network-svg" viewBox="0 0 400 400">
+            <!-- Lines from center to nodes -->
+            <path d="M200,200 L60,80" class="network-line" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M200,200 L340,70" class="network-line" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.3"/>
+            <path d="M200,200 L50,300" class="network-line" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.4"/>
+            <path d="M200,200 L350,320" class="network-line" stroke="var(--accent)" stroke-width="1.5" fill="none" opacity="0.35"/>
+            <path d="M200,200 L200,30" class="network-line" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.25" stroke-dasharray="4,4"/>
+            <path d="M200,200 L200,370" class="network-line" stroke="var(--accent)" stroke-width="1" fill="none" opacity="0.25" stroke-dasharray="4,4"/>
+
+            <!-- Animated dots on lines -->
+            <circle r="3" fill="#fff" filter="url(#glow)">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M200,200 L60,80"/>
+            </circle>
+            <circle r="2.5" fill="#fff" filter="url(#glow)">
+              <animateMotion dur="4s" repeatCount="indefinite" path="M200,200 L340,70"/>
+            </circle>
+            <circle r="3" fill="#fff" filter="url(#glow)">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M200,200 L50,300"/>
+            </circle>
+            <circle r="2.5" fill="#fff" filter="url(#glow)">
+              <animateMotion dur="3.2s" repeatCount="indefinite" path="M200,200 L350,320"/>
+            </circle>
+            <circle r="2" fill="var(--accent)">
+              <animateMotion dur="2.5s" repeatCount="indefinite" path="M200,200 L200,30"/>
+            </circle>
+            <circle r="2" fill="var(--accent)">
+              <animateMotion dur="2.8s" repeatCount="indefinite" path="M200,200 L200,370"/>
+            </circle>
+
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+          </svg>
+
+          <!-- Node: Betting Platforms -->
+          <div class="network-node node-top-left">
+            <div class="node-glow node-glow-purple"></div>
+            <div class="node-box">
+              <div class="node-box-icon"><i data-lucide="dices" style="width:20px;height:20px;color:var(--accent);"></i></div>
+              <span class="node-box-label">Betting</span>
+              <span class="node-box-sub">Stake · Rollbit</span>
+            </div>
+          </div>
+
+          <!-- Node: Trading Platforms -->
+          <div class="network-node node-top-right">
+            <div class="node-glow node-glow-blue"></div>
+            <div class="node-box">
+              <div class="node-box-icon"><i data-lucide="bar-chart-3" style="width:20px;height:20px;color:#60a5fa;"></i></div>
+              <span class="node-box-label">Exchanges</span>
+              <span class="node-box-sub">Binance · Bybit</span>
+            </div>
+          </div>
+
+          <!-- Node: Real Money -->
+          <div class="network-node node-bottom-left">
+            <div class="node-glow node-glow-green"></div>
+            <div class="node-box">
+              <div class="node-box-icon"><i data-lucide="banknote" style="width:20px;height:20px;color:#4ade80;"></i></div>
+              <span class="node-box-label">Fiat · Cash</span>
+              <span class="node-box-sub">USDT · USD · EUR</span>
+            </div>
+          </div>
+
+          <!-- Node: DeFi -->
+          <div class="network-node node-bottom-right">
+            <div class="node-glow node-glow-orange"></div>
+            <div class="node-box">
+              <div class="node-box-icon"><i data-lucide="building" style="width:20px;height:20px;color:#fb923c;"></i></div>
+              <span class="node-box-label">DeFi · Staking</span>
+              <span class="node-box-sub">Jito · Marinade</span>
+            </div>
+          </div>
+
+          <!-- Top node -->
+          <div class="network-node node-top">
+            <div class="node-glow node-glow-cyan"></div>
+            <div class="node-box node-box-sm">
+              <div class="node-box-icon"><i data-lucide="zap" style="width:18px;height:18px;color:#22d3ee;"></i></div>
+              <span class="node-box-label">Payments</span>
+            </div>
+          </div>
+
+          <!-- Bottom node -->
+          <div class="network-node node-bottom">
+            <div class="node-glow node-glow-pink"></div>
+            <div class="node-box node-box-sm">
+              <div class="node-box-icon"><i data-lucide="shield" style="width:18px;height:18px;color:#f472b6;"></i></div>
+              <span class="node-box-label">Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Quick Start Guide -->
+  <section class="guide-section">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Quick Start <span>Guide</span></div>
+        <div class="section-subtitle">How to claim your dumped Solana wallet in 5 simple steps</div>
+      </div>
+    </div>
+    <div class="guide-flow">
+      <div class="guide-flow-row">
+
+        <div class="guide-node">
+          <div class="guide-node-icon" style="--node-c:#9945FF;--node-bg:rgba(153,69,255,0.12);--node-ring:rgba(153,69,255,0.35);">
+            <i data-lucide="shopping-bag" style="width:24px;height:24px;"></i>
+            <span class="guide-node-num">1</span>
+          </div>
+          <div class="guide-node-title">Select &amp; Pay</div>
+          <div class="guide-node-desc">Browse the wallet inventory and checkout with USDT, BTC, or LTC. Your order is reserved instantly.</div>
+          <span class="guide-node-chip">USDT · BTC · LTC</span>
+        </div>
+
+        <div class="guide-connector">
+          <i data-lucide="chevrons-right" style="width:16px;height:16px;"></i>
+        </div>
+
+        <div class="guide-node">
+          <div class="guide-node-icon" style="--node-c:#14F195;--node-bg:rgba(20,241,149,0.12);--node-ring:rgba(20,241,149,0.35);">
+            <i data-lucide="badge-check" style="width:24px;height:24px;"></i>
+            <span class="guide-node-num">2</span>
+          </div>
+          <div class="guide-node-title">Instant Delivery</div>
+          <div class="guide-node-desc">Payment is verified automatically and your <strong>private key + seed phrase</strong> appear instantly in checkout. No email needed.</div>
+          <span class="guide-node-chip">Auto · No KYC</span>
+        </div>
+
+        <div class="guide-connector">
+          <i data-lucide="chevrons-right" style="width:16px;height:16px;"></i>
+        </div>
+
+        <div class="guide-node">
+          <div class="guide-node-icon" style="--node-c:#60A5FA;--node-bg:rgba(96,165,250,0.12);--node-ring:rgba(96,165,250,0.35);">
+            <i data-lucide="wallet" style="width:24px;height:24px;"></i>
+            <span class="guide-node-num">3</span>
+          </div>
+          <div class="guide-node-title">Install Wallet</div>
+          <div class="guide-node-desc">Download <strong>Phantom</strong> or <strong>Solflare</strong> from official stores — the most secure and trusted Solana wallets.</div>
+          <span class="guide-node-chip">Phantom · Solflare</span>
+        </div>
+
+        <div class="guide-connector">
+          <i data-lucide="chevrons-right" style="width:16px;height:16px;"></i>
+        </div>
+
+        <div class="guide-node">
+          <div class="guide-node-icon" style="--node-c:#FBBF24;--node-bg:rgba(251,191,36,0.12);--node-ring:rgba(251,191,36,0.35);">
+            <i data-lucide="key-round" style="width:24px;height:24px;"></i>
+            <span class="guide-node-num">4</span>
+          </div>
+          <div class="guide-node-title">Import Private Key</div>
+          <div class="guide-node-desc">Open Phantom → <strong>"I already have a wallet"</strong> → paste the key or seed phrase. Full control, instantly.</div>
+          <span class="guide-node-chip">Private key · Seed</span>
+        </div>
+
+        <div class="guide-connector">
+          <i data-lucide="chevrons-right" style="width:16px;height:16px;"></i>
+        </div>
+
+        <div class="guide-node">
+          <div class="guide-node-icon" style="--node-c:#F472B6;--node-bg:rgba(244,114,182,0.12);--node-ring:rgba(244,114,182,0.35);">
+            <i data-lucide="arrow-up-right" style="width:24px;height:24px;"></i>
+            <span class="guide-node-num">5</span>
+          </div>
+          <div class="guide-node-title">Verify &amp; Dump</div>
+          <div class="guide-node-desc">Confirm the balance on <strong>Solscan</strong>, then transfer SOL to your wallet or exchange address.</div>
+          <span class="guide-node-chip">On-chain verified</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products-section" id="products">
+    <div class="neon-bg">
+      <div class="neon-line neon-h-1"></div>
+      <div class="neon-line neon-h-2"></div>
+      <div class="neon-line neon-h-3"></div>
+      <div class="neon-line neon-v-1"></div>
+      <div class="neon-line neon-v-2"></div>
+      <div class="neon-dot neon-dot-1"></div>
+      <div class="neon-dot neon-dot-2"></div>
+      <div class="neon-dot neon-dot-3"></div>
+      <div class="neon-dot neon-dot-4"></div>
+      <div class="neon-dot neon-dot-5"></div>
+    </div>
+    <div class="disclaimer-bar">
+      <i data-lucide="shield" style="width:16px;height:16px;flex-shrink:0;"></i>
+      <span>Disclaimer: All wallets are sold as-is with no guarantee of future activity or balance retention. By purchasing, you acknowledge that the seller bears no responsibility for any changes to wallet contents after the transaction is complete.</span>
+    </div>
+    <div class="section-header">
+      <div>
+        <div class="section-title">Available <span>Wallets</span></div>
+        <div class="section-subtitle">Dumped Solana wallets with verified balances — private keys included</div>
+      </div>
+
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+
+    <!-- BTC Promotional Banner -->
+    <div class="btc-promo" id="btcPromo">
+      <div class="btc-promo-bg">
+        <div class="btc-promo-glow"></div>
+        <div class="btc-promo-glow-2"></div>
+        <div class="btc-promo-halo"></div>
+      </div>
+      <div class="btc-promo-img">
+        <img src="1/cd28a072-bb87-4261-bf9c-0f93f301b377.png" alt="BTC DORMANT">
+      </div>
+      <div class="btc-promo-content">
+        <div class="btc-promo-pill">
+          <span class="btc-promo-pill-dot"></span>
+          <span>NEW COLLECTION · BTC DORMANT</span>
+        </div>
+        <div class="btc-promo-title">Dormant Bitcoin<br><span>Wallet Recovery</span></div>
+        <p class="btc-promo-desc">Verified dormant BTC wallets with confirmed on-chain balances — private keys tested, WIF format ready, delivered instantly after payment.</p>
+        <div class="btc-promo-stats">
+          <div class="btc-promo-stat">
+            <strong>3,200+</strong>
+            <span>Wallets Delivered</span>
+          </div>
+          <div class="btc-promo-stat">
+            <strong>100%</strong>
+            <span>On-Chain Verified</span>
+          </div>
+          <div class="btc-promo-stat">
+            <strong>24/7</strong>
+            <span>Instant Delivery</span>
+          </div>
+        </div>
+        <div class="btc-promo-actions">
+          <a href="btc.html" class="btc-promo-btn btc-promo-btn-primary">
+            BROWSE BTC WALLETS
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="btc.html" class="btc-promo-btn btc-promo-btn-secondary">HOW IT WORKS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="reviews-section">
+    <div class="reviews-inner">
+
+      <!-- Trustpilot Profile Hero -->
+      <div class="tp-profile">
+        <div class="tp-profile-inner">
+          <div class="tp-profile-left">
+            <div class="tp-profile-avatar">
+              <img src="1/1627ac24-e9a5-4ee6-a151-ae4a434484ca.png" alt="BLACK SOL">
+            </div>
+            <div class="tp-profile-identity">
+              <div class="tp-profile-name">BLACK SOL</div>
+              <div class="tp-profile-domain">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+                <span>blacksol.io</span>
+                <span class="tp-profile-verified">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>
+                  Verified
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="tp-profile-right">
+            <div class="tp-profile-card">
+              <div class="tp-ts-head">
+                <div class="tp-ts-title">
+                  TrustScore
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                </div>
+                <div class="tp-ts-score" style="color:#00B67A;">4.8</div>
+              </div>
+              <div class="tp-ts-stars">
+                <div class="tp-profile-stars">
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                  <svg style="color:#00B67A;"><use href="#tp-star"></use></svg>
+                </div>
+                <a class="tp-ts-stars-link" href="https://fr.trustpilot.com/" target="_blank" rel="noopener">Read more about TrustScore reviews</a>
+              </div>
+              <div class="tp-ts-count">2,600+ reviews</div>
+              <div class="tp-profile-divider"></div>
+              <div class="tp-recommend"><strong>95%</strong> of customers recommend this company</div>
+              <div class="tp-profile-bars">
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">5★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:85%;background:#00B67A;"></div></div>
+                  <span class="tp-bar-pct">85%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">4★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:10%;background:#73CF11;"></div></div>
+                  <span class="tp-bar-pct">10%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">3★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:3%;background:#FFCE00;"></div></div>
+                  <span class="tp-bar-pct">3%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">2★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:1%;background:#FF931F;"></div></div>
+                  <span class="tp-bar-pct">1%</span>
+                </div>
+                <div class="tp-bar-row">
+                  <span class="tp-bar-label">1★</span>
+                  <div class="tp-bar-track"><div class="tp-bar-fill" style="width:1%;background:#E54335;"></div></div>
+                  <span class="tp-bar-pct">1%</span>
+                </div>
+              </div>
+              <div class="tp-profile-actions">
+                <a class="tp-btn-primary" href="reviews.html">Write a review</a>
+                <a class="tp-btn-secondary" href="#products">Visit website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-divider"></div>
+
+      <div class="reviews-stats">
+        <div class="reviews-stat-item">
+          <span class="reviews-stat-num">2,600+</span>
+          <span class="reviews-stat-lbl">Total Reviews</span>
+        </div>
+        <div class="reviews-stat-dot"></div>
+        <div class="reviews-stat-item">
+          <span class="reviews-stat-num">4.8 ★★★★★</span>
+          <span class="reviews-stat-lbl">Average Rating</span>
+        </div>
+        <div class="reviews-stat-dot"></div>
+        <div class="reviews-stat-item">
+          <span class="reviews-stat-num">98%</span>
+          <span class="reviews-stat-lbl">Delivery Success</span>
+        </div>
+      </div>
+
+      <a href="reviews.html" class="reviews-cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/></svg>
+        View All Reviews on Trustpilot
+      </a>
+    </div>
+  </section>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" onclick="toggleCart()"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-price" id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn" onclick="goToCheckout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span class="toast-icon"></span>
+  </div>
+
+  <!-- Auth Required Modal -->
+  <div class="auth-modal-overlay" id="authModal" style="display:none;" onclick="closeAuthModal(event)">
+    <div class="auth-modal">
+      <button class="auth-modal-close" onclick="closeAuthModal()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="auth-modal-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div class="auth-modal-title">Account Required</div>
+      <div class="auth-modal-sub">You need to create an account or sign in to access this feature</div>
+      <div class="auth-modal-buttons">
+        <a href="signup.html" class="auth-modal-btn primary">Create Account</a>
+        <a href="signin.html" class="auth-modal-btn secondary">I Already Have an Account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dump Process Modal -->
+  <div class="modal-overlay" id="dumpModal" onclick="closeDumpModal(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeDumpModal()"><i data-lucide="x" style="width:20px;height:20px;"></i></button>
+
+      <!-- Step 1 -->
+      <div class="modal-step">
+        <div class="step-number">01</div>
+        <div class="step-body">
+          <h3>Purchase &amp; Receive</h3>
+          <p>Select a dumped wallet from the inventory. Upon purchase, you receive the private key or seed phrase instantly — full control transferred immediately. No KYC, no delays.</p>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <!-- Step 2 -->
+      <div class="modal-step">
+        <div class="step-number">02</div>
+        <div class="step-body">
+          <h3>Verify &amp; Prepare</h3>
+          <p>Import the wallet into your preferred interface (Phantom, Solflare, Backpack). Confirm the SOL balance, check for SPL tokens, and ensure the wallet is clean with no freeze authorities or clawback risks.</p>
+        </div>
+      </div>
+
+      <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <!-- Step 3 -->
+      <div class="modal-step">
+        <div class="step-number">03</div>
+        <div class="step-body">
+          <h3>Connect &amp; Dump</h3>
+          <p>Link the wallet to your target platform. Execute transfers across betting sites, exchanges, binary options, or games. Distribute amounts strategically to avoid flags — each destination gets a fraction of the total.</p>
+        </div>
+      </div>
+
+      <div class="step-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+
+      <!-- Step 4 -->
+      <div class="modal-step">
+        <div class="step-number">04</div>
+        <div class="step-body">
+          <h3>Liquidate &amp; Exit</h3>
+          <p>Withdraw profits to your personal wallet or exchange account. The dumped wallet is now spent — no trace back, no recovery. Repeat the cycle with a fresh wallet from the inventory.</p>
+        </div>
+      </div>
+
+      <!-- Diagram -->
+      <div class="modal-diagram">
+        <div class="diagram-title">Dump Flow Architecture</div>
+        <div class="diagram-grid">
+          <!-- Wallet Source -->
+          <div class="diagram-node diagram-source">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="18" cy="12" r="2"/><path d="M6 12h4"/></svg>
+            <span>Dumped Wallet</span>
+          </div>
+
+          <div class="diagram-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+
+          <!-- Splitter -->
+          <div class="diagram-split">
+            <div class="diagram-split-line"></div>
+            <div class="diagram-split-label">Split &amp; Route</div>
+          </div>
+
+          <!-- Platforms Row -->
+          <div class="diagram-row">
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span>Betting<br><small>Stake · Rollbit · BC.Game</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+              <span>Exchanges<br><small>Binance · Bybit · OKX</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M6 4l2 4M18 4l-2 4M4 16l3-2M20 16l-3-2M12 22v-6M8 18l-1-3M16 18l1-3"/></svg>
+              <span>Binary Options<br><small>Pocket Option · IQ Option</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Gaming<br><small>CSGO Roll · Bloxflip</small></span>
+            </div>
+            <div class="diagram-node diagram-plat">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>DeFi · Apps<br><small>Jito · Telegram Bots</small></span>
+            </div>
+          </div>
+
+          <div class="diagram-connector">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+
+          <!-- Exit -->
+          <div class="diagram-node diagram-exit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+            <span>Liquidated · Exited</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bg">
+      <div class="footer-glow"></div>
+    </div>
+    <div class="footer-inner">
+
+      <div class="footer-section">
+        <div class="footer-brand-top">
+          <svg viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:22px;height:17px;">
+            <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#9945FF"/>
+              <stop offset="100%" stop-color="#14F195"/>
+            </linearGradient>
+            <path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#footerGrad)"/>
+            <path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#footerGrad)"/>
+            <path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#footerGrad)"/>
+          </svg>
+          <span class="footer-brand-text">BLACK SOL</span>
+          <span class="footer-official-badge">
+            <i data-lucide="badge-check" style="width:11px;height:11px;"></i>
+            Verified Operator
+          </span>
+        </div>
+        <div class="footer-desc">
+          Premium dumped Solana wallets with verified balances. Full private-key access, instant delivery, escrow-protected checkout — no KYC required.
+        </div>
+        <div class="footer-assets">
+          <span class="footer-asset sol">SOL</span>
+          <span class="footer-asset usdt">USDT</span>
+          <span class="footer-asset btc">BTC</span>
+          <span class="footer-asset ltc">LTC</span>
+        </div>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="footer-stat-value">5,200+</span>
+            <span class="footer-stat-label">Sales Completed</span>
+          </div>
+          <div class="footer-stat">
+            <span class="footer-stat-value">874K+</span>
+            <span class="footer-stat-label">SOL Circulated</span>
+          </div>
+        </div>
+        <div class="footer-vendor-row">
+          <span class="footer-vendor-item"><i data-lucide="landmark" style="width:12px;height:12px;color:#9945FF;"></i> <strong>BLACK SOL TECHNOLOGIES</strong></span>
+          <span class="footer-vendor-sep">•</span>
+          <span class="footer-vendor-item"><i data-lucide="shield-check" style="width:12px;height:12px;color:#14F195;"></i> <strong>Escrow-backed</strong></span>
+          <span class="footer-vendor-sep">•</span>
+          <span class="footer-vendor-item"><i data-lucide="clock" style="width:12px;height:12px;color:#60A5FA;"></i> <strong>24/7</strong> operations</span>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-section-title">Platform</div>
+        <a href="#" class="footer-link">
+          <i data-lucide="home" style="width:13px;height:13px;color:#9945FF;"></i>
+          Home
+        </a>
+        <a href="#products" class="footer-link">
+          <i data-lucide="wallet" style="width:13px;height:13px;color:#9945FF;"></i>
+          Wallets
+        </a>
+        <a href="btc.html" class="footer-link">
+          <i data-lucide="bitcoin" style="width:13px;height:13px;color:#F7931A;"></i>
+          Bitcoin Wallets
+        </a>
+        <a href="#" onclick="event.preventDefault(); openDumpModal();" class="footer-link">
+          <i data-lucide="info" style="width:13px;height:13px;color:#9945FF;"></i>
+          How It Works
+        </a>
+        <a href="support.html" class="footer-link">
+          <i data-lucide="headset" style="width:13px;height:13px;color:#60A5FA;"></i>
+          Support
+        </a>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-section-title">Explorers &amp; Tools</div>
+        <a href="https://solscan.io/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="globe" style="width:13px;height:13px;color:#14F195;"></i>
+          Solscan Explorer
+        </a>
+        <a href="https://phantom.app/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="wallet" style="width:13px;height:13px;color:#9945FF;"></i>
+          Phantom Wallet
+        </a>
+        <a href="https://solflare.com/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="shield" style="width:13px;height:13px;color:#14F195;"></i>
+          Solflare Wallet
+        </a>
+        <a href="https://coingecko.com/en/coins/solana" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="trending-up" style="width:13px;height:13px;color:#14F195;"></i>
+          SOL Price — CoinGecko
+        </a>
+        <a href="https://explorer.solana.com/" target="_blank" rel="noopener" class="footer-link">
+          <i data-lucide="compass" style="width:13px;height:13px;color:#9945FF;"></i>
+          Solana Explorer
+        </a>
+      </div>
+
+      <div class="footer-section">
+        <div class="footer-section-title">Compliance &amp; Security</div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Escrow-protected checkout</span>
+        </div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>PGP-encrypted communications</span>
+        </div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          <span>Non-custodial · self-custody keys</span>
+        </div>
+        <div class="footer-contact">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <span>Risk disclosure &amp; AML policy</span>
+        </div>
+        <div class="footer-pgp-row">
+          <code class="pgp-key">09BA 9522 83D7 4740 B4DB  5625 42AD 7947 1A2B 3C4D</code>
+          <button class="pgp-copy" onclick="copyPGP()">Copy</button>
+        </div>
+        <div class="footer-badges">
+          <span class="footer-badge">Since 2024</span>
+          <span class="footer-badge">5K+ Sales</span>
+          <span class="footer-badge">XMR Escrow</span>
+          <span class="footer-badge">Instant Delivery</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-legal">
+      Trading digital assets involves substantial risk and can result in total loss. Wallets are supplied "as-is" with no guarantees of future balance retention — always verify balances on-chain (Solscan) before purchasing.
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 BLACK SOL. All rights reserved.</div>
+      <div class="footer-tagline">Don't trust, verify.</div>
+    </div>
+  </footer>
+
+  <div class="trust-badges">
+    <div class="trust-badges-inner">
+      <div class="trust-item">
+        <span class="trust-item-icon ti-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span class="trust-item-text">256-Bit SSL Encryption</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-trust"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="trust-item-text">Trustpilot <strong>4.8</strong> ★★★★★</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-pay"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg></span>
+        <span class="trust-item-text">USDT · BTC · LTC</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-escrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+        <span class="trust-item-text">Escrow Protected</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01L8 10"/></svg></span>
+        <span class="trust-item-text">Verified Operator</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-refund"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></span>
+        <span class="trust-item-text">100% Money-Back</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-fast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+        <span class="trust-item-text">Instant Delivery</span>
+      </div>
+      <span class="trust-item-sep"></span>
+      <div class="trust-item">
+        <span class="trust-item-icon ti-cust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+        <span class="trust-item-text">Non-Custodial</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Loader -->
+  <div class="wallet-loader" id="walletLoader" aria-hidden="true">
+    <div class="wl-core">
+      <svg class="wl-logo" viewBox="0 0 397 311" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="wlSolGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9945FF"/>
+            <stop offset="100%" stop-color="#14F195"/>
+          </linearGradient>
+        </defs>
+        <path d="M64.8 236.3C66.1 235 67.9 234.3 69.8 234.3H386.5C389.7 234.3 391.3 238.2 389 240.5L332.2 297.3C330.9 298.6 329.1 299.3 327.2 299.3H10.5C7.3 299.3 5.7 295.4 8 293.1L64.8 236.3Z" fill="url(#wlSolGrad)"/>
+        <path d="M64.8 13.1C66.1 11.8 67.9 11 69.8 11H386.5C389.7 11 391.3 14.9 389 17.1L332.2 73.9C330.9 75.2 329.1 76 327.2 76H10.5C7.3 76 5.7 72.1 8 69.8L64.8 13.1Z" fill="url(#wlSolGrad)"/>
+        <path d="M332.2 124C330.9 122.7 329.1 122 327.2 122H10.5C7.3 122 5.7 125.9 8 128.1L64.8 184.9C66.1 186.2 67.9 186.9 69.8 186.9H386.5C389.7 186.9 391.3 183 389 180.8L332.2 124Z" fill="url(#wlSolGrad)"/>
+      </svg>
+      <div class="wl-dots">
+        <span class="wl-dot" style="--dot-c:#9945FF;--dot-glow:rgba(153,69,255,0.8);animation-delay:0s;"></span>
+        <span class="wl-dot" style="--dot-c:#14F195;--dot-glow:rgba(20,241,149,0.8);animation-delay:0.17s;"></span>
+        <span class="wl-dot" style="--dot-c:#9945FF;--dot-glow:rgba(153,69,255,0.8);animation-delay:0.34s;"></span>
+      </div>
+      <div class="wl-label">
+        <span class="wl-label-strong">Get +50% Bonus</span>
+        <span class="wl-label-sub">On Your First Wallet Deposit</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wallet Sidebar Overlay -->
+  <div class="wallet-overlay" id="walletOverlay" onclick="toggleWallet()"></div>
+
+  <!-- Wallet Sidebar -->
+  <div class="wallet-sidebar" id="walletSidebar">
+    <div class="wallet-sidebar-header">
+      <div class="wallet-sidebar-title">
+        <span class="wallet-title-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>
+        </span>
+        <div class="wallet-title-text">
+          <div class="wallet-title-name">My Wallet</div>
+          <div class="wallet-title-sub">Private Balance Vault</div>
+        </div>
+      </div>
+      <button class="wallet-sidebar-close" onclick="toggleWallet()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div class="wallet-nav" id="walletNav">
+      <button class="wallet-nav-tab active" data-wallet-view="wallet" onclick="setWalletView('wallet')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>
+        Wallet
+      </button>
+      <button class="wallet-nav-tab" data-wallet-view="tx" onclick="setWalletView('tx')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        Transactions
+      </button>
+    </div>
+
+    <div class="wallet-view" id="walletView">
+    <div class="wallet-balance-section">
+      <div class="wallet-balance-amount"><span class="cur">$</span><span id="walletBalance" class="num">0.00</span></div>
+      <div class="wallet-balance-usd">≈ <strong id="walletBalanceUsd">$0.00</strong> USD</div>
+    </div>
+
+    <div class="wallet-actions">
+      <button class="wallet-action-btn primary" onclick="showWalletDeposit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit
+      </button>
+      <button class="wallet-action-btn" onclick="requireWalletFunds()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Buy
+      </button>
+    </div>
+
+    <div class="wallet-notice" id="walletNotice">
+      <div class="wallet-notice-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 16v-4M12 8h.01"/></svg>
+      </div>
+      <div class="wallet-notice-title">Wallet Balance Required</div>
+      <div class="wallet-notice-text">Your wallet must be funded before you can complete a purchase. Deposits are accepted in <strong>USDT</strong> via <strong>TRC-20</strong> or <strong>BEP-20</strong>.</div>
+      <button class="wallet-notice-btn" onclick="showWalletDeposit()">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit Now
+      </button>
+    </div>
+
+    <div class="wallet-deposit" id="walletDeposit">
+      <div class="wallet-deposit-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Deposit Funds
+      </div>
+      <div class="wallet-deposit-methods">
+        <button class="wallet-deposit-method active" data-wallet-method="trc20" onclick="selectWalletMethod('trc20')">
+          <img class="wallet-deposit-method-icon" src="https://cryptologos.cc/logos/tron-trx-logo.png" alt="TRC-20">
+          USDT (TRC-20)
+        </button>
+        <button class="wallet-deposit-method" data-wallet-method="bep20" onclick="selectWalletMethod('bep20')">
+          <img class="wallet-deposit-method-icon" src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BEP-20">
+          USDT (BEP-20)
+        </button>
+      </div>
+      <div class="wallet-deposit-addr" id="walletDepositAddr">TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS</div>
+      <button class="wallet-deposit-copy" id="walletDepositCopy" onclick="copyWalletAddr()">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        Copy Address
+      </button>
+      <div class="wallet-deposit-note">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        Send only the selected network to this address. After sending, click "I've Deposited" to credit your wallet.
+      </div>
+      <button class="wallet-deposit-confirm" id="walletDepositConfirm" onclick="confirmWalletDeposit()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        I've Deposited — Verify
+      </button>
+    </div>
+
+    <div class="wallet-verify" id="walletVerify" style="display:none;">
+      <div class="wallet-verify-icon" id="walletVerifyIcon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="wallet-verify-title" id="walletVerifyTitle">Searching Network</div>
+      <div class="wallet-verify-sub" id="walletVerifySub">Scanning the blockchain for your incoming deposit</div>
+      <div class="wallet-verify-dots" id="walletVerifyDots">
+        <span class="wallet-verify-dot"></span>
+        <span class="wallet-verify-dot"></span>
+        <span class="wallet-verify-dot"></span>
+      </div>
+      <div class="wallet-verify-fail" id="walletVerifyFail" style="display:none;">
+        <div class="wallet-verify-fail-text">No transaction found. Send funds to the address below and try again.</div>
+        <div class="wallet-deposit-addr" id="walletVerifyAddr">TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS</div>
+        <button class="wallet-deposit-copy" onclick="copyWalletVerifyAddr()" style="margin-bottom:8px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy Address
+        </button>
+        <button class="wallet-deposit-confirm" onclick="retryWalletDeposit()" style="margin-top:0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+          Scan Again
+        </button>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="wallet-tx-view" id="walletTxView">
+      <div class="wallet-txs">
+        <div class="wallet-txs-head">
+          <div class="wallet-txs-title">Transaction History</div>
+          <div class="tx-view-stats">
+            <span class="tx-stat"><b id="txStatDep">0</b> Deposits</span>
+            <span class="tx-stat"><b id="txStatPur">0</b> Purchases</span>
+          </div>
+        </div>
+        <div class="wallet-txs-tabs">
+          <button class="wallet-txs-tab active" data-tx-filter="all" onclick="setWalletTxFilter('all')">All</button>
+          <button class="wallet-txs-tab" data-tx-filter="deposit" onclick="setWalletTxFilter('deposit')">Deposits</button>
+          <button class="wallet-txs-tab" data-tx-filter="purchase" onclick="setWalletTxFilter('purchase')">Purchases</button>
+        </div>
+        <div class="wallet-empty" id="walletEmpty">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div class="wallet-empty-text">No transactions yet</div>
+          <div class="wallet-empty-sub">Deposit funds to get started</div>
+        </div>
+        <div id="walletTxList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Support Button -->
+  <button class="support-float" onclick="window.location.href='support.html'" aria-label="Support">
+    <img src="fde7ac45-17ed-4d8f-b1c2-f719f706b7a0.png" alt="Support" class="support-float-icon">
+    <span class="support-tooltip">Contact Support</span>
+  </button>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+  <script>
+    /* ===== Auth System ===== */
+    function checkAuth() {
+      var data;
+      try { data = JSON.parse(localStorage.getItem('blackSolUser')); } catch(e) { data = null; }
+      if (!data || !data.registered) {
+        var guests = ['Crypto Hunter', 'Wallet Seeker', 'SOL Trader', 'BTC Maxi', 'Dump Master', 'Key Finder', 'Chain Walker', 'Ghost Trader', 'Dark Arbit', 'Sweeper Pro'];
+        var name = guests[Math.floor(Math.random() * guests.length)] + Math.floor(Math.random() * 1000);
+        data = { registered: true, username: name };
+        localStorage.setItem('blackSolUser', JSON.stringify(data));
+      }
+      return data;
+    }
+    function requireAuth() { return true; }
+    function closeAuthModal(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('authModal').style.display = 'none';
+    }
+    function updateAuthUI() {
+      const userData = checkAuth();
+      const signUpLink = document.getElementById('navSignUp');
+      const userDiv = document.getElementById('navUser');
+      const userName = document.getElementById('navUserName');
+      if (signUpLink && userDiv && userName) {
+        if (userData && userData.registered) {
+          signUpLink.style.display = 'none';
+          userDiv.classList.remove('hidden');
+          userName.textContent = userData.username || 'User';
+        } else {
+          signUpLink.style.display = '';
+          userDiv.classList.add('hidden');
+        }
+      }
+    }
+    function logout() {
+      localStorage.removeItem('blackSolUser');
+      updateAuthUI();
+      document.getElementById('toast').textContent = 'Logged out successfully';
+      document.getElementById('toast').className = 'toast show';
+      setTimeout(function() { document.getElementById('toast').className = 'toast'; }, 2500);
+    }
+
+    /* ===== Wallet System ===== */
+    const WALLET_KEY = 'userWalletBalance';
+    const WALLET_TXS_KEY = 'userWalletTxs';
+    const WALLET_ADDRS = {
+      trc20: { addr: 'TPdnVb1aAQdTh2VqbKqnd81HxGTFFmo6oS', label: 'USDT (TRC-20)' },
+      bep20: { addr: '0xD8F73264fDb89b8Ff5EfCBd97001190556A45Bd3', label: 'USDT (BEP-20)' },
+    };
+    let walletMethod = 'trc20';
+    let walletTxFilter = 'all';
+
+    function getWalletBalance() { return parseFloat(localStorage.getItem(WALLET_KEY)) || 0; }
+    function setWalletBalance(val) { localStorage.setItem(WALLET_KEY, val.toString()); }
+    function getWalletTxs() { return JSON.parse(localStorage.getItem(WALLET_TXS_KEY)) || []; }
+    function setWalletTxs(txs) { localStorage.setItem(WALLET_TXS_KEY, JSON.stringify(txs)); }
+
+    function updateWalletUI() {
+      const bal = getWalletBalance();
+      document.getElementById('walletBalance').textContent = bal.toFixed(2);
+      document.getElementById('walletBalanceUsd').textContent = '$' + bal.toFixed(2);
+      const dot = document.getElementById('walletDot');
+      if (dot) { dot.classList.toggle('has-balance', bal > 0); }
+      renderWalletTxs();
+    }
+
+    function toggleWallet() {
+      if (!requireAuth()) return;
+      const sidebar = document.getElementById('walletSidebar');
+      const overlay = document.getElementById('walletOverlay');
+      const loader = document.getElementById('walletLoader');
+      const isOpen = sidebar.classList.contains('open');
+      if (isOpen) {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+        if (loader) { loader.classList.remove('visible', 'hide'); }
+        return;
+      }
+      const openPanel = function() {
+        sidebar.classList.add('open');
+        overlay.classList.add('open');
+        const dep = document.getElementById('walletDeposit');
+        if (dep) { dep.style.display = 'none'; dep.classList.remove('open'); }
+        const ver = document.getElementById('walletVerify');
+        if (ver) ver.style.display = 'none';
+        updateWalletUI();
+      };
+      if (loader) {
+        loader.classList.remove('hide');
+        loader.classList.add('visible');
+        const unlockDelay = 6000 + Math.floor(Math.random() * 9000);
+        setTimeout(openPanel, unlockDelay);
+        setTimeout(function() { loader.classList.add('hide'); }, unlockDelay + 350);
+      } else {
+        openPanel();
+      }
+    }
+
+    function showWalletDeposit() {
+      document.getElementById('walletVerify').style.display = 'none';
+      const notice = document.getElementById('walletNotice');
+      if (notice) notice.classList.remove('show');
+      const dep = document.getElementById('walletDeposit');
+      if (dep) { dep.style.display = 'block'; dep.classList.toggle('open'); }
+    }
+
+    function requireWalletFunds() {
+      const notice = document.getElementById('walletNotice');
+      if (!notice) return;
+      notice.classList.remove('show');
+      void notice.offsetWidth;
+      notice.classList.add('show');
+      const sidebar = document.getElementById('walletSidebar');
+      if (sidebar) sidebar.scrollTop = Math.max(0, notice.offsetTop - 16);
+    }
+
+    function selectWalletMethod(method) {
+      walletMethod = method;
+      document.querySelectorAll('.wallet-deposit-method').forEach(el => el.classList.remove('active'));
+      document.querySelector('.wallet-deposit-method[data-wallet-method="' + method + '"]').classList.add('active');
+      document.getElementById('walletDepositAddr').textContent = WALLET_ADDRS[method].addr;
+      document.getElementById('walletVerify').style.display = 'none';
+      document.getElementById('walletDeposit').style.display = 'block';
+      if (document.getElementById('walletDepositConfirm')) {
+        document.getElementById('walletDepositConfirm').disabled = false;
+        document.getElementById('walletDepositConfirm').textContent = '';
+        document.getElementById('walletDepositConfirm').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> I\'ve Deposited — Verify';
+        document.getElementById('walletDepositConfirm').style.background = '';
+        document.getElementById('walletDepositConfirm').style.color = '';
+        document.getElementById('walletDepositConfirm').style.border = 'none';
+      }
+    }
+
+    function copyWalletAddr() {
+      const addr = document.getElementById('walletDepositAddr').textContent;
+      navigator.clipboard.writeText(addr).catch(function(){});
+      const btn = document.getElementById('walletDepositCopy');
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
+      setTimeout(function() {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Address';
+      }, 2000);
+    }
+
+    function confirmWalletDeposit() {
+      const btn = document.getElementById('walletDepositConfirm');
+      if (!btn || btn.disabled) return;
+      const dep = document.getElementById('walletDeposit');
+      if (dep) dep.style.display = 'none';
+      const verify = document.getElementById('walletVerify');
+      if (verify) verify.style.display = 'block';
+      document.getElementById('walletVerifyFail').style.display = 'none';
+      document.getElementById('walletVerifyDots').style.display = 'flex';
+      const icon = document.getElementById('walletVerifyIcon');
+      icon.className = 'wallet-verify-icon';
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+      document.getElementById('walletVerifyTitle').textContent = 'Searching ' + WALLET_ADDRS[walletMethod].label + ' Network';
+      document.getElementById('walletVerifyTitle').className = 'wallet-verify-title';
+      document.getElementById('walletVerifySub').textContent = 'Scanning the blockchain for your incoming deposit';
+
+      setTimeout(function() {
+        document.getElementById('walletVerifyDots').style.display = 'none';
+        document.getElementById('walletVerifyFail').style.display = 'block';
+        document.getElementById('walletVerifyAddr').textContent = WALLET_ADDRS[walletMethod].addr;
+        icon.className = 'wallet-verify-icon failed';
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+        document.getElementById('walletVerifyTitle').textContent = 'Transaction Not Found';
+        document.getElementById('walletVerifyTitle').className = 'wallet-verify-title failed';
+        document.getElementById('walletVerifySub').textContent = 'No incoming payment detected on the ' + WALLET_ADDRS[walletMethod].label + ' network';
+      }, 3000 + Math.random() * 4000);
+    }
+
+    function retryWalletDeposit() {
+      document.getElementById('walletVerifyFail').style.display = 'none';
+      document.getElementById('walletVerifyDots').style.display = 'flex';
+      const icon = document.getElementById('walletVerifyIcon');
+      icon.className = 'wallet-verify-icon';
+      icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>';
+      document.getElementById('walletVerifyTitle').textContent = 'Searching ' + WALLET_ADDRS[walletMethod].label + ' Network';
+      document.getElementById('walletVerifyTitle').className = 'wallet-verify-title';
+      document.getElementById('walletVerifySub').textContent = 'Scanning the blockchain for your incoming deposit';
+
+      setTimeout(function() {
+        document.getElementById('walletVerifyDots').style.display = 'none';
+        document.getElementById('walletVerifyFail').style.display = 'block';
+        document.getElementById('walletVerifyAddr').textContent = WALLET_ADDRS[walletMethod].addr;
+        const icon2 = document.getElementById('walletVerifyIcon');
+        icon2.className = 'wallet-verify-icon failed';
+        icon2.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+        document.getElementById('walletVerifyTitle').textContent = 'Transaction Not Found';
+        document.getElementById('walletVerifyTitle').className = 'wallet-verify-title failed';
+        document.getElementById('walletVerifySub').textContent = 'No incoming payment detected on the ' + WALLET_ADDRS[walletMethod].label + ' network';
+      }, 3000 + Math.random() * 4000);
+    }
+
+    function copyWalletVerifyAddr() {
+      const addr = document.getElementById('walletVerifyAddr').textContent;
+      if (navigator.clipboard) navigator.clipboard.writeText(addr);
+    }
+
+    function openWalletDeposit() {
+      document.getElementById('walletVerify').style.display = 'none';
+      document.getElementById('walletDeposit').style.display = 'block';
+      document.getElementById('walletDeposit').classList.add('open');
+    }
+
+    function setWalletTxFilter(filter) {
+      walletTxFilter = filter;
+      document.querySelectorAll('.wallet-txs-tab').forEach(function(t) {
+        t.classList.toggle('active', t.getAttribute('data-tx-filter') === filter);
+      });
+      renderWalletTxs();
+    }
+
+    function setWalletView(view) {
+      document.querySelectorAll('.wallet-nav-tab').forEach(function(t) {
+        t.classList.toggle('active', t.getAttribute('data-wallet-view') === view);
+      });
+      document.getElementById('walletView').style.display = view === 'tx' ? 'none' : 'flex';
+      document.getElementById('walletTxView').style.display = view === 'tx' ? 'flex' : 'none';
+      if (view === 'tx') renderWalletTxs();
+    }
+
+    function renderWalletTxs() {
+      const txs = getWalletTxs();
+      let depCount = 0, purCount = 0;
+      txs.forEach(function(tx) { if (tx.type === 'deposit') depCount++; else purCount++; });
+      document.getElementById('txStatDep').textContent = depCount;
+      document.getElementById('txStatPur').textContent = purCount;
+      const filtered = walletTxFilter === 'all' ? txs : txs.filter(function(tx) { return tx.type === walletTxFilter; });
+      const list = document.getElementById('walletTxList');
+      const empty = document.getElementById('walletEmpty');
+      if (filtered.length === 0) {
+        list.innerHTML = '';
+        empty.style.display = 'block';
+        if (walletTxFilter === 'deposit') {
+          empty.querySelector('.wallet-empty-text').textContent = 'No deposits yet';
+          empty.querySelector('.wallet-empty-sub').textContent = 'Deposit funds to get started';
+        } else if (walletTxFilter === 'purchase') {
+          empty.querySelector('.wallet-empty-text').textContent = 'No purchases yet';
+          empty.querySelector('.wallet-empty-sub').textContent = 'Your wallet purchases will appear here';
+        } else {
+          empty.querySelector('.wallet-empty-text').textContent = 'No transactions yet';
+          empty.querySelector('.wallet-empty-sub').textContent = 'Deposit funds to get started';
+        }
+        return;
+      }
+      empty.style.display = 'none';
+      list.innerHTML = filtered.map(function(tx) {
+        return '<div class="wallet-tx">' +
+          '<div class="wallet-tx-icon ' + tx.type + '">' +
+            (tx.type === 'deposit'
+              ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+              : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M16 12a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/></svg>') +
+          '</div>' +
+          '<div class="wallet-tx-info">' +
+            '<div class="wallet-tx-desc">' + tx.desc + '</div>' +
+            '<div class="wallet-tx-date">' + tx.date + '</div>' +
+          '</div>' +
+          '<div class="wallet-tx-amount ' + tx.amountClass + '">' + tx.amount + '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    updateWalletUI();
+    updateAuthUI();
+
+    /* Dropdown toggle */
+    function toggleDropdown(e) {
+      e.stopPropagation();
+      document.getElementById('navDropdownMenu').classList.toggle('open');
+    }
+    document.addEventListener('click', function() {
+      var menu = document.getElementById('navDropdownMenu');
+      if (menu) menu.classList.remove('open');
+    });
+
+    function goToCheckout() {
+      if (!cart || cart.length === 0) {
+        showToast('Cart is empty', '!');
+        return;
+      }
+      if (!requireAuth()) return;
+      var id = cart[0].id;
+      window.location.href = 'checkout.html?id=' + id;
+    }
+  </script>
+</body>
+</html>
